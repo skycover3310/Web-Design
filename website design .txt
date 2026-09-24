@@ -1,0 +1,82 @@
+https://youtu.be/83QV4n7RZE8?si=adiuIKbG1YJMg_aU
+
+
+https://www.youtube.com/watch?v=pHstb0JGGhE&t=1285s
+
+
+請直接修改目前這份 HTML，只處理網站 Header 導覽按鈕的功能與互動，不要修改作品內容、作品圖片、整體版面設計、字體、配色或其他既有視覺風格。
+目前導覽列包含：
+* 首頁 Works
+* 關於我 About
+* EN / 中文
+請完成以下優化：
+1. 修正「首頁 Works」與「關於我 About」點擊後沒有反應的問題。
+2. 確保導覽按鈕可以正常切換對應的 Section。
+3. 如果目前 HTML 缺少必要的 JavaScript，請直接補上完整且穩定的 JavaScript。
+4. 點擊 Works 時：
+o 顯示 section-home
+o 隱藏其他 .page-section
+o nav-works 顯示 active 狀態
+o 移除 nav-about 的 active 狀態
+5. 點擊 About 時：
+o 顯示 section-about
+o 隱藏其他 .page-section
+o nav-about 顯示 active 狀態
+o 移除 nav-works 的 active 狀態
+6. 如果目前沒有 section-about，請建立一個最基本的 About Section，讓按鈕至少可以正常切換，不需要大幅設計內容。
+7. 導覽按鈕應該具有清楚的 cursor: pointer 與 hover 效果，但請沿用目前網站既有的視覺風格。
+8. 點擊切換 Section 時加入簡潔、平滑的淡入效果，但不要過度動畫。
+9. 點擊導覽按鈕後，頁面回到頂部。
+10. EN / 中文 按鈕維持目前功能；如果目前 toggleLanguage() 沒有實作，請補上必要函式，但不要改動現有作品資料。
+11. <a> 導覽項目請加入適當的 href（例如 #home、#about），同時保留 JavaScript Section 切換功能。
+12. 不要使用需要額外套件或 framework 的方法，維持純 HTML + CSS + JavaScript。
+13. 請檢查 JavaScript 是否有 console error，確保：
+* showSection() 存在
+* toggleLanguage() 存在
+* 所有 ID 都與 HTML 對應
+* 點擊 Works / About 不會出現錯誤
+14. 不要重寫整個網站，只修改必要部分。
+完成後請告訴我：
+* 修改了哪些地方
+* JavaScript 放在哪裡
+* 如何測試 Works / About 按鈕
+* 是否還有任何需要我手動處理的地方
+最重要：保持目前網站設計不變，只把導覽按鈕修好並優化互動。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+余辰曜
+作曲家｜鋼琴家｜聲音設計
+余辰曜是一位活躍於影視、動畫、遊戲與新媒體展演的跨界配樂家與鋼琴家，畢業於國立臺北藝術大學音樂系鋼琴演奏組，具備深厚的古典音樂底蘊與國際視野，曾赴上海音樂學院與日本武藏野音樂大學交流演出，並獲 WOCMAT 國際青年電子音樂創作獎肯定。其作品涵蓋商業電視、獨立遊戲、動畫與電影，其中配樂作品《Sky Maker》入選 SPARK ANIMATION 2026，作品亦曾入圍金穗獎、布宜諾斯艾利斯國際影展（BUEIFF）等國際影展。
+他的創作版圖涵蓋商業電視連續劇、獨立遊戲與跨域互動藝術；在幕後配樂製作上，他擅長將管弦樂編制與現代電子合成聲響融合並刻畫影像張力；同時，他也憑藉扎實的主修底子，提供高品質的鋼琴編曲與錄音實戰能力。他持續以多元的聲響語彙，為各類視覺載體提供專業且高執行力的音樂解決方案。
+Chen-Yao Yu
+Composer | Pianist | Sound Designer
+Chen-Yao Yu is a versatile composer and pianist active in film, television, animation, game audio, and cross-disciplinary interactive art. A graduate of Piano Performance at Taipei National University of the Arts (TNUA), he combines a strong classical foundation with international experience, including academic exchanges in Shanghai and Japan and recognition from the WOCMAT International Young Computer Music Composer Award. His work includes Sky Maker, selected for SPARK ANIMATION 2026, as well as film and animation projects featured in international festivals.
+His creative portfolio spans commercial television, independent games, and cross-disciplinary interactive art. He excels at blending traditional orchestral instrumentation with modern electronic sound design to capture the emotional and narrative tension of visual media. Leveraging his rigorous classical training, he also provides high-quality piano arranging, performance, and professional studio recording. With a diverse sonic vocabulary, he delivers professional and highly executable musical solutions for visual and interactive media.
+1.不要亂改設計、不要虛構履歷、圖片副檔名規則、雙語規則、修改後要驗證
+

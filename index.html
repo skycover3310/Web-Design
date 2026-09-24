@@ -1,0 +1,2103 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yu Chen Yao | Composer / Pianist / Sound Designer</title>
+    <!-- 引入 Squarespace 高級極簡字體 -->
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;600;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+
+        html {
+    scroll-behavior: smooth;
+}
+        /* --- Squarespace 核心極簡視覺風格定義 --- */
+        :root {
+            --bg-color: #ffffffe0;       /* 高級溫潤淺灰色底色 */
+            --text-main: #111111f5;      /* 高級極細黑色字 */
+            --text-muted: #272727;     /* 輔助灰色字 */
+            --card-radius: 10px;        /* 輕量圓角 */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Geist', 'Noto Sans TC', Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+             background-color: var(--bg-color);
+            color: var(--text-main);
+            overflow-x: hidden;
+            /* 確保底層互動霧氣不會把網頁內容撐開 */
+            position: relative; 
+        }
+
+        /* 導覽列 (Header) */
+       header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 8px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header::before {
+    content: "";
+    position: absolute !important;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 100vw;
+
+    transform: translateX(-50%);
+
+  background: rgba(255, 255, 255, 0.635);
+-webkit-backdrop-filter: blur(5px);
+backdrop-filter: blur(5px);
+
+    opacity: 0;
+    transition: opacity 0.5s ease;
+
+    z-index: -1;
+}
+header.is-scrolled::before {
+    opacity: 1;
+    
+}
+
+        .logo {
+            FONT-FAMILY: 'Geist', 'Noto Sans TC', serif;
+            font-size: 50px;
+    font-weight: 900;      /* 大字配粗一點比較有份量，不想加粗就留 400 */
+    letter-spacing: 2px;   /* 字變大後，2px 字距會顯得太鬆 */
+    line-height: 1;
+    display: inline-block;          /* transform 對 inline 元素無效，一定要加 */
+    transform: scale(1.9, 0.75);    /* 第一個數字是橫向，第二個是縱向 */
+    transform-origin: left center;  
+    transition: -webkit-text-fill-color 0.4s ease;
+    color: transparent;
+    -webkit-text-fill-color: transparent;       /* 填色透明 */
+    -webkit-text-stroke: 1.5px var(--text-main);
+        }
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 14px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-left: 30px;
+            font-weight: 400;
+            transition: all 0.3s;
+            cursor: pointer;
+            padding-bottom: 4px;
+            border-bottom: 1px solid transparent;
+        }
+
+        nav a:hover, nav a.active-nav {
+            color: var(--text-muted);
+            border-bottom: 1px solid var(--text-main);
+        }
+
+        .lang-btn {
+            background: none;
+            border: 1px solid var(--text-main);
+            color: var(--text-main);
+            padding: 4px 12px;
+            font-size: 12px;
+            letter-spacing: 1px;
+            cursor: pointer;
+            margin-left: 30px;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
+        .lang-btn:hover {
+            background-color: var(--text-main);
+            color: #ffffff;
+        }
+
+        /* 模擬多頁區段控制 (Section View) */
+        .page-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 20px 80px 20px;
+            scroll-margin-top: 80px;
+            display: block; /* 預設完全隱藏 */
+        }
+
+        /* 當啟動 active 時，強制覆蓋屬性顯示並觸發動畫 */
+        .page-section.active {
+            display: block !important; 
+            animation: fadeIn 0.6s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* 語系隱藏切換 */
+        .lang-block {
+            display: none;
+        }
+        .lang-block.active-lang {
+            display: block;
+        }
+
+        /* 首頁標題區 */
+        .intro-hero {
+            margin-bottom: 60px;
+        }
+
+        .intro-hero h1 {
+            font-family: 'Geist', 'Noto Sans TC', serif;
+            font-size: 48px;
+            font-weight: 400;
+            letter-spacing: -0.5px;
+            margin-bottom: 10px;
+        }
+
+        .intro-hero p {
+            font-family: 'Geist', 'Noto Sans TC', serif;
+            font-size: 14px;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+            font-weight: 400;
+        }
+
+        /* 作品集 Editorial Gallery Grid */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(12, minmax(0, 1fr));
+            grid-auto-flow: row dense;
+            grid-auto-rows: 24px;
+            gap: clamp(16px, 1.7vw, 24px);
+        }
+
+        /* 作品圖片維持原比例並以裁切填滿版面 */
+        .work-card {
+            position: relative;
+            min-height: 0;
+            background-color: #eaeaea;
+            border-radius: var(--card-radius);
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            cursor: default;
+            user-select: none;
+            -webkit-user-drag: none; 
+            filter: brightness(0.87);
+            transition: filter 0.55s ease, transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s ease;
+        }
+
+        .work-card:nth-child(1),
+        .work-card:nth-child(4),
+        .work-card:nth-child(9) {
+            grid-column: span 5;
+            grid-row: span 13;
+        }
+
+        .work-card:nth-child(2),
+        .work-card:nth-child(3),
+        .work-card:nth-child(10) {
+            grid-column: span 7;
+            grid-row: span 13;
+        }
+
+        .work-card:nth-child(5),
+        .work-card:nth-child(8),
+        .work-card:nth-child(12) {
+            grid-column: span 4;
+            grid-row: span 11;
+        }
+
+        .work-card:nth-child(6),
+        .work-card:nth-child(7),
+        .work-card:nth-child(11) {
+            grid-column: span 8;
+            grid-row: span 11;
+        }
+
+        /* 大師級微微浮起與擴散陰影微動畫 */
+        .work-card:hover {
+            filter: brightness(1);
+            transform: scale(1.02) translateY(-6px); 
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.08); 
+        }
+
+        /* 強行重疊在圖片前方的暗色半透明遮罩與文字層 */
+        .card-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.65) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 25px;
+            transition: all 0.4s ease;
+        }
+
+        .card-overlay .hover-content {
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        /* 滑鼠懸停時，優雅壓暗遮罩並浮現職稱文字 */
+        .work-card:hover .card-overlay {
+            background: linear-gradient(to bottom, rgba(0,0,0,0.4) 20%, rgba(0,0,0,0.8) 100%);
+        }
+
+        .work-card:hover .card-overlay .hover-content {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .card-title {
+            color: #ffffff;
+            font-size: 19px;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+        }
+
+        .card-credit {
+            color: #d1d1d1;
+            font-size: 12px;
+            font-weight: 300;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* 關於我 (About) 內頁簡約排版 */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-top: 40px;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-family: 'Geist', 'Noto Sans TC', serif;
+            font-size: 38px;
+            font-weight: 400;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .about-text p {
+            font-size: 15px;
+            line-height: 1.9;
+            font-weight: 300;
+            color: #222222;
+            margin-bottom: 20px;
+        }
+
+        /* 網頁底部法律免責與保護聲明 */
+  footer {
+    max-width: 1200px;
+    margin: 100px auto 40px auto;
+    padding: 30px 20px 0;
+    text-align: center;
+    border: none;
+    box-shadow: none;
+}
+        footer p {
+            font-size: 12px;
+            color: var(--text-muted);
+            line-height: 1.7;
+            letter-spacing: 0.5px;
+        }
+        button,
+        a {
+            font: inherit;
+        }
+
+        [hidden] {
+            display: none !important;
+        }
+
+        header {
+            gap: 24px;
+        }
+
+        .logo {
+            flex: 0 0 auto;
+            color: var(--text-main);
+            text-decoration: none;
+        }
+
+        nav {
+            gap: 30px;
+        }
+
+        nav a {
+            margin-left: 0;
+            padding: 8px 0;
+        }
+
+        nav a:focus-visible,
+        .lang-btn:focus-visible,
+        .logo:focus-visible {
+            outline: 2px solid var(--text-main);
+            outline-offset: 4px;
+        }
+
+        .lang-btn {
+            min-height: 32px;
+            margin-left: 0;
+        }
+
+        .page-section {
+            padding-top: 20px;
+            padding-bottom: 80px;
+        }
+
+        .intro-hero {
+            max-width: 680px;
+        }
+
+        .intro-hero h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 400;
+            line-height: 1;
+        }
+
+        .intro-hero p {
+            font-family: "Geist", "Noto Sans TC", "Helvetica Neue", Arial, sans-serif;
+            font-size: 12px;
+            letter-spacing: 1.1px;
+            line-height: 1.7;
+            text-transform: uppercase;
+        }
+
+        .work-card {
+            background-position: center;
+        }
+
+        .about-content {
+    display: block;
+    width: 100%;
+}
+
+        .about-heading {
+            padding-top: 5px;
+        }
+
+.section-kicker {
+    font-family: 'Geist', 'Noto Sans TC', serif;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 400;
+    letter-spacing: -0.5px;
+    line-height: 1;
+    color: var(--text-main);
+    margin: 0;
+}
+
+     .about-copy {
+    width: 100%;
+    max-width: none;
+}
+
+        .about-name {
+            margin-left: -0.01em; 
+            margin-bottom: 8px;
+            font-family: "Geist", "Noto Sans TC", Georgia, serif;
+            font-size: clamp(2.8rem, 5vw, 4.2rem);
+            font-weight: 500;
+            letter-spacing: -1px;
+            line-height: 0.95;
+        }
+
+        .about-identity {
+            margin-bottom: 46px;
+            font-size: clamp(1rem, 1.8vw, 1.25rem);
+            font-weight: 600;
+            letter-spacing: 0.45px;
+            line-height: 1.5;
+        }
+
+        .about-section {
+    padding-top: 28px;
+    margin-top: 34px;
+    border-top: 1px solid #d9d9d9;
+}
+
+        .about-section h2 {
+            margin-bottom: 16px;
+            font-size: 24px
+        }
+
+        .about-section p {
+            color: #222222;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 1.9;
+        }
+
+        .about-section p + p {
+            margin-top: 18px;
+        }
+
+        .about-list {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 8px 28px;
+            color: #222222;
+            font-size: 18px;
+            font-weight: 400;
+            letter-spacing: 0.6px;
+            line-height: 1.7;
+            list-style: none;
+        }
+
+        .recognition-list {
+            display: grid;
+            gap: 10px;
+            color: #222222;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1.65;
+            list-style: none;
+        }
+
+        .contact-placeholder {
+            color: var(--text-muted) !important;
+            font-size: 12px !important;
+            font-weight: 400 !important;
+        }
+
+footer {
+    margin-top: 40px;
+    border: none;
+    box-shadow: none;
+}
+
+        footer .footer-name {
+            color: var(--text-main);
+            font-family: "Geist", "Noto Sans TC", Georgia, serif;
+            font-size: 20px;
+            font-weight: 500;
+            letter-spacing: 1.2px;
+        }
+
+        @media (hover: hover) and (pointer: fine) {
+            .card-overlay .hover-content {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+        }
+
+        @media (hover: none), (pointer: coarse) {
+            .work-card {
+                filter: brightness(1);
+            }
+
+            .card-overlay .hover-content {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .portfolio-grid {
+                grid-template-columns: repeat(6, minmax(0, 1fr));
+                grid-auto-rows: 20px;
+                gap: 20px;
+            }
+
+            .work-card:nth-child(1),
+            .work-card:nth-child(2),
+            .work-card:nth-child(3),
+            .work-card:nth-child(4),
+            .work-card:nth-child(9),
+            .work-card:nth-child(10) {
+                grid-column: span 3;
+                grid-row: span 14;
+            }
+
+            .work-card:nth-child(5),
+            .work-card:nth-child(8),
+            .work-card:nth-child(12) {
+                grid-column: span 2;
+                grid-row: span 12;
+            }
+
+            .work-card:nth-child(6),
+            .work-card:nth-child(7),
+            .work-card:nth-child(11) {
+                grid-column: span 4;
+                grid-row: span 12;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                position: sticky;
+                top: 0;
+                padding-top: 14px;
+                padding-bottom: 14px;
+                
+                
+                .burger {
+                    display: block;
+                    
+            }
+                
+            
+
+            nav {
+                display: none;
+            }
+
+
+             nav.mobile-open {
+                
+    position: relative; /* 因為要讓 ::before 用絕對定位對齊 */
+    
+}
+
+nav.mobile-open::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: var(--nav-indicator-top, 0px);
+    width: 100%;
+    height: var(--nav-indicator-height, 0px);
+    background: rgba(17, 17, 17, 0.12);
+    border-radius: 4px;
+    transition:
+        top 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+        height 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    pointer-events: none;
+    z-index: 0;
+}
+    }
+
+           nav.mobile-open {
+    display: flex;
+    flex-direction: column;
+
+    
+
+    position: absolute !important;
+    top: calc(100% + 8px);
+    right: 16px;
+
+    width: 100px;
+    padding: 12px 16px;
+
+    align-items: flex-start;
+    gap: 12px;
+
+    background: rgb(235, 235, 235);
+    border: 1px solid rgba(162, 162, 162, 0.416);
+    border-radius: 8px;
+    box-shadow: 0 12px 30px rgba(231, 231, 231, 0.08);
+
+    z-index: 2000;
+}
+           nav.mobile-open a {
+    display: block;
+    width: 110%;
+    padding: 9px 0;
+    margin: 0;
+
+    font-size: 12px;
+    letter-spacing: 0.8px;
+}
+
+            .page-section {
+                padding-bottom: 60px;
+            }
+
+            .intro-hero {
+                margin-bottom: 36px;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+                grid-auto-flow: row;
+                grid-auto-rows: auto;
+                gap: 18px;
+            }
+
+            .work-card {
+                min-height: 0;
+                aspect-ratio: 4 / 5;
+                filter: brightness(1);
+            }
+
+            .work-card:nth-child(n) {
+                grid-column: auto;
+                grid-row: auto;
+            }
+
+            .work-card:nth-child(6),
+            .work-card:nth-child(7),
+            .work-card:nth-child(11) {
+                aspect-ratio: 16 / 10;
+            }
+
+            .card-overlay .hover-content {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .about-identity {
+                margin-bottom: 34px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header,
+            .page-section,
+            footer {
+                padding-right: 16px;
+                padding-left: 16px;
+            }
+
+            header {
+                gap: 12px;
+                padding-top: 18px;
+                padding-bottom: 24px;
+                
+            }
+ 
+            .logo {
+                font-size: 30px;
+                letter-spacing: 1px;
+                 transform: scale(1.5, 0.7);
+        margin-right: 20px;
+            }
+
+            nav {
+                flex: 1 1 auto;
+                justify-content: flex-end;
+                gap: 10px;
+                min-width: 0;
+            }
+
+            nav a {
+                font-size: 12px;
+                letter-spacing: 0.65px;
+            }
+
+            .lang-btn {
+                min-height: 30px;
+                padding: 4px 7px;
+                font-size: 12px;
+                letter-spacing: 0.5px;
+            }
+
+            .intro-hero h1 {
+                font-size: 2.3rem;
+            }
+
+            .intro-hero p {
+                font-size: 12px;
+            }
+
+            .work-card {
+                min-height: 0;
+            }
+
+            .card-overlay {
+                padding: 20px;
+            }
+
+            .card-title {
+                font-size: 17px;
+            }
+
+            .about-name {
+                font-size: 2.9rem;
+            }
+
+            .about-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                transition-duration: 0.01ms !important;
+                animation-duration: 0.01ms !important;
+            }
+        }
+  body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+
+  /* 明暗交錯，亮灰與近黑要有明確落差 */
+  background: linear-gradient(
+    135deg,
+    #29ab84 0%,
+    #d175ffc0 20%,
+    #b83939 40%,
+    #47ff72 60%,
+    #42dcde 80%,
+    #e5e5e5fd 100%
+  );
+  background-size: 250% 250%;
+  animation: hazyFlow 14s ease-in-out infinite alternate;
+}
+
+@keyframes hazyFlow {
+  from { background-position: 0% 50%; }
+  to   { background-position: 100% 50%; }
+}
+
+/* 額外的流動光暈層，讓畫面更有深度 */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(255,255,255,.28), transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(130,170,255,.22), transparent 45%);
+  mix-blend-mode: overlay;
+  animation: drift 18s ease-in-out infinite alternate;
+}
+
+@keyframes drift {
+  to { transform: translate(6%, -6%) scale(1.2); }
+}
+
+  /* 🌌 🟥 新增：不規則、隨機漂浮的朦朧圖形基礎設定 */
+  .random-blur-shape {
+    position: fixed;
+    /* 使用你調配好的深暗灰（#5858598b）作為隨機圖形的底色，維持色調和諧 */
+    background: rgba(251, 250, 250, 0.874);
+    /* 透過 40px 的強烈模糊，讓圖形邊緣變得像霧氣一樣朦朧 */
+    filter: blur(70px);
+    z-index: -2;
+    pointer-events: none;
+  }
+
+  /* 🟥 隨機圖形一：巨大的長條不規則流體，在左上方到右方隨機扭曲 */
+  .shape-1 {
+    width: 900px;
+    height: 650px;
+    top: -10%;
+    left: -15%;
+    /* 設定很不對稱的初始形狀 */
+    border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+    /* 速度較快（13秒），軌跡完全獨立隨機 */
+    animation: randomDrift1 7s ease-in-out infinite alternate;
+  }
+
+  /* 🟥 隨機圖形二：中型的奇異形狀，在右下方到中央隨機漂移 */
+.shape-2 {
+    width: 650px;
+    height: 650px;
+    bottom: -15%;
+    right: -10%;
+    border-radius: 70% 30% 52% 48% / 60% 40% 60% 40%;
+    /* 速度較慢（19秒），反向隨機漂移 */
+    animation: randomDrift2 10s ease-in-out infinite alternate-reverse;
+  }
+
+  /* ⚙️ 圖形一的隨機不規則扭曲與漂移軌跡 */
+  @keyframes randomDrift1 {
+    0% {
+      transform: translate(0, 0) scale(1) rotate(0deg);
+      border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+    }
+    50% {
+      /* 大幅度揉捏變形，打破完美的圓形 */
+      transform: translate(140px, 80px) scale(1.15) rotate(45deg);
+      border-radius: 70% 30% 52% 48% / 30% 65% 35% 70%;
+    }
+    100% {
+      transform: translate(-50px, 120px) scale(0.9) rotate(-20deg);
+      border-radius: 35% 65% 35% 65% / 55% 35% 65% 45%;
+    }
+  }
+
+  /* ⚙️ 圖形二的隨機不規則扭曲與漂移軌跡 */
+  @keyframes randomDrift2 {
+    0% {
+      transform: translate(0, 0) scale(1) rotate(0deg);
+      border-radius: 70% 30% 52% 48% / 60% 40% 60% 40%;
+    }
+    50% {
+      transform: translate(-120px, -90px) scale(0.85) rotate(-60deg);
+      border-radius: 40% 60% 30% 70% / 50% 30% 70% 50%;
+    }
+    100% {
+      transform: translate(60px, -40px) scale(1.1) rotate(35deg);
+      border-radius: 55% 45% 65% 35% / 45% 55% 45% 55%;
+    }
+  }
+
+  /* 💡 保持你調配的高級淺灰白色文字 */
+  .portfolio-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    color: #f4f4f5; 
+  }
+  /* 切换按钮：两个小圆点，当前选中的有外圈 */
+.theme-switch {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.theme-dot {
+    width: 18px;
+    height: 18px;
+    padding: 0;
+    border: 1px solid var(--text-main);
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.theme-dot:hover { opacity: 0.85; }
+
+.theme-dot[aria-pressed="true"] {
+    opacity: 1;
+    outline: 1.5px solid var(--text-main);
+    outline-offset: 3px;
+}
+
+.theme-dot:focus-visible {
+    outline: 2px solid var(--text-main);
+    outline-offset: 3px;
+}
+
+.theme-color { background: linear-gradient(135deg, #e58ad0, #c0393f); }
+.theme-mono  { background: linear-gradient(135deg, #ffffff, #bdbdbd); }
+
+/* 白灰主题：用 html[data-theme] 的优先级盖过原本的 body 规则，位置放哪都可以 */
+html[data-theme="mono"] body {
+    background: linear-gradient(
+        135deg,
+        #d1d1d1 0%,
+        #b3b3b328 30%,
+        #cdcdcd76 65%,
+        #cacaca21 100%
+    );
+    background-size: 250% 250%;
+    animation: hazyFlow 14s ease-in-out infinite alternate;  /* 想要完全静止就改成 animation: none; */
+}
+
+/* 原本偏蓝的光晕层在白灰主题里会显得突兀，直接关掉 */
+html[data-theme="mono"] body::before { display: none; }
+
+/* 漂浮的雾气改成白色，在灰底上会像柔光 */
+html[data-theme="mono"] .random-blur-shape {
+   background: rgb(255, 255, 255);
+}
+/* 手機版漢堡選單 */
+.burger {
+    position: relative;
+    width: 28px;
+    height: 22px;
+    background: transparent;
+    cursor: pointer;
+    display: none;
+}
+
+.burger input {
+    display: none;
+}
+
+.burger span {
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background: var(--text-main);
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+}
+
+.burger span:nth-of-type(1) {
+    top: 0;
+    transform-origin: left center;
+}
+
+.burger span:nth-of-type(2) {
+    top: 50%;
+    transform: translateY(-50%);
+    transform-origin: left center;
+}
+
+.burger span:nth-of-type(3) {
+    top: 100%;
+    transform-origin: left center;
+    transform: translateY(-100%);
+}
+
+.burger input:checked ~ span:nth-of-type(1) {
+    transform: rotate(45deg);
+    top: 0;
+    left: 3px;
+}
+
+.burger input:checked ~ span:nth-of-type(2) {
+    width: 0%;
+    opacity: 0;
+}
+
+.burger input:checked ~ span:nth-of-type(3) {
+    transform: rotate(-45deg);
+    top: 20px;
+    left: 3px;
+}
+@media (max-width: 480px) {
+    .theme-switch { gap: 8px; }
+    .theme-dot { width: 15px; height: 15px; }
+}
+
+.about-slideshow {
+    position: relative;
+    width: 100%;
+    margin: 50px 0 70px;
+}
+
+.slide-viewport {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+
+
+.slide-track {
+    display: flex;
+    transition: transform 0.6s ease-in-out;
+}
+
+.about-slide {
+    flex: 0 0 100%;
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    display: block;
+}
+
+.slide-arrow {
+    position: absolute;
+    text-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+
+    border: none;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+
+    font-size: 22px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+    opacity: 0.45;
+    transition: opacity 0.3s ease;
+}
+
+.slide-arrow:hover {
+    opacity: 1;
+}
+
+.slide-prev {
+    left: 12px;
+}
+
+.slide-next {
+    right: 12px;
+}
+
+@media (max-width: 480px) {
+    .slide-viewport {
+        width: 100%;
+    }
+}
+
+.slide-arrow:hover {
+    opacity: 1;
+}
+
+/* 導覽列：目前頁面黑色填滿白牆，懸停變灰，無底線 */
+@media (min-width: 769px) {
+
+    
+    header {
+        padding-top: 0px;
+        padding-bottom: 0;
+        min-height: 56px;          /* 白牆高度 */
+    }
+
+    nav {
+        align-self: stretch;       /* 導覽列拉到跟白牆一樣高 */
+        align-items: stretch;
+        gap: 4px;
+    }
+
+    nav a {
+        display: flex;
+        align-items: center;       /* 文字垂直置中 */
+        padding: 0 16px;           /* 黑色填充的左右寬度 */
+    }
+
+    .lang-btn,
+    .theme-switch { align-self: center; }
+    .lang-btn { margin-left: 16px; }
+    .theme-switch { margin-left: 8px; }
+}
+
+nav a {
+    background: none;
+    border-bottom: none;
+    border-radius: 0;
+    color: var(--text-main);
+    transition: color 0.3s ease, background 0.3s ease;
+}
+
+nav a:hover {
+    color: #191919c1;                /* 懸停變灰 */
+    border-bottom: none;
+}
+
+nav {
+    position: relative;
+}
+
+nav::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: var(--nav-indicator-left, 0px);
+    width: var(--nav-indicator-width, 0px);
+    height: 100%;
+    background: rgba(17, 17, 17, 0.203);
+    transition:
+        left 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+        width 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    pointer-events: none;
+    z-index: 0;
+}
+
+nav a {
+    position: relative;
+    z-index: 1;
+    background: none !important;
+}
+
+nav a.active-nav {
+    color: var(--text-main);
+    border-bottom: none;
+}
+
+/* 分隔線和獎項清單維持滿版，只有段落限寬並左右對齊 */
+.about-section p {
+    max-width: 1200px;
+    text-align: justify;
+    text-justify: inter-character;
+    hyphens: auto;
+}
+
+/* 段落左右對齊，桌機和手機都適用 */
+.about-section p {
+    text-align: justify;
+    text-justify: inter-character;   /* 中文字也能平均分配間距 */
+    hyphens: auto;                   /* 英文在手機窄螢幕自動斷字，避免字距被拉得太開 */
+}
+
+/* Logo 跑馬燈 */
+.logo {
+    transform: none;              /* 縮放改由內層負責，這行要蓋掉原本的 scale */
+    flex: 0 1 700px;              /* 跑馬燈可見寬度，想更寬或更窄改 560px */
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);   /* 兩端淡出 */
+}
+
+@media (max-width: 1100px) and (min-width: 481px) {
+    .logo {
+        flex: 0 1 320px;
+        min-width: 100px;
+    }
+}
+
+.logo-track {
+    --sx: 1.9;                    /* 橫向拉寬，沿用你原本的 scale */
+    --sy: 0.75;
+    display: flex;
+    width: max-content;
+    white-space: nowrap;
+    transform-origin: left center;
+    animation: logo-marquee 14s linear infinite;   /* 數字越小越快 */
+}
+
+.logo-track span {
+    padding-right: 0.6em;         /* 兩段文字之間的空隙 */
+}
+
+@keyframes logo-marquee {
+    from { transform: scale(var(--sx), var(--sy)) translateX(0); }
+    to   { transform: scale(var(--sx), var(--sy)) translateX(-50%); }
+}
+
+
+
+@media (max-width: 480px) {
+    .logo {
+        flex: 1 1 auto;
+        width: 100%;
+        min-width: 0;
+    }
+
+    .logo-track {
+        --sx: 1.9;
+        --sy: 0.75;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    .logo-track { animation: none !important; }
+}
+
+.lang-btn {
+    white-space: nowrap;
+}
+
+/* 社群聯絡按鈕 */
+.social-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    margin: 0 auto 30px;
+}
+
+.social-title {
+    font-family: 'Geist', 'Noto Sans TC', Arial, sans-serif;
+    color: var(--text-muted);
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: var(--card-radius);
+    background-color: #313638;
+    transition: 0.3s;
+}
+
+.social-icons .icon {
+    width: 26px;
+    height: 26px;
+    fill: #fff;
+}
+
+.social-icons a:nth-child(1):hover { background-color: #d62976; }
+.social-icons a:nth-child(2):hover { background-color: #ff5500; }
+.social-icons a:nth-child(3):hover { background-color: #1db954; }
+
+@media (max-width: 480px) {
+    .social-icons a {
+        width: 46px;
+        height: 46px;
+    }
+    .social-icons .icon {
+        width: 22px;
+        height: 22px;
+    }
+    .social-title {
+        font-family: 'Geist', 'Noto Sans TC', Arial, sans-serif;
+        font-size: 16px;
+    }
+}
+.contact-section {
+    width: 100%;
+}
+
+.contact-section h2 {
+    margin-bottom: 30px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #222;
+    border-radius: 1;
+    background: absolute;
+    
+
+    font-family: 'Geist', 'Noto Sans TC', sans-serif;
+    font-size: 28px;
+
+    padding: 20px 10px;
+    margin-bottom: 25px;
+}
+
+.contact-form input {
+    height: 78px;
+}
+
+.contact-form textarea {
+    height: 380px;
+    resize: vertical;
+}
+
+.contact-form button {
+    padding: 14px 35px;
+    border: 1px solid #222;
+    background: #111;
+    color: white;
+    font-family: 'Geist', 'Noto Sans TC', sans-serif;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.contact-form button:hover {
+    background: #fff;
+    color: #111;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border: 1px solid #ff0000;
+    outline: none;
+    box-shadow: none;
+}
+
+.contact-success {
+    display: inline-block;
+    margin-left: 12px;
+    padding: 7px 12px;
+    border: 1px solid #888;
+    border-radius: 20px;
+    background: #fff;
+    color: #222;
+    font-size: 12px;
+    opacity: 0;
+    transform: translateY(3px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    pointer-events: none;
+}
+
+.contact-success.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 回到頂端按鈕 */
+.back-to-top {
+    position: fixed;
+    right: clamp(12px, 2.5vw, 24px);
+   bottom: clamp(12px, 2.5vw, 24px);
+    z-index: 2000;
+
+  width: clamp(40px, 4vw, 46px);
+   height: clamp(40px, 4vw, 46px);
+
+    border: 1px solid rgba(17, 17, 17, 0.18);
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.45);
+    color: rgba(17, 17, 17, 0.75);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+
+    cursor: pointer;
+
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+
+    transition:
+        background 0.3s ease,
+        opacity 0.3s ease,
+        transform 0.3s ease;
+}
+
+.back-to-top:hover {
+    background: rgba(255, 255, 255, 0.7);
+    transform: translateY(-3px);
+}
+
+@media (max-width: 480px) {
+    .back-to-top {
+        right: 16px;
+        bottom: 16px;
+        width: 42px;
+        height: 42px;
+        font-size: 18px;
+    }
+}
+
+/* 平板版：確保英文導覽列也容得下背景按鈕 */
+@media (min-width: 769px) and (max-width: 1100px) {
+
+       header {
+        padding-top: 0;
+        padding-bottom: 0;
+        padding-left: 12px;
+        padding-right: 12px;
+        min-height: 60px;
+    }
+
+    .logo {
+        flex: 0 1 180px;
+        min-width: 80px;
+    }
+
+    nav {
+        flex: 1 1 auto;
+        min-width: 0;
+        gap: 0;
+        justify-content: flex-end;
+    }
+
+ nav a {
+    padding: 0 6px;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    min-width: 0;
+
+    height: 100%;
+    align-self: stretch;
+}
+    .lang-btn {
+        margin-left: 4px;
+        padding: 4px 6px;
+        font-size: 10px;
+        letter-spacing: 0.3px;
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+
+    .theme-switch {
+        display: flex !important;
+        flex-shrink: 0;
+        margin-left: 1px;
+        gap: 6px;
+    }
+
+    .theme-dot {
+        display: block !important;
+        width: 16px;
+        height: 16px;
+        flex-shrink: 0;
+    }
+}
+
+</style>
+ <script>
+        try {
+            if (localStorage.getItem("theme") === "mono") {
+                document.documentElement.dataset.theme = "mono";
+            }
+        } catch (e) {}
+        function setTheme(theme) {
+    const t = theme === "mono" ? "mono" : "color";
+    document.documentElement.dataset.theme = t;
+
+    document.querySelectorAll("[data-theme-value]").forEach(function (btn) {
+        btn.setAttribute("aria-pressed", String(btn.dataset.themeValue === t));
+    });
+
+    try { localStorage.setItem("theme", t); } catch (e) {}
+}
+
+
+    </script>
+</head>
+<body>
+    <div class="random-blur-shape"></div>
+<div class="random-blur-shape shape-1"></div>
+<div class="random-blur-shape shape-2"></div>
+    <!-- 頂部簡約導覽列 -->
+    <header>
+        <a class="logo" href="#home" aria-label="THIS IS YU CHEN YAO'S PAGE., works">
+    <span class="logo-track">
+        <span>THIS IS YU CHEN YAO'S PAGE.</span>
+        <span aria-hidden="true">THIS IS YU CHEN YAO'S PAGE.</span>
+    </span>
+</a>
+        <nav aria-label="Primary navigation">
+            <a href="#section-home" id="nav-works" class="active-nav" data-section-link="home" data-zh="作品" data-en="Works" aria-current="page">作品</a>
+            <a href="#section-portfolio" id="nav-portfolio" data-section-link="portfolio" data-zh="作品集" data-en="Portfolio">作品集</a>
+            <a href="#section-about" id="nav-about" data-section-link="about" data-zh="關於" data-en="About">關於</a>
+            <button class="lang-btn" id="language-toggle" type="button" onclick="toggleLanguage()" aria-label="Switch to English" aria-pressed="false">EN / 中文</button>
+            <div class="theme-switch" role="group" aria-label="背景主题">
+        <button type="button" class="theme-dot theme-color" data-theme-value="color" aria-label="彩色背景" aria-pressed="true"></button>
+        <button type="button" class="theme-dot theme-mono" data-theme-value="mono" aria-label="白灰背景" aria-pressed="false"></button>
+    </div>
+        </nav>
+        <div class="nav-backdrop"></div>
+        <!-- From Uiverse.io by Cevorob --> <label class="burger" for="burger"> <input type="checkbox" id="burger"> <span></span> <span></span> <span></span> </label>
+    </header>
+
+    <main>
+  <section id="section-home" class="page-section active" aria-labelledby="works-title">
+            <div class="intro-hero">
+                <h1 id="works-title" data-zh="精選配樂作品" data-en="Selected Scoring Works"><strong>精選配樂作品</strong></h1>
+                <p data-zh="動畫、電影、電視與多媒體配樂" data-en="Animation, Film, TV &amp; Multimedia Scoring">動畫、電影、電視與多媒體配樂</p>
+            </div>
+          
+            <div class="portfolio-grid">
+                <div class="work-card" style="background-image: url('cover01.jpg');">
+                    <div class="card-overlay"><div class="hover-content"><h3 class="card-title">在光裏的人</h3><p class="card-credit">大愛電視台 | 劇中插曲配樂</p></div></div>
+                </div>
+                <div class="work-card" style="background-image: url('cover02.jpg');">
+                    <div class="card-overlay"><div class="hover-content"><h3 class="card-title">成功補習班</h3><p class="card-credit">華納兄弟發行 | 協力編曲</p></div></div>
+                </div>
+                <div class="work-card" style="background-image: url('cover03.jpg');">
+                    <div class="card-overlay"><div class="hover-content"><h3 class="card-title">流水迢迢</h3><p class="card-credit">騰訊視頻大劇 | 配樂製作</p></div></div>
+                </div>
+                <div class="work-card" style="background-image: url('cover04.jpg');">
+                    <div class="card-overlay"><div class="hover-content"><h3 class="card-title">秘書俱樂部</h3><p class="card-credit">TVBS 歡樂台 | 原創配樂</p></div></div>
+                </div>
+                <div class="work-card" style="background-image: url('cover05.jpg');">
+                    <div class="card-overlay"><div class="hover-content"><h3 class="card-title">阿叔</h3><p class="card-credit">華視/東森電視 | 電視劇配樂</p></div></div>
+                </div>
+                <div class="work-card" style="background-image: url('cover06.jpg');">
+                    <div class="card-overlay"><div class="hover-content"><h3 class="card-title">放手阿官</h3><p class="card-credit">大愛劇場 | 劇中插曲編曲</p></div></div>
+                </div>
+                <div class="work-card" style="background-image: url('cover07.jpg');">
+                    <div class="card-overlay"><div class="hover-content"><h3 class="card-title">SKYMAKER</h3><p class="card-credit">動畫專案 | 音樂總監 / 作曲</p></div></div>
+                </div>
+                <div class="work-card" style="background-image: url('cover08.jpg');">
+                    <div class="card-overlay"><div class="hover-content"><h3 class="card-title">在光裏的人</h3><p class="card-credit">大愛電視台 | 劇中插曲配樂</p></div></div>
+                </div>
+                <div class="work-card" style="background-image: url('cover09.jpg');">
+                    <div class="card-overlay"><div class="hover-content"><h3 class="card-title">在光裏的人</h3><p class="card-credit">大愛電視台 | 劇中插曲配樂</p></div></div>
+                </div>
+                <div class="work-card" style="background-image: url('cover10.jpg');">
+                    <div class="card-overlay"><div class="hover-content"><h3 class="card-title">在光裏的人</h3><p class="card-credit">大愛電視台 | 劇中插曲配樂</p></div></div>
+                </div>
+                <div class="work-card" style="background-image: url('cover11.jpg');">
+                    <div class="card-overlay"><div class="hover-content"><h3 class="card-title">在光裏的人</h3><p class="card-credit">大愛電視台 | 劇中插曲配樂</p></div></div>
+                </div>
+                <div class="work-card" style="background-image: url('cover12.jpg');">
+                    <div class="card-overlay"><div class="hover-content"><h3 class="card-title">在光裏的人</h3><p class="card-credit">大愛電視台 | 劇中插曲配樂</p></div></div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="section-portfolio" class="page-section">
+
+    <div class="intro-hero">
+        <h1>Portfolio</h1>
+        <p>Selected Works & Projects</p>
+    </div>
+  <iframe
+    width="100%"
+    height="600"
+    scrolling="no"
+    frameborder="yes"
+     style="width:100%; min-width:100%;"
+    src="https://play.reelcrafter.com/embed/050b56d3-417b-4267-8715-8db86b444c80">
+  </iframe>
+
+</section>
+        <section id="section-about" class="page-section" aria-labelledby="about-name-zh">
+            <div class="about-content">
+
+
+    <div id="about-zh" class="about-copy" lang="zh-TW">
+                    <h1 id="about-name-zh" class="about-name">余辰曜</h1>
+                    <p class="about-identity">作曲家｜鋼琴家｜聲音設計</p>
+
+<div class="about-slideshow">
+
+    <div class="slide-viewport">
+
+        <button class="slide-arrow slide-prev" type="button" aria-label="Previous image">
+            ←
+        </button>
+
+        <div class="slide-track">
+            <img src="about_01.jpg" alt="" class="about-slide">
+            <img src="about_02.jpg" alt="" class="about-slide">
+            <img src="about_03.jpg" alt="" class="about-slide">
+        </div>
+
+        <button class="slide-arrow slide-next" type="button" aria-label="Next image">
+            →
+        </button>
+
+    </div>
+
+
+
+  
+
+</div>
+    
+
+                    <div class="about-section">
+                        <h2>個人簡介</h2>
+                        <p>余辰曜（藝名為SkyCover）是一位活躍於影視、動畫、遊戲與新媒體展演的跨界配樂家與鋼琴家，畢業於國立臺北藝術大學音樂系鋼琴演奏組，具備深厚的古典音樂底蘊與國際視野，曾赴上海音樂學院與日本武藏野音樂大學交流演出，並獲 WOCMAT 國際青年電子音樂創作獎肯定。其作品涵蓋商業電視、獨立遊戲、動畫與電影，其中配樂作品《Sky Maker》入選 SPARK ANIMATION 2026，作品亦曾入圍金穗獎、布宜諾斯艾利斯國際影展（BUEIFF）等國際影展。</p>
+                        <p>他的創作版圖涵蓋商業電視連續劇、獨立遊戲與跨域互動藝術；在幕後配樂製作上，他擅長將管弦樂編制與現代電子合成聲響融合並刻畫影像張力；同時，他也憑藉扎實的主修底子，提供高品質的鋼琴編曲與錄音實戰能力。他持續以多元的聲響語彙，為各類視覺載體提供專業且高執行力的音樂解決方案。</p>
+                    </div>
+
+                    <div class="about-section">
+                        <h2>創作領域</h2>
+                        <ul class="about-list">
+                            <li>影視配樂</li><li>電視</li><li>動畫</li><li>遊戲聲音</li><li>互動媒體</li><li>管弦寫作</li><li>電子聲音設計</li><li>鋼琴編曲與錄音</li>
+                        </ul>
+                    </div>
+
+                    <div class="about-section">
+                        <h2>學歷</h2>
+                        <p>國立臺北藝術大學 音樂系鋼琴演奏組</p>
+                    </div>
+
+                    <div class="about-section">
+                        <h2>精選經歷</h2>
+                        <ul class="recognition-list">
+                            <li>WOCMAT 國際青年電子音樂創作獎</li>
+                            <li>《Sky Maker》入選 SPARK ANIMATION 2026</li>
+                            <li>作品曾入圍金穗獎、布宜諾斯艾利斯國際影展（BUEIFF）等國際影展</li>
+                        </ul>
+                    </div>
+
+                    <div class="about-section contact-section">
+
+    <h2>聯絡</h2>
+
+    <form class="contact-form" action="https://formspree.io/f/xjykwleb"
+    method="POST">
+        
+
+        <input
+            type="text"
+            name="name"
+            placeholder="姓名*"
+            required
+        >
+
+        <input
+            type="email"
+            name="email"
+            placeholder="電子郵件*"
+            required
+        >
+
+        <textarea
+            name="message"
+            placeholder="請在此載入您的想法..."
+            required
+        ></textarea>
+
+        <button type="submit">送出</button>
+
+    </form>
+
+</div>
+                </div>
+
+                <div id="about-en" class="about-copy" lang="en" hidden>
+    <h1 id="about-name-en" class="about-name">Yu Chen Yao</h1>
+    <p class="about-identity">Composer | Pianist | Sound Designer</p>
+
+    <div class="about-slideshow">
+
+        <div class="slide-viewport">
+
+            <button class="slide-arrow slide-prev" type="button" aria-label="Previous image">
+                ←
+            </button>
+
+            <div class="slide-track">
+                <img src="about_01.jpg" alt="" class="about-slide">
+                <img src="about_02.jpg" alt="" class="about-slide">
+                <img src="about_03.jpg" alt="" class="about-slide">
+            </div>
+
+            <button class="slide-arrow slide-next" type="button" aria-label="Next image">
+                →
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="about-section">
+        <h2>Biography</h2>
+
+    <p>
+        Chen-Yao Yu (artist name: SkyCover) is a composer and pianist active across film, television, animation, game audio, and new media performance. He graduated from the Piano Performance program at Taipei National University of the Arts, where he developed a strong foundation in classical music alongside an international perspective. He has participated in exchange performances at the Shanghai Conservatory of Music and Musashino Academia Musicae in Japan, and received recognition from the WOCMAT International Young Computer Music Composer Award.
+    </p>
+
+    <p>
+        His creative work spans commercial television, independent games, animation, film, and interdisciplinary interactive art. In music production, he combines orchestral writing with contemporary electronic sound design to shape the emotional and dramatic language of visual media. With a strong background in piano performance, he also works in piano arranging and recording. His approach continues to explore diverse sonic languages and provide music solutions for a wide range of visual and multimedia projects.
+    </p>
+</div>
+<div class="about-section">
+
+                        <h2>Selected Experience</h2>
+                        <ul class="about-list">
+                            <li>Film Scoring</li><li>Television</li><li>Animation</li><li>Game Audio</li><li>Interactive Media</li><li>Orchestral Writing</li><li>Electronic Sound Design</li><li>Piano Arranging &amp; Recording</li>
+                        </ul>
+                    </div>
+
+
+                    <div class="about-section">
+                        <h2>Education</h2>
+                        <p>Taipei National University of the Arts — Piano Performance</p>
+                    </div>
+
+                    <div class="about-section">
+                        <h2>Selected Recognition</h2>
+                        <ul class="recognition-list">
+                            <li>WOCMAT International Young Computer Music Composer Award</li>
+                            <li><em>Sky Maker</em> — SPARK ANIMATION 2026 selection</li>
+                            <li>Works selected for the Golden Harvest Awards, Buenos Aires International Film Festival (BUEIFF), and other international festivals</li>
+                        </ul>
+                    </div>
+
+                    <div class="about-section">
+                      
+
+    <h2>CONTACT</h2>
+
+    <form class="contact-form" action="https://formspree.io/f/xjykwleb"
+    method="POST">
+        
+
+        <input
+            type="text"
+            name="name"
+            placeholder="Name*"
+            required
+        >
+
+        <input
+            type="email"
+            name="email"
+            placeholder="Your Email*"
+            required
+        >
+
+        <textarea
+            name="message"
+            placeholder="Loading thoughts...wait..."
+            required
+        ></textarea>
+
+        <button type="submit">SEND</button>
+
+    </form>
+
+</div>
+                </div>
+            </div>
+        </section>
+
+      
+    </main>
+<button class="back-to-top" id="backToTop" aria-label="Back to top">
+       ⮝
+</button>
+    <footer>
+     
+        <div class="social-container">
+            
+        <span class="social-title">
+        
+        <div class="social-icons">
+            <a href="https://www.instagram.com/__chenyao__/" target="_blank" rel="noopener" aria-label="Instagram">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path></svg>
+            </a>
+            <a href="https://soundcloud.com/chris-yu-404190717/popular-tracks" target="_blank" rel="noopener" aria-label="SoundCloud">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M111.4 256.3c-3.6 0-6.4 2.8-6.9 6.5L96 339.1l8.5 74.4c.5 3.7 3.3 6.5 6.9 6.5 3.5 0 6.4-2.8 6.9-6.5l9.7-74.4-9.7-76.3c-.5-3.7-3.4-6.5-6.9-6.5zm-42.6 24.9c-.5-3.4-3-5.9-6.4-5.9-3.5 0-6.1 2.5-6.5 5.9L48 339l7.9 55.9c.4 3.4 3 5.9 6.5 5.9 3.4 0 5.9-2.5 6.4-5.9l9-55.9-9-57.8zm-42.7 22.8c-.5-2.9-2.7-5-5.7-5-3 0-5.2 2.1-5.6 5L8 339l6.8 30.9c.4 2.9 2.6 5 5.6 5 3 0 5.2-2.1 5.7-5l7.9-30.9-7.9-33zm127.7-88.9c-4.3 0-7.6 3.3-8.1 7.7L136 339l9.7 92.3c.4 4.4 3.8 7.7 8.1 7.7s7.6-3.3 8.1-7.7l11-92.3-11-93.8c-.5-4.3-3.8-7.6-8.1-7.6zm44.3-24.4c-4.9 0-8.8 3.9-9.2 8.8L172 339l9.5 87.6c.4 4.9 4.3 8.7 9.2 8.7 4.8 0 8.8-3.8 9.2-8.7L209 339l-9.1-105.2c-.4-4.9-4.4-8.8-9.2-8.8zM223.7 78c-6.7 0-12.1 5.4-12.4 12.1L200 339l11.3 129.5c.3 6.7 5.7 12.1 12.4 12.1s12.1-5.4 12.4-12.1L248 339 236.1 90.1c-.3-6.7-5.7-12.1-12.4-12.1zM274 339l10.6 124.3c.3 7.1 6.1 12.7 13.3 12.7 7.2 0 13-5.6 13.3-12.7L322 339 310.9 90.6c-.3-7.1-6.1-12.7-13.3-12.7-7.2 0-13 5.6-13.3 12.7L274 339zm305.1-160.8c-8-6.6-18.2-10.6-29.3-10.6-4.4 0-8.7.6-12.8 1.8C529.2 129.4 495.8 96 456 96c-19.9 0-38 8.3-50.9 21.5-4.9-7.4-11.3-13.7-18.8-18.5V447h194.4c40.5 0 73.3-32.8 73.3-73.3 0-40.5-32.8-73.3-73.3-73.3-2.1 0-4.2.1-6.2.3z"></path></svg>
+            </a>
+            <a href="https://open.spotify.com/artist/6WbF188l72Ag0ebxAaod8K" target="_blank" rel="noopener" aria-label="Spotify">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M248 8C111.1 8 0 119.1 0 256s111.1 248 248 248 248-111.1 248-248S384.9 8 248 8zm100.7 364.9c-4.2 0-6.8-1.3-10.7-3.6-62.4-37.6-135-39.2-206.7-24.5-3.9 1-9 2.6-11.9 2.6-9.7 0-15.8-7.7-15.8-15.8 0-10.3 6.1-15.2 13.6-16.8 82.6-18.2 165.8-16.6 237.6 26.6 6.1 3.9 9.7 7.4 9.7 16.5s-7.1 15-15.8 15zm26.9-65.6c-5.2 0-8.7-2.3-12.3-4.2-62.5-37-155.7-51.9-238.6-29.4-4.8 1.3-7.4 2.6-11.9 2.6-10.6 0-19.3-8.7-19.3-19.3s5.2-17.5 15.5-20.4c27.8-7.8 56.2-13.6 97.8-13.6 64.9 0 127.6 16.1 177 45.5 8.1 4.8 11.3 11 11.3 19.7-.1 10.5-8.3 19.1-19.5 19.1zm31-76.2c-5.2 0-8.4-1.3-12.9-3.9-71.2-42.5-198.5-52.7-280.9-29.7-3.6 1-8.1 2.6-12.9 2.6-13.2 0-23.3-10.3-23.3-23.6 0-13.6 8.4-21.3 17.4-23.9 35.2-10.3 74.6-15.2 117.5-15.2 73 0 149.5 15.2 205.4 47.8 7.8 4.5 12.9 10.7 12.9 22.6 0 13.6-11 23.3-23.2 23.3z"></path></svg>
+            </a>
+        </div>
+    </div>
+    <p class="footer-name">Yu Chen Yao</p>
+    <p data-zh="作曲家｜鋼琴家｜聲音設計" data-en="Composer / Pianist / Sound Designer">作曲家｜鋼琴家｜聲音設計</p>
+
+       <p>© 2026 Yu Chen Yao</p>
+</footer>
+
+    <script>
+        
+        "use strict";
+
+        const header = document.querySelector("header");
+
+window.addEventListener("scroll", function () {
+    header.classList.toggle("is-scrolled", window.scrollY > 20);
+});
+
+        const burger = document.getElementById("burger");
+const nav = document.querySelector("header nav");
+
+burger.addEventListener("change", function () {
+    nav.classList.toggle("mobile-open", burger.checked);
+});
+
+let currentSlide = 0;
+
+function updateSlideshow() {
+    document.querySelectorAll(".slide-track").forEach(function (track) {
+        track.style.transform = `translateX(-${currentSlide * 100}%)`;
+    });
+}
+
+function nextSlide() {
+    currentSlide = (currentSlide + 1) % 3;
+    updateSlideshow();
+}
+
+function prevSlide() {
+    currentSlide = (currentSlide - 1 + 3) % 3;
+    updateSlideshow();
+}
+        let currentLanguage = "zh";
+
+        function showSection(section, options = {}) {
+            const sectionName = ["home", "portfolio", "about"].includes(section) ? section : "home";
+            const shouldScroll = options.scroll !== false;
+            const target = document.getElementById("section-" + sectionName);
+
+            document.querySelectorAll(".page-section").forEach(function (element) {
+                element.classList.remove("active");
+            });
+
+            if (target) {
+                target.classList.add("active");
+            }
+
+            document.querySelectorAll("[data-section-link]").forEach(function (link) {
+                const isCurrent = link.dataset.sectionLink === sectionName;
+                link.classList.toggle("active-nav", isCurrent);
+                if (isCurrent) {
+                    link.setAttribute("aria-current", "page");
+                } else {
+                    link.removeAttribute("aria-current");
+                }
+            });
+
+            if (shouldScroll) {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            }
+        }
+
+        function loadSectionFromHash() {
+            const section = window.location.hash.replace("#", "");
+           showSection(["home", "portfolio", "about"].includes(section) ? section : "home", { scroll: false });
+        }
+
+        function setLanguage(language) {
+            currentLanguage = language === "en" ? "en" : "zh";
+            document.documentElement.lang = currentLanguage === "en" ? "en" : "zh-TW";
+
+            document.querySelectorAll("[data-zh][data-en]").forEach(function (element) {
+                element.textContent = element.dataset[currentLanguage];
+            });
+
+            const chineseAbout = document.getElementById("about-zh");
+            const englishAbout = document.getElementById("about-en");
+            const toggle = document.getElementById("language-toggle");
+
+            chineseAbout.hidden = currentLanguage !== "zh";
+            englishAbout.hidden = currentLanguage !== "en";
+            toggle.setAttribute("aria-pressed", String(currentLanguage === "en"));
+            toggle.setAttribute("aria-label", currentLanguage === "zh" ? "Switch to English" : "切換為中文");
+            document.getElementById("section-about").setAttribute(
+                "aria-labelledby",
+                currentLanguage === "zh" ? "about-name-zh" : "about-name-en"
+            );
+        }
+
+        function toggleLanguage() {
+    setLanguage(currentLanguage === "zh" ? "en" : "zh");
+
+    requestAnimationFrame(function () {
+        const activeLink = document.querySelector("[data-section-link].active-nav");
+
+        if (activeLink) {
+            moveNavIndicator(activeLink);
+        }
+    });
+}
+
+        window.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".slide-next").forEach(function (button) {
+    button.addEventListener("click", nextSlide);
+});
+
+document.querySelectorAll(".slide-prev").forEach(function (button) {
+    button.addEventListener("click", prevSlide);
+});
+            let savedTheme = "color";
+            try { savedTheme = localStorage.getItem("theme") || "color"; } catch (e) {}
+            setTheme(savedTheme);
+
+            document.querySelectorAll("[data-theme-value]").forEach(function (btn) {
+                btn.addEventListener("click", function () {
+                    setTheme(btn.dataset.themeValue);
+                });
+            });
+
+            setLanguage("zh");
+            loadSectionFromHash();
+
+            const sections = document.querySelectorAll(".page-section");
+const navLinks = document.querySelectorAll("[data-section-link]");
+let isNavScrolling = false;
+
+function moveNavIndicator(link) {
+    if (!link) return;
+
+    const nav = link.closest("nav");
+    if (!nav) return;
+
+    const navRect = nav.getBoundingClientRect();
+    const linkRect = link.getBoundingClientRect();
+
+    const left = linkRect.left - navRect.left;
+    const top = linkRect.top - navRect.top;
+
+    nav.style.setProperty("--nav-indicator-left", left + "px");
+    nav.style.setProperty("--nav-indicator-width", linkRect.width + "px");
+    nav.style.setProperty("--nav-indicator-top", top + "px");
+    nav.style.setProperty("--nav-indicator-height", linkRect.height + "px");
+}
+// 一開始先定位到目前選取的項目
+const initialLink = document.querySelector("[data-section-link].active-nav");
+moveNavIndicator(initialLink);
+const navEl = document.querySelector("header nav");
+const ro = new ResizeObserver(function () {
+    const activeLink = document.querySelector("[data-section-link].active-nav");
+    if (activeLink) moveNavIndicator(activeLink);
+});
+ro.observe(navEl);
+window.addEventListener("resize", function () {
+    const activeLink = document.querySelector("[data-section-link].active-nav");
+    moveNavIndicator(activeLink);
+});
+
+// 點擊時：灰色方框立即切換位置，但移動軌跡保持 smooth
+navLinks.forEach(function (link) {
+    link.addEventListener("click", function () {
+        isNavScrolling = true;
+        navLinks.forEach(function (item) {
+            item.classList.remove("active-nav");
+        });
+
+        link.classList.add("active-nav");
+        moveNavIndicator(link);
+       let scrollTimer;
+
+function unlockNavAfterScroll() {
+    clearTimeout(scrollTimer);
+
+    scrollTimer = setTimeout(function () {
+        isNavScrolling = false;
+    }, 150);
+}
+
+window.addEventListener("scroll", function () {
+    if (isNavScrolling) {
+        unlockNavAfterScroll();
+    }
+}, { passive: true });
+    });
+});
+
+
+        });
+
+       
+
+          document.querySelectorAll(".contact-form").forEach(function (form) {
+        form.addEventListener("submit", async function (event) {
+            event.preventDefault();
+
+            const button = form.querySelector("button");
+            const formData = new FormData(form);
+
+            button.disabled = true;
+
+            try {
+                const response = await fetch(form.action, {
+                    method: "POST",
+                    body: formData,
+                    headers: {
+                        "Accept": "application/json"
+                    }
+                });
+
+                if (response.ok) {
+                    form.reset();
+
+                    let message = form.querySelector(".contact-success");
+
+                    if (!message) {
+                        message = document.createElement("span");
+                        message.className = "contact-success";
+
+                        message.textContent =
+                            form.closest("#about-en")
+                                ? "Sent"
+                                : "已送出";
+
+                        button.insertAdjacentElement("afterend", message);
+                    }
+
+                    message.classList.add("show");
+
+                    setTimeout(function () {
+                        message.classList.remove("show");
+                    }, 2500);
+                }
+
+            } catch (error) {
+                console.error("Form submission error:", error);
+            }
+
+            button.disabled = false;
+        });
+    });
+
+    </script>
+</body>
+ <script>
+        const blurShape = document.querySelector('.random-blur-shape');
+        let isDragging = false;
+        let startX, startY;
+        let currentX = -40; // 對應 CSS 的 left: -40vw
+        let currentY = -40; // 對應 CSS 的 top: -40vh
+
+        // 當指標（滑鼠/觸控/數位筆）按下時
+        blurShape.addEventListener('pointerdown', (e) => {
+            isDragging = true;
+            blurShape.setPointerCapture(e.pointerId);
+            
+            // 記錄按下時的初始座標
+            startX = e.clientX;
+            startY = e.clientY;
+            
+            // 互動微特效：點擊時霧氣凝聚（縮小模糊值，讓圖形變清晰）
+            blurShape.style.filter = "blur(35px)";
+        });
+
+        // 當指標移動時，拖動整個流體畫布
+        blurShape.addEventListener('pointermove', (e) => {
+            if (!isDragging) return;
+            
+            // 計算位移量（轉為輕微的 vw/vh 物理移動）
+            const moveX = (e.clientX - startX) * 0.05;
+            const moveY = (e.clientY - startY) * 0.05;
+            
+            // 實時更新位置，並保留原本的旋轉動畫（使用 CSS 變數或直接疊加）
+            blurShape.style.left = `calc(-40vw + ${moveX}px)`;
+            blurShape.style.top = `calc(-40vh + ${moveY}px)`;
+        });
+
+        // 當指標放開時
+        blurShape.addEventListener('pointerup', (e) => {
+            isDragging = false;
+            blurShape.releasePointerCapture(e.pointerId);
+            
+            // 恢復原狀
+            blurShape.style.filter = "blur(50px)";
+            blurShape.style.left = "-40vw";
+            blurShape.style.top = "-40vh";
+        });
+
+
+
+
+
+               const backToTop = document.getElementById("backToTop");
+
+backToTop.addEventListener("click", function () {
+    document.documentElement.style.scrollBehavior = "auto";
+
+    const startPosition = window.scrollY;
+    const duration = 1400;
+    const startTime = performance.now();
+
+    function scrollToTop(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+
+        // easeInOutCubic：開始與結束都比較柔順
+        const eased =
+            progress < 0.5
+                ? 4 * progress * progress * progress
+                : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+
+        window.scrollTo(0, startPosition * (1 - eased));
+
+        if (progress < 1) {
+            requestAnimationFrame(scrollToTop);
+        } else {
+            document.documentElement.style.scrollBehavior = "";
+        }
+    }
+
+    requestAnimationFrame(scrollToTop);
+});
+    </script>
+</body>
+</html>
+
