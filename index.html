@@ -435,18 +435,30 @@ header.is-scrolled::before {
             font-weight: 600;
             letter-spacing: 0.45px;
             line-height: 1.5;
+            
         }
 
         .about-section {
     padding-top: 28px;
-    margin-top: 34px;
-    border-top: 1px solid #d9d9d9;
+    margin-top: 20px;
+    border-top: none;
 }
 
         .about-section h2 {
             margin-bottom: 16px;
             font-size: 24px
         }
+
+           .about-section h3 {
+    margin: 0 0 14px;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.about-section .recognition-list + h3 {
+    margin-top: 28px;
+}
 
         .about-section p {
             color: #222222;
@@ -455,6 +467,7 @@ header.is-scrolled::before {
             line-height: 1.9;
         }
 
+     
         .about-section p + p {
             margin-top: 18px;
         }
@@ -462,18 +475,19 @@ header.is-scrolled::before {
         .about-list {
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 8px 28px;
+            gap: 8px 55px;
             color: #222222;
             font-size: 18px;
             font-weight: 400;
             letter-spacing: 0.6px;
             line-height: 1.7;
             list-style: none;
+            
         }
 
         .recognition-list {
             display: grid;
-            gap: 10px;
+            gap: 14px;
             color: #222222;
             font-size: 14px;
             font-weight: 400;
@@ -481,6 +495,27 @@ header.is-scrolled::before {
             list-style: none;
         }
 
+     .more-experience-button {
+    margin: 36px 0 42px;
+    text-align: left;
+}
+
+.more-experience-button a {
+    display: inline-block;
+    padding: 10px 18px;
+    border: 1px solid #222222;
+    color: #ffffff;
+    background: #222222;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 400;
+    transition: all 0.25s ease;
+}
+
+.more-experience-button a:hover {
+    background: #ffffff;
+    color: #222222;
+}
         .contact-placeholder {
             color: var(--text-muted) !important;
             font-size: 12px !important;
@@ -610,9 +645,11 @@ nav.mobile-open::before {
     align-items: flex-start;
     gap: 12px;
 
-    background: rgb(235, 235, 235);
+   background: rgba(235, 235, 235, 0.613);
+backdrop-filter: blur(12px);
+-webkit-backdrop-filter: blur(12px);
     border: 1px solid rgba(162, 162, 162, 0.416);
-    border-radius: 8px;
+    border-radius: 10px;
     box-shadow: 0 12px 30px rgba(231, 231, 231, 0.08);
 
     z-index: 2000;
@@ -675,6 +712,8 @@ nav.mobile-open::before {
         }
 
         @media (max-width: 480px) {
+
+            
             header,
             .page-section,
             footer {
@@ -742,6 +781,28 @@ nav.mobile-open::before {
             .about-list {
                 grid-template-columns: 1fr;
             }
+ .expertise-grid {
+        grid-template-columns: 1fr 1fr;
+        column-gap: 20px;
+        row-gap: 20px;
+    }
+
+    .expertise-item {
+        min-height: auto;
+    }
+
+    .expertise-item h3 {
+        font-size: 15px;
+    }
+
+    .expertise-item p {
+        font-size: 14px;
+        line-height: 1.6;
+        letter-spacing: 0;
+        text-align: left;
+    }
+
+
         }
 
         @media (prefers-reduced-motion: reduce) {
@@ -768,7 +829,8 @@ nav.mobile-open::before {
     #42dcde 80%,
     #e5e5e5fd 100%
   );
-  background-size: 250% 250%;
+  background-size: 150% 150%;
+  background-repeat: repeat-y;
   animation: hazyFlow 14s ease-in-out infinite alternate;
 }
 
@@ -799,7 +861,7 @@ body::before {
   .random-blur-shape {
     position: fixed;
     /* 使用你調配好的深暗灰（#5858598b）作為隨機圖形的底色，維持色調和諧 */
-    background: rgba(251, 250, 250, 0.874);
+    background: rgba(237, 236, 236, 0.785);
     /* 透過 40px 的強烈模糊，讓圖形邊緣變得像霧氣一樣朦朧 */
     filter: blur(70px);
     z-index: -2;
@@ -921,7 +983,7 @@ html[data-theme="mono"] body::before { display: none; }
 
 /* 漂浮的雾气改成白色，在灰底上会像柔光 */
 html[data-theme="mono"] .random-blur-shape {
-   background: rgb(255, 255, 255);
+   background: rgba(192, 192, 192, 0.097);
 }
 /* 手機版漢堡選單 */
 .burger {
@@ -1242,6 +1304,8 @@ nav a.active-nav {
 .social-icons a:nth-child(1):hover { background-color: #d62976; }
 .social-icons a:nth-child(2):hover { background-color: #ff5500; }
 .social-icons a:nth-child(3):hover { background-color: #1db954; }
+.social-icons a:nth-child(4):hover { background-color: #ff0000; } /* YouTube Music */
+.social-icons a:nth-child(5):hover { background-color: #4285f4; } /* Gmail */
 
 @media (max-width: 480px) {
     .social-icons a {
@@ -1440,6 +1504,66 @@ nav a.active-nav {
     }
 }
 
+
+.expertise-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 55px;
+    row-gap: 24px;
+}
+
+.expertise-item {
+    min-height: auto;
+}
+
+.expertise-item h4 {
+    margin: 0 0 8px;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: 0;
+}
+.expertise-item p {
+    margin: 0;
+    color: #222222;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.7;
+    letter-spacing: 0;
+}
+
+.expertise-item p span {
+    display: block;
+    margin-bottom: 6px;
+}
+
+.expertise-item p span:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 480px) {
+    .expertise-grid {
+        grid-template-columns: 1fr 1fr;
+        column-gap: 20px;
+        row-gap: 20px;
+    }
+
+    .expertise-item {
+        min-height: auto;
+    }
+
+    .expertise-item h3 {
+        font-size: 15px;
+    }
+
+    .expertise-item p {
+        font-size: 14px;
+        line-height: 1.6;
+        letter-spacing: 0;
+        text-align: left;
+        text-justify: auto;
+    }
+}
 </style>
  <script>
         try {
@@ -1588,31 +1712,125 @@ nav a.active-nav {
 
                     <div class="about-section">
                         <h2>個人簡介</h2>
-                        <p>余辰曜（藝名為SkyCover）是一位活躍於影視、動畫、遊戲與新媒體展演的跨界配樂家與鋼琴家，畢業於國立臺北藝術大學音樂系鋼琴演奏組，具備深厚的古典音樂底蘊與國際視野，曾赴上海音樂學院與日本武藏野音樂大學交流演出，並獲 WOCMAT 國際青年電子音樂創作獎肯定。其作品涵蓋商業電視、獨立遊戲、動畫與電影，其中配樂作品《Sky Maker》入選 SPARK ANIMATION 2026，作品亦曾入圍金穗獎、布宜諾斯艾利斯國際影展（BUEIFF）等國際影展。</p>
+                        <p>余辰曜（藝名為 SkyCover）是一位活躍於影視、動畫、遊戲與新媒體展演的跨界配樂家與鋼琴家，畢業於國立臺北藝術大學音樂系鋼琴演奏組，具備深厚的古典音樂底蘊與國際視野，曾赴上海音樂學院與日本武藏野音樂大學交流演出，並獲 WOCMAT 國際青年電子音樂創作獎肯定。其作品涵蓋商業電視、獨立遊戲、動畫與電影，其中《Sky Maker》入選 SPARK ANIMATION 2026，作品亦曾入圍金穗獎、布宜諾斯艾利斯國際影展（BUEIFF）等國際影展。</p>
                         <p>他的創作版圖涵蓋商業電視連續劇、獨立遊戲與跨域互動藝術；在幕後配樂製作上，他擅長將管弦樂編制與現代電子合成聲響融合並刻畫影像張力；同時，他也憑藉扎實的主修底子，提供高品質的鋼琴編曲與錄音實戰能力。他持續以多元的聲響語彙，為各類視覺載體提供專業且高執行力的音樂解決方案。</p>
                     </div>
 
                     <div class="about-section">
                         <h2>創作領域</h2>
                         <ul class="about-list">
-                            <li>影視配樂</li><li>電視</li><li>動畫</li><li>遊戲聲音</li><li>互動媒體</li><li>管弦寫作</li><li>電子聲音設計</li><li>鋼琴編曲與錄音</li>
+                            <li>影視配樂</li><li>動畫配樂</li><li>遊戲聲音</li><li>互動媒體與電子聲音設計</li><li>管弦寫作</li><li>樂譜編排與製作</li><li>鋼琴編曲與錄音</li><li>鋼琴演奏與研究、教學</li>
+                        </ul>
+                    </div>
+
+                        <div class="about-section">
+                            
+                        <h2>創作軟體</h2>
+                        <ul class="about-list">
+                            <li>Cubase Pro</li><li>Dorico</li><li>Adobe Audition</li><li>CapCut Pro</li>
                         </ul>
                     </div>
 
                     <div class="about-section">
                         <h2>學歷</h2>
-                        <p>國立臺北藝術大學 音樂系鋼琴演奏組</p>
-                    </div>
-
-                    <div class="about-section">
-                        <h2>精選經歷</h2>
                         <ul class="recognition-list">
-                            <li>WOCMAT 國際青年電子音樂創作獎</li>
-                            <li>《Sky Maker》入選 SPARK ANIMATION 2026</li>
-                            <li>作品曾入圍金穗獎、布宜諾斯艾利斯國際影展（BUEIFF）等國際影展</li>
+                            <li>國立臺北藝術大學 音樂系鋼琴演奏組 (碩士)</li>
+                            <li>中國上海音樂學院 (交流生)</li>
+                            <li>國立臺北藝術大學 音樂系（學士）</li>
                         </ul>
                     </div>
 
+                   <div class="about-section">
+    <h2>精選經歷</h2>
+    <ul class="recognition-list">
+        <li>2026 第 48 屆金穗獎 (Golden Harvest Awards)：入圍作品《髮圈》（電影配樂設計）</li>
+        <li>2026 《Sky Maker》入選 SPARK ANIMATION 2026</li>
+        <li>2025 阿根廷布宜諾斯艾利斯國際影展 (BUEIFF)：入圍作品《朗鐵板》（電影配樂設計）</li>
+        <li>2024 臺中國家歌劇院《夏日放／FUN 時光》#PLAYGROUND 音像藝術徵件：第二名</li>
+        <li>2024 放視大賞 (Vision Get Wild)－智冠科技數位音樂大賞：數位音樂組－銅賞</li>
+        <li>2024 上海第二屆「元創未來」元宇宙設計創意大賽：「元音聲律」元宇宙音樂創作——優秀獎</li>
+        <li>2024 關渡國際動畫節 (KuanDu International Animation Festival)：入圍作品《潮起潮落》（動畫配樂設計）</li>
+        <li>2022 《My Little Dress》動畫配樂：入圍金光短片影展、智利國際動畫影展、巴黎國際動畫影展等多項國際獎項</li>
+        <li>2019 WOCMAT 國際青年電子音樂創作獎 (International Youth Electronic Music Creation Award)：佳作</li>
+    </ul>
+</div>
+
+
+<div class="about-section">
+    <h2>精選經歷</h2>
+    <ul class="recognition-list">
+        <li>2026 第 48 屆金穗獎 (Golden Harvest Awards)：入圍作品《髮圈》（電影配樂設計）</li>
+        <li>2026 《Sky Maker》入選 SPARK ANIMATION 2026</li>
+        <li>2025 阿根廷布宜諾斯艾利斯國際影展 (BUEIFF)：入圍作品《朗鐵板》（電影配樂設計）</li>
+        <li>2024 臺中國家歌劇院《夏日放／FUN 時光》#PLAYGROUND 音像藝術徵件：第二名</li>
+        <li>2024 放視大賞 (Vision Get Wild)－智冠科技數位音樂大賞：數位音樂組－銅賞</li>
+        <li>2024 關渡國際動畫節 (KuanDu International Animation Festival)：入圍作品《潮起潮落》（動畫配樂設計）</li>
+        <li>2019 WOCMAT 國際青年電子音樂創作獎 (International Youth Electronic Music Creation Award)：佳作</li>
+    </ul>
+</div>
+
+
+<div class="about-section">
+
+    <h3>劇場與展演聲響設計</h3>
+    <ul class="recognition-list">
+        <li>2026 呂紹可 x 李宜樺 聯合畢業製作《觸碰的那一刻》：音樂、聲音設計與製作</li>
+        <li>2025 小水滴創藝劇團《踅》臺語親子音樂劇：音樂設計與演出</li>
+        <li>2024 臺中國家歌劇院 夏日放／FUN 時光—2023-2024 #PLAYGROUND 音像藝術徵件青年創作計畫：《夏日幻夢》新媒體影像音樂製作</li>
+        <li>2023 新北市美術館《共創之光－建築雷射聲光秀》：音樂設計</li>
+    </ul>
+
+    <h3>電影與影視配樂</h3>
+    <ul class="recognition-list">
+        <li>2026 騰訊視頻：少俠逆襲攻略：配樂參與</li>
+        <li>2025 電影《朗鐵板》：配樂設計</li>
+        <li>2024 大愛電視台《在光裡的人》：配樂參與</li>
+        <li>2024 TVBS《秘書俱樂部》：配樂參與</li>
+        <li>2024 公視學生劇展《髮圈》：配樂設計</li>
+    </ul>
+
+    <h3>動畫配樂</h3>
+    <ul class="recognition-list">
+        <li>2026 《Sky Maker》動畫：音樂製作</li>
+        <li>2025 北藝大動畫學系《十月裡的妙妙子》動畫：音樂音效</li>
+        <li>2024 北藝大動畫學系《潮起潮落》動畫：音樂音效</li>
+        <li>2023 北藝大動畫學系《My Little Hedgehog》動畫：音樂音效</li>
+    </ul>
+
+    <h3>遊戲配樂</h3>
+    <ul class="recognition-list">
+        <li>2026 C4Cat Music Open Submission 2026：單曲《Homeward Memories》入選音樂節奏遊戲《Dynamix Universe》之遊戲音樂選曲</li>
+        <li>2024 莉莉絲遊戲《眾神派對》視覺 EP 音樂製作：《玄牝的內心》</li>
+        <li>2023 漢創國際音樂《陽春白雪》：音樂節奏遊戲樂曲提供</li>
+        <li>2022 漢創國際音樂《Gadvia》：音樂節奏遊戲樂曲提供</li>
+    </ul>
+
+    <h3>鋼琴演奏與錄音</h3>
+    <ul class="recognition-list">
+        <li>2026 北藝星勢力《黑鍵與白鍵的絮語》（於台北南港生技園區多功能廳演出）：鋼琴獨奏</li>
+        <li>2026 南國國際生活節：《Kawo》演出鍵盤手</li>
+        <li>2025 石滾 / 始主步巢：Violin Sonata, Op.12 古典音樂專輯錄製</li>
+        <li>2023 郭真榕《時間之流》專輯：鋼琴演奏錄音</li>
+    </ul>
+
+    <h3>學術交流</h3>
+    <ul class="recognition-list">
+        <li>2025 參與 NSO 以樂會客 2.0 國際作曲家工作坊</li>
+        <li>2025 赴日本武藏野音樂大學鋼琴系交流，於該校布拉姆斯音樂廳 (Concert Hall) 演出，並參與鋼琴家永岡信幸教授大師班</li>
+        <li>2024 以研究生身份至上海音樂學院鋼琴系交流一年，師從鋼琴家孫韵教授</li>
+        <li>2024 於上海「兜作音樂 (Dozo Music)」擔任實習生，參與錄音室錄音、音樂製作協助與交流</li>
+    </ul>
+
+</div>
+<div class="more-experience-button">
+    <a href="https://sites.google.com/view/yu-chen-yao/portfolio"
+       target="_blank"
+       rel="noopener"
+       data-zh="更多資訊・經歷請按此"
+       data-en="More Information &amp; Experience">
+        More Information &amp; Experience
+    </a>
+</div>
                     <div class="about-section contact-section">
 
     <h2>聯絡</h2>
@@ -1688,25 +1906,93 @@ nav a.active-nav {
 <div class="about-section">
 
                         <h2>Selected Experience</h2>
+                       <div class="about-section">
+    <h2>EXPERTISE</h2>
+
+<div class="expertise-grid">
+
+    <div class="expertise-item">
+        <h4>FILM &amp; TV</h4>
+        <p>
+            <span>Original Score</span>
+            <span>Orchestration</span>
+            <span>Music Production</span>
+        </p>
+    </div>
+
+    <div class="expertise-item">
+        <h4>Game Soundtrack</h4>
+        <p>
+            <span>Game Music</span>
+            <span>Interactive Sound</span>
+            <span>Electronic Sound Design</span>
+        </p>
+    </div>
+
+    <div class="expertise-item">
+        <h4>MULTIMEDIA</h4>
+        <p>
+            <span>Sound Design</span>
+            <span>Exhibition</span>
+            <span>Performance</span>
+        </p>
+    </div>
+
+    <div class="expertise-item">
+        <h4>PIANO</h4>
+        <p>
+            <span>Piano Performance</span>
+            <span>Arrangement</span>
+            <span>Recording</span>
+            <span>Teaching</span>
+        </p>
+    </div>
+
+</div>
+</div>
+                    <div class="about-section">
+                            
+                        <h2>Tools</h2>
                         <ul class="about-list">
-                            <li>Film Scoring</li><li>Television</li><li>Animation</li><li>Game Audio</li><li>Interactive Media</li><li>Orchestral Writing</li><li>Electronic Sound Design</li><li>Piano Arranging &amp; Recording</li>
+                            <li>Cubase Pro</li><li>Dorico</li><li>Adobe Audition</li><li>CapCut Pro</li>
                         </ul>
                     </div>
-
+                            
 
                     <div class="about-section">
                         <h2>Education</h2>
-                        <p>Taipei National University of the Arts — Piano Performance</p>
+                        <ul class="recognition-list">
+                            <li>Taipei National University of the Arts — Piano Performance (Master's Degree)</li>
+                            <li>Shanghai Conservatory of Music — Piano Performance (Exchange Student)</li>
+                            <li>Taipei National University of the Arts — Music Department (Bachelor's Degree)</li>
+                        </ul>
                     </div>
 
                     <div class="about-section">
-                        <h2>Selected Recognition</h2>
-                        <ul class="recognition-list">
-                            <li>WOCMAT International Young Computer Music Composer Award</li>
-                            <li><em>Sky Maker</em> — SPARK ANIMATION 2026 selection</li>
-                            <li>Works selected for the Golden Harvest Awards, Buenos Aires International Film Festival (BUEIFF), and other international festivals</li>
-                        </ul>
-                    </div>
+                       <h2>Selected Achievements</h2>
+<ul class="recognition-list">
+    <li>2026 48th Golden Harvest Awards: Nominated Work, 《髮圈》 (Film Scoring)</li>
+    <li>2026 《Sky Maker》: Official Selection, SPARK ANIMATION 2026</li>
+    <li>2025 Buenos Aires International Film Festival (BUEIFF), Argentina: Nominated Work, 《朗鐵板》 (Film Scoring)</li>
+    <li>2024 National Taichung Theater “Summer Fun Time” #PLAYGROUND Audiovisual Art Competition: 2nd Place</li>
+    <li>2024 Vision Get Wild – CATCHPLAY Digital Music Awards: Bronze Award, Digital Music Category</li>
+    <li>2024 2nd “Meta-Creation Future” Metaverse Design & Creative Competition, Shanghai: “Yuan Yin Sheng Lu” Metaverse Music Composition – Excellence Award</li>
+    <li>2024 KuanDu International Animation Festival: Nominated Work, 《潮起潮落》 (Animation Scoring)</li>
+    <li>2022 《My Little Dress》 Animation Score: Selected for multiple international film festivals, including the Golden Harvest Short Film Festival, Chile International Animation Festival, and Paris International Animation Festival</li>
+    <li>2019 WOCMAT International Youth Electronic Music Creation Award: Honorable Mention</li>
+</ul>
+
+<div class="more-experience-button">
+    <a href="https://sites.google.com/view/yu-chen-yao/portfolio"
+       target="_blank"
+       rel="noopener"
+       data-zh="更多資訊・經歷請按此"
+       data-en="More Information &amp; Experience">
+        更多資訊・經歷請按此
+    </a>
+</div>
+
+
 
                     <div class="about-section">
                       
@@ -1748,6 +2034,8 @@ nav a.active-nav {
 
       
     </main>
+
+    <p style="color: #000000; text-align: center; font-family: Geist, sans-serif;">Or you can email me at <a href="mailto:skycovermusic@email.com">skycovermusic@email.com</a></p>
 <button class="back-to-top" id="backToTop" aria-label="Back to top">
        ⮝
 </button>
@@ -1767,12 +2055,30 @@ nav a.active-nav {
             <a href="https://open.spotify.com/artist/6WbF188l72Ag0ebxAaod8K" target="_blank" rel="noopener" aria-label="Spotify">
                 <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M248 8C111.1 8 0 119.1 0 256s111.1 248 248 248 248-111.1 248-248S384.9 8 248 8zm100.7 364.9c-4.2 0-6.8-1.3-10.7-3.6-62.4-37.6-135-39.2-206.7-24.5-3.9 1-9 2.6-11.9 2.6-9.7 0-15.8-7.7-15.8-15.8 0-10.3 6.1-15.2 13.6-16.8 82.6-18.2 165.8-16.6 237.6 26.6 6.1 3.9 9.7 7.4 9.7 16.5s-7.1 15-15.8 15zm26.9-65.6c-5.2 0-8.7-2.3-12.3-4.2-62.5-37-155.7-51.9-238.6-29.4-4.8 1.3-7.4 2.6-11.9 2.6-10.6 0-19.3-8.7-19.3-19.3s5.2-17.5 15.5-20.4c27.8-7.8 56.2-13.6 97.8-13.6 64.9 0 127.6 16.1 177 45.5 8.1 4.8 11.3 11 11.3 19.7-.1 10.5-8.3 19.1-19.5 19.1zm31-76.2c-5.2 0-8.4-1.3-12.9-3.9-71.2-42.5-198.5-52.7-280.9-29.7-3.6 1-8.1 2.6-12.9 2.6-13.2 0-23.3-10.3-23.3-23.6 0-13.6 8.4-21.3 17.4-23.9 35.2-10.3 74.6-15.2 117.5-15.2 73 0 149.5 15.2 205.4 47.8 7.8 4.5 12.9 10.7 12.9 22.6 0 13.6-11 23.3-23.2 23.3z"></path></svg>
             </a>
+            <!-- YouTube Music -->
+<a href="https://music.youtube.com/channel/UC0UhQ5Zjvt8OrgHbie1Ui0A"
+   target="_blank"
+   rel="noopener"
+   aria-label="YouTube Music">
+    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+        <path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 432c-106.1 0-192-85.9-192-192S149.9 64 256 64s192 85.9 192 192-85.9 192-192 192zm-48-288v208l160-104-160-104z"/>
+    </svg>
+</a>
+
+<!-- Gmail -->
+<a href="mailto:skycovermusic@gmail.com"
+   aria-label="Gmail">
+    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+        <path d="M502.3 190.8L327.4 52.2c-41.2-32.7-101.6-32.7-142.8 0L9.7 190.8C3.6 195.6 0 203 0 210.8V432c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V210.8c0-7.8-3.6-15.2-9.7-20zM464 432H48V250.3l175.4 139c18.9 15 46.3 15 65.2 0L464 250.3V432zM256 351L48 186.3 142.8 111c24.1-19.1 59.3-19.1 83.4 0L464 186.3 256 351z"/>
+    </svg>
+</a>
         </div>
     </div>
     <p class="footer-name">Yu Chen Yao</p>
     <p data-zh="作曲家｜鋼琴家｜聲音設計" data-en="Composer / Pianist / Sound Designer">作曲家｜鋼琴家｜聲音設計</p>
+    <p data-zh="網站設計與開發: Yu Chen Yao" data-en="Web Design & Development: Yu Chen Yao">網站設計與開發: Yu Chen Yao</p>
 
-       <p>© 2026 Yu Chen Yao</p>
+       <p>© 2026 Yu Chen Yao. All rights reserved. Unauthorized reproduction or distribution of this work is prohibited.</p>
 </footer>
 
     <script>
@@ -1785,11 +2091,31 @@ window.addEventListener("scroll", function () {
     header.classList.toggle("is-scrolled", window.scrollY > 20);
 });
 
-        const burger = document.getElementById("burger");
+       const burger = document.getElementById("burger");
+const burgerButton = burger.closest(".burger");
 const nav = document.querySelector("header nav");
 
-burger.addEventListener("change", function () {
+burgerButton.addEventListener("click", function (event) {
+    event.preventDefault();
+
+    burger.checked = !burger.checked;
     nav.classList.toggle("mobile-open", burger.checked);
+});
+
+function closeMobileMenu() {
+    burger.checked = false;
+    nav.classList.remove("mobile-open");
+
+    nav.style.removeProperty("--nav-indicator-top");
+    nav.style.removeProperty("--nav-indicator-height");
+}
+
+document.addEventListener("click", function (event) {
+    if (!nav.classList.contains("mobile-open")) return;
+
+    if (!nav.contains(event.target) && !burgerButton.contains(event.target)) {
+        closeMobileMenu();
+    }
 });
 
 let currentSlide = 0;
