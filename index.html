@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yu Chen Yao | Composer / Pianist / Sound Designer</title>
-    <!-- 撘 Squarespace 擃?璆萇陛摮? -->
+    <!-- 引入 Squarespace 高級極簡字體 -->
     <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,12 +21,12 @@
         html {
     scroll-behavior: smooth;
 }
-        /* --- Squarespace ?詨?璆萇陛閬死憸冽摰儔 --- */
+        /* --- Squarespace 核心極簡視覺風格定義 --- */
         :root {
-            --bg-color: #ffffff;       /* 擃?皞急膜瘛箇?脣???*/
-            --text-main: #000000;      /* 擃?璆萇敦暺摮?*/
-            --text-muted: #131313;     /* 頛?啗摮?*/
-            --card-radius: 20px;        /* 頛??? */
+            --bg-color: #ffffff;       /* 高級溫潤淺灰色底色 */
+            --text-main: #000000;      /* 高級極細黑色字 */
+            --text-muted: #131313;     /* 輔助灰色字 */
+            --card-radius: 20px;        /* 輕量圓角 */
         }
 
         * {
@@ -41,11 +41,11 @@
              background-color: var(--bg-color);
             color: var(--text-main);
             overflow-x: hidden;
-            /* 蝣箔?摨惜鈭??扳除銝??雯?摰寞???*/
+            /* 確保底層互動霧氣不會把網頁內容撐開 */
             position: relative; 
         }
 
-        /* 撠汗??(Header) */
+        /* 導覽列 (Header) */
        header {
     position: sticky;
     top: 0;
@@ -86,15 +86,15 @@ header.is-scrolled::before {
         .logo {
             FONT-FAMILY: 'Geist', 'Noto Sans TC', serif;
             font-size: 50px;
-    font-weight: 900;      /* 憭批???銝暺?頛?隞賡?嚗??喳?蝎停??400 */
-    letter-spacing: 2px;   /* 摮?憭批?嚗?px 摮??＊敺云擛?*/
+    font-weight: 900;      /* 大字配粗一點比較有份量，不想加粗就留 400 */
+    letter-spacing: 2px;   /* 字變大後，2px 字距會顯得太鬆 */
     line-height: 1;
-    display: inline-block;          /* transform 撠?inline ???⊥?嚗?摰???*/
-    transform: scale(1.9, 0.75);    /* 蝚砌??摮璈怠?嚗洵鈭蝮勗? */
+    display: inline-block;          /* transform 對 inline 元素無效，一定要加 */
+    transform: scale(1.9, 0.75);    /* 第一個數字是橫向，第二個是縱向 */
     transform-origin: left center;  
     transition: -webkit-text-fill-color 0.4s ease;
     color: transparent;
-    -webkit-text-fill-color: transparent;       /* 憛怨?? */
+    -webkit-text-fill-color: transparent;       /* 填色透明 */
     -webkit-text-stroke: 1.5px var(--text-main);
         }
         nav {
@@ -143,14 +143,14 @@ width: max-content;
             color: #ffffff;
         }
 
-        /* 璅⊥憭??畾菜??(Section View) */
+        /* 模擬多頁區段控制 (Section View) */
         .page-section {
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px 20px 80px 20px;
             
             scroll-margin-top: 80px;
-            display: block; /* ?身摰?梯? */
+            display: block; /* 預設完全隱藏 */
         }
 
      .home-cta {
@@ -228,7 +228,7 @@ width: max-content;
         }
 
         .home-cta-link::after {
-            content: "??;
+            content: "→";
         }
 
         .home-cta-link:focus-visible {
@@ -242,7 +242,7 @@ width: max-content;
 .about-page-section {
     border-top: 1px solid #000000;
 }
-        /* ?嗅???active ??撘瑕閬?撅祆折＊蝷箔蒂閫貊? */
+        /* 當啟動 active 時，強制覆蓋屬性顯示並觸發動畫 */
         .page-section.active {
             display: block !important; 
             animation: fadeIn 0.6s ease-in-out;
@@ -253,7 +253,7 @@ width: max-content;
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* 隤頂?梯??? */
+        /* 語系隱藏切換 */
         .lang-block {
             display: none;
         }
@@ -261,7 +261,7 @@ width: max-content;
             display: block;
         }
 
-        /* 擐?璅?? */
+        /* 首頁標題區 */
       .intro-hero {
     padding-top: 180px;
     margin-bottom: 60px;
@@ -345,7 +345,7 @@ width: max-content;
             margin: 0;
         }
 
-        /* 雿???Editorial Gallery Grid */
+        /* 作品集 Editorial Gallery Grid */
 .portfolio-grid {
     display: grid;
    grid-template-columns: repeat(24, minmax(0, 1fr));
@@ -382,7 +382,7 @@ width: max-content;
     padding-bottom: 28px;
     display: grid;
    grid-template-columns: repeat(2, 375px);
-    gap: clamp(16px, 1vw, 24px);   /* 頝???grid ??頝?*/
+    gap: clamp(16px, 1vw, 24px);   /* 跟下方 grid 同間距 */
     border-bottom: 1px solid #d9d9d9;
 }
 
@@ -392,7 +392,7 @@ width: max-content;
     width: 100%;
     aspect-ratio: 1 / 1;
     overflow: hidden;
-    border: 1px solid #bdbdbd;        /* 頝?work-card 銝璅?*/
+    border: 1px solid #bdbdbd;        /* 跟 work-card 一樣 */
     border-radius: 0;
     outline: 1px solid rgba(255, 255, 255, 0.522);
 outline-offset: -8px;
@@ -418,7 +418,7 @@ outline-offset: -8px;
     display: block;
 }
 
-/* 摨瞍詨惜?桃蔗嚗像撣詨停?剁?hover ??瘛梧? */
+/* 底部漸層遮罩（平常就在，hover 時變深） */
 .album-item::after {
     content: "";
     position: absolute;
@@ -432,7 +432,7 @@ outline-offset: -8px;
     background: linear-gradient(to bottom, rgba(0,0,0,0.4) 20%, rgba(0,0,0,0.8) 100%);
 }
 
-/* ??撅?*/
+/* 文字層 */
 .album-info {
     position: absolute;
     inset: 0;
@@ -470,7 +470,7 @@ outline-offset: -8px;
     letter-spacing: 0.6px;
 }
 
-/* 撟喳虜?梯?嚗over 瘚桃嚗? .hover-content ??憟??恬? */
+/* 平常隱藏，hover 浮現（跟 .hover-content 同一套動畫） */
 .album-info p {
     opacity: 1;
     transform: translateY(0);
@@ -499,7 +499,7 @@ outline-offset: -8px;
     font-weight: 300;
 }
 
-/* 閫豢鋆蔭瘝? hover嚗?摮虜擏?*/
+/* 觸控裝置沒有 hover，文字常駐 */
 @media (hover: none), (pointer: coarse) {
     .album-item { filter: brightness(1); }
     .album-info p,
@@ -511,7 +511,7 @@ outline-offset: -8px;
 
 
 
-        /* 雿???蝬剜???靘蒂隞亥??‵皛輻???*/
+        /* 作品圖片維持原比例並以裁切填滿版面 */
        .work-card {
     position: relative;
     min-height: 0;
@@ -541,13 +541,13 @@ outline-offset: -8px;
 }
         
 
-        /* 憭批葦蝝凝敺格筑韏瑁??湔?啣蔣敺桀???*/
+        /* 大師級微微浮起與擴散陰影微動畫 */
     .work-card:hover {
     filter: brightness(1);
     transform: scale(1.01);
     box-shadow: none;
 }
-        /* 撘瑁????典????寧?????桃蔗??摮惜 */
+        /* 強行重疊在圖片前方的暗色半透明遮罩與文字層 */
         .card-overlay {
             position: absolute;
             inset: 0;
@@ -565,7 +565,7 @@ outline-offset: -8px;
 }
 
 .work-card::after {
-    content: "??;
+    content: "→";
     position: absolute;
     right: 28px;
     bottom: 26px;
@@ -591,7 +591,7 @@ outline-offset: -8px;
 }
 
 
-        /* 皛??詨????芷?憯??桃蔗銝行筑?曇蝔望?摮?*/
+        /* 滑鼠懸停時，優雅壓暗遮罩並浮現職稱文字 */
         .work-card:hover .card-overlay {
             background: linear-gradient(to bottom, rgba(0,0,0,0.4) 20%, rgba(0,0,0,0.8) 100%);
         }
@@ -617,7 +617,7 @@ outline-offset: -8px;
             text-transform: uppercase;
         }
 
-        /* ???(About) ?折?蝪∠??? */
+        /* 關於我 (About) 內頁簡約排版 */
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -643,7 +643,7 @@ outline-offset: -8px;
             margin-bottom: 20px;
         }
 
-        /* 蝬脤?摨瘜??痊??霅瑁??*/
+        /* 網頁底部法律免責與保護聲明 */
   footer {
     max-width: 1200px;
     margin: 100px auto 40px auto;
@@ -1227,7 +1227,7 @@ nav.mobile-open::before {
   min-height: 100vh;
   overflow-x: hidden;
 
-  /* ??鈭日嚗漁?啗?餈?閬??Ⅱ?賢榆 */
+  /* 明暗交錯，亮灰與近黑要有明確落差 */
   background: linear-gradient(
     135deg,
   #20e1ff 0%,
@@ -1246,7 +1246,7 @@ nav.mobile-open::before {
   to   { background-position: 100% 50%; }
 }
 
-/* 憿??????惜嚗??恍?湔?瘛勗漲 */
+/* 額外的流動光暈層，讓畫面更有深度 */
 body::before {
   content: "";
   position: fixed;
@@ -1264,48 +1264,48 @@ body::before {
   to { transform: translate(6%, -6%) scale(1.2); }
 }
 
-  /* ?? ? ?啣?嚗?閬??璈?瘚桃??行?耦?箇?閮剖? */
+  /* 🌌 🟥 新增：不規則、隨機漂浮的朦朧圖形基礎設定 */
   .random-blur-shape {
     position: fixed;
-    /* 雿輻雿矽?末?楛?嚗?5858598b嚗??粹璈?敶Ｙ?摨嚗雁?隤踹?隢?*/
+    /* 使用你調配好的深暗灰（#5858598b）作為隨機圖形的底色，維持色調和諧 */
     background: rgba(237, 236, 236, 0.785);
-    /* ?? 40px ?撥?芋蝟?霈?敶ａ?蝺??敺??扳除銝璅???*/
+    /* 透過 40px 的強烈模糊，讓圖形邊緣變得像霧氣一樣朦朧 */
     filter: blur(70px);
     z-index: -2;
     pointer-events: none;
   }
 
-  /* ? ?冽??耦銝嚗楊憭抒??瑟?銝???擃??典椰銝?啣?寥璈??*/
+  /* 🟥 隨機圖形一：巨大的長條不規則流體，在左上方到右方隨機扭曲 */
   .shape-1 {
     width: 900px;
     height: 650px;
     top: -10%;
     left: -15%;
-    /* 閮剖?敺?撠迂??憪耦? */
+    /* 設定很不對稱的初始形狀 */
     border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
-    /* ?漲頛翰嚗?3蝘?嚗?頝∪??函蝡璈?*/
+    /* 速度較快（13秒），軌跡完全獨立隨機 */
     animation: randomDrift1 7s ease-in-out infinite alternate;
   }
 
-  /* ? ?冽??耦鈭?銝剖????啣耦?嚗?喃??孵銝剖亢?冽?瞍宏 */
+  /* 🟥 隨機圖形二：中型的奇異形狀，在右下方到中央隨機漂移 */
 .shape-2 {
     width: 650px;
     height: 650px;
     bottom: -15%;
     right: -10%;
     border-radius: 70% 30% 52% 48% / 60% 40% 60% 40%;
-    /* ?漲頛嚗?9蝘?嚗??璈?蝘?*/
+    /* 速度較慢（19秒），反向隨機漂移 */
     animation: randomDrift2 10s ease-in-out infinite alternate-reverse;
   }
 
-  /* ?? ?耦銝?璈?閬??剜??蝘餉?頝?*/
+  /* ⚙️ 圖形一的隨機不規則扭曲與漂移軌跡 */
   @keyframes randomDrift1 {
     0% {
       transform: translate(0, 0) scale(1) rotate(0deg);
       border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
     }
     50% {
-      /* 憭批?摨行???敶ｇ??摰???敶?*/
+      /* 大幅度揉捏變形，打破完美的圓形 */
       transform: translate(140px, 80px) scale(1.15) rotate(45deg);
       border-radius: 70% 30% 52% 48% / 30% 65% 35% 70%;
     }
@@ -1315,7 +1315,7 @@ body::before {
     }
   }
 
-  /* ?? ?耦鈭??冽?銝???脰?瞍宏頠楚 */
+  /* ⚙️ 圖形二的隨機不規則扭曲與漂移軌跡 */
   @keyframes randomDrift2 {
     0% {
       transform: translate(0, 0) scale(1) rotate(0deg);
@@ -1331,14 +1331,14 @@ body::before {
     }
   }
 
-  /* ? 靽?雿矽??擃?瘛箇?質?? */
+  /* 💡 保持你調配的高級淺灰白色文字 */
   .portfolio-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 40px 20px;
     color: #f4f4f5; 
   }
-  /* ??嚗舅銝芸??嚗??葉??憭? */
+  /* 切换按钮：两个小圆点，当前选中的有外圈 */
 .theme-switch {
     display: flex;
     align-items: center;
@@ -1372,7 +1372,7 @@ body::before {
 .theme-color { background: linear-gradient(135deg, #e58ad0, #c0393f); }
 .theme-mono  { background: linear-gradient(135deg, #ffffff, #bdbdbd); }
 
-/* ?賜銝駁?嚗 html[data-theme] ???漣?????body 閫?嚗?蝵格?芷?臭誑 */
+/* 白灰主题：用 html[data-theme] 的优先级盖过原本的 body 规则，位置放哪都可以 */
 html[data-theme="mono"] body {
     background: linear-gradient(
         135deg,
@@ -1382,15 +1382,15 @@ html[data-theme="mono"] body {
         #ffffffd0 100%
     );
     background-size: 250% 250%;
-    animation: none  /* ?唾?摰?迫撠望??animation: none; */
+    animation: none  /* 想要完全静止就改成 animation: none; */
 }
 
 animation: hazyFlow 14s ease-in-out infinite alternate;
 
-/* ????????函?唬蜓憸?隡敺??嚗?亙??*/
+/* 原本偏蓝的光晕层在白灰主题里会显得突兀，直接关掉 */
 html[data-theme="mono"] body::before { display: none; }
 
-/* 瞍筑?瘞??莎??函摨?隡??? */
+/* 漂浮的雾气改成白色，在灰底上会像柔光 */
 
 
 
@@ -1400,7 +1400,7 @@ html[data-theme="mono"] .random-blur-shape {
 
 
 
-/* ???慰?⊿??*/
+/* 手機版漢堡選單 */
 .burger {
     position: relative;
     width: 28px;
@@ -1566,26 +1566,26 @@ html[data-theme="mono"] .random-blur-shape {
     opacity: 1;
 }
 
-/* 撠汗???桀??暺憛急遛?賜?嚗???堆??∪?蝺?*/
+/* 導覽列：目前頁面黑色填滿白牆，懸停變灰，無底線 */
 @media (min-width: 769px) {
 
     
     header {
         padding-top: 0px;
         padding-bottom: 0;
-        min-height: 56px;          /* ?賜?擃漲 */
+        min-height: 56px;          /* 白牆高度 */
     }
 
     nav {
-        align-self: stretch;       /* 撠汗???啗??賜?銝璅?? */
+        align-self: stretch;       /* 導覽列拉到跟白牆一樣高 */
         align-items: stretch;
         gap: 4px;
     }
 
     nav a {
         display: flex;
-        align-items: center;       /* ???蝵桐葉 */
-        padding: 0 16px;           /* 暺憛怠??椰?喳祝摨?*/
+        align-items: center;       /* 文字垂直置中 */
+        padding: 0 16px;           /* 黑色填充的左右寬度 */
     }
 
     .lang-btn,
@@ -1603,7 +1603,7 @@ nav a {
 }
 
 nav a:hover {
-    color: #191919c1;                /* ?詨?霈 */
+    color: #191919c1;                /* 懸停變灰 */
     border-bottom: none;
 }
 
@@ -1662,7 +1662,7 @@ nav a.active-nav {
 
 
 
-/* ???皛輻? */
+/* 區隔線滿版 */
 .portfolio-section,
 .about-page-section {
     border-top: none;
@@ -1687,7 +1687,7 @@ nav a.active-nav {
     white-space: nowrap;
 }
 
-/* 蝷曄黎?舐窗?? */
+/* 社群聯絡按鈕 */
 .social-container {
     display: flex;
     flex-direction: column;
@@ -1825,7 +1825,7 @@ nav a.active-nav {
     transform: translateY(0);
 }
 
-/* ??垢?? */
+/* 回到頂端按鈕 */
 .back-to-top {
     position: fixed;
     right: clamp(12px, 2.5vw, 24px);
@@ -1877,7 +1877,7 @@ nav a.active-nav {
     }
 }
 
-/* 撟單??蝣箔??望?撠汗??摰孵?銝??舀???*/
+/* 平板版：確保英文導覽列也容得下背景按鈕 */
 @media (min-width: 769px) and (max-width: 1100px) {
 
        header {
@@ -1995,7 +1995,7 @@ nav a.active-nav {
     }
 }
 
-/* 敺拙?餉皜豢? */
+/* 復古電腦游標 */
 
 .contact-marquee {
     width: 100%;
@@ -2194,14 +2194,14 @@ nav.mobile-open::before {
     width: 100%;
     height: var(--nav-indicator-height, 0px);
 }
-/* Work Grid嚗?摮虜擏?蝞剝 hover ?箇 */
+/* Work Grid：文字常駐，箭頭 hover 出現 */
 .work-card .card-overlay .hover-content {
     opacity: 1;
     transform: translateY(0);
 }
 
 .work-card::after {
-    content: "??;
+    content: "→";
     position: absolute;
     right: 28px;
     bottom: 26px;
@@ -2259,12 +2259,12 @@ nav.mobile-open::before {
     -webkit-text-stroke: 1.5px var(--text-main);
 }
 
-/* Header ?詨? */
+/* Header 選單靠右 */
 header nav {
     margin-left: auto !important;
 }
 
-/* 獢??敺株矽撠汗??頝?*/
+/* 桌面版：微調導覽列間距 */
 @media (min-width: 769px) {
     header nav {
         gap: 13px !important;
@@ -2298,7 +2298,7 @@ header nav {
 
 
 
-/* ????Logo嚗蝡身摰?銝蔣?踹??砍?閫 */
+/* 手機版 Logo：獨立設定，不影響原本外觀 */
 @media (max-width: 768.99px) {
     .logo {
         font-family: 'Inter', sans-serif !important;
@@ -2825,35 +2825,35 @@ html[data-theme="night"] .contact-marquee {
 <div class="random-blur-shape shape-1"></div>
 <div class="random-blur-shape shape-2"></div>
 <div class="retro-cursor" aria-hidden="true"></div>
-    <!-- ?蝪∠?撠汗??-->
+    <!-- 頂部簡約導覽列 -->
     <header>
     <a class="logo" href="#home" aria-label="YU CHEN YAO">
     YU CHEN YAO
 </a>
         <nav aria-label="Primary navigation">
-            <a href="#section-home" id="nav-works" class="active-nav" data-section-link="home" data-zh="雿?" data-en="Works" aria-current="page">雿?</a>
+            <a href="#section-home" id="nav-works" class="active-nav" data-section-link="home" data-zh="作品" data-en="Works" aria-current="page">作品</a>
             <a href="#section-music"
      id="nav-music"
    data-section-link="music"
-   data-zh="?單?"
+   data-zh="音樂"
    data-en="Music">
-    ?單?
+    音樂
 </a>
-            <a href="#section-about" id="nav-about" data-section-link="about" data-zh="?" data-en="About">?</a>
+            <a href="#section-about" id="nav-about" data-section-link="about" data-zh="關於" data-en="About">關於</a>
          <a href="#section-about"
    id="nav-contact"
    data-section-link="contact"
-   data-zh="?舐窗"
+   data-zh="聯絡"
    data-en="Contact"
    onclick="showSection('about', { scroll: false }); setTimeout(function () { document.querySelector('#about-zh:not([hidden]) .contact-section, #about-en:not([hidden]) .contact-section').scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 50); return false;">
-    ?舐窗
+    聯絡
 </a>
             
-            <button class="lang-btn" id="language-toggle" type="button" onclick="toggleLanguage()" aria-label="Switch to English" aria-pressed="false">EN / 銝剜?</button>
-            <div class="theme-switch" role="group" aria-label="?銝駁?">
-        <button type="button" class="theme-dot theme-color" data-theme-value="color" aria-label="敶抵?" aria-pressed="true"></button>
-        <button type="button" class="theme-dot theme-mono" data-theme-value="mono" aria-label="?賜?" aria-pressed="false"></button>
-        <button type="button" class="theme-dot theme-night" data-theme-value="night" aria-label="瘛梯?憭?璅∪?" title="瘛梯?憭?璅∪?" aria-pressed="false"></button>
+            <button class="lang-btn" id="language-toggle" type="button" onclick="toggleLanguage()" aria-label="Switch to English" aria-pressed="false">EN / 中文</button>
+            <div class="theme-switch" role="group" aria-label="背景主题">
+        <button type="button" class="theme-dot theme-color" data-theme-value="color" aria-label="彩色背景" aria-pressed="true"></button>
+        <button type="button" class="theme-dot theme-mono" data-theme-value="mono" aria-label="白灰背景" aria-pressed="false"></button>
+        <button type="button" class="theme-dot theme-night" data-theme-value="night" aria-label="深藍夜間模式" title="深藍夜間模式" aria-pressed="false"></button>
     </div>
         </nav>
         <div class="nav-backdrop"></div>
@@ -2863,10 +2863,10 @@ html[data-theme="night"] .contact-marquee {
     <main>
   <section id="section-home" class="page-section active" aria-labelledby="works-title">
             <div class="home-cta">
-                <h1 data-zh="隞仿璅韏琿?嚗蝝Ｗ蔣????????單?蝔? data-en="Ignite your imagination through a sonic journey across music, visuals, brands, and stories.">隞仿璅韏琿?嚗蝝Ｗ蔣????????單?蝔?/h1>
+                <h1 data-zh="以音樂為起點，探索影像、品牌與故事的聲音旅程。" data-en="Ignite your imagination through a sonic journey across music, visuals, brands, and stories.">以音樂為起點，探索影像、品牌與故事的聲音旅程。</h1>
              <a class="home-cta-link"
    href="#works-title"
-   data-zh="??雿??單???"
+   data-zh="開始你的音樂旅程"
    data-en="Start your journey"
    onclick="document.querySelector('#works-title').scrollIntoView({ behavior: 'smooth', block: 'start' }); return false;">
 </a>
@@ -2878,10 +2878,10 @@ html[data-theme="night"] .contact-marquee {
 
             <div class="intro-hero albums-heading-row">
                 <div class="albums-heading-copy">
-                    <h1 id="works-title" data-zh="?單?雿?" data-en="Discography"><strong>?單?雿?</strong></h1>
-                    <p data-zh="撠摩?銵? data-en="Albums &amp; Releases">撠摩?銵?/p>
+                    <h1 id="works-title" data-zh="音樂作品" data-en="Discography"><strong>音樂作品</strong></h1>
+                    <p data-zh="專輯與發行" data-en="Albums &amp; Releases">專輯與發行</p>
                 </div>
-                <button class="view-all-works" id="albums-view-all" type="button" aria-controls="albums-grid" aria-expanded="false">View All Works <span aria-hidden="true">??/span></button>
+                <button class="view-all-works" id="albums-view-all" type="button" aria-controls="albums-grid" aria-expanded="false">View All Works <span aria-hidden="true">→</span></button>
             </div>
 
            
@@ -2889,26 +2889,26 @@ html[data-theme="night"] .contact-marquee {
            <div class="album-section" id="albums-grid">
 
     <a class="album-item" href="https://music.youtube.com/channel/UC0UhQ5Zjvt8OrgHbie1Ui0A" target="_blank" rel="noopener noreferrer">
-        <img src="album_01.webp" alt="SkyCover Music 1st Album: Journey">
+        <img src="album_01.png" alt="SkyCover Music 1st Album: Journey">
 
         <div class="album-info">
             <p>Composed & Released by SkyCover (Yu Chen Yao)</p>
             <p>Journey</p>
             <p>SkyCover Music 1st Album</p>
-            <p>2021 ??2024</p>
-            <span class="album-arrow">??/span>
+            <p>2021 — 2024</p>
+            <span class="album-arrow">→</span>
         </div>
     </a>
 
     <a class="album-item" href="https://www.pukumelo.com/" target="_blank" rel="noopener noreferrer">
-        <img src="album_02.webp" alt="Pukumelo Music 1st Album: 時葉の幸せな時間">
+        <img src="album_02.png" alt="Pukumelo Music 1st Album: 時葉の幸せな時間">
 
         <div class="album-info">
             <p>Contributing Composer</p>
-            <p>???桀兢???</p>
+            <p>時葉の幸せな時間</p>
             <p>Pukumelo 1st Album</p>
-            <p>M3 ??October 2026</p>
-            <span class="album-arrow">??/span>
+            <p>M3 — October 2026</p>
+            <span class="album-arrow">→</span>
         </div>
     </a>
 
@@ -2916,31 +2916,31 @@ html[data-theme="night"] .contact-marquee {
 
 
             <div class="works-heading-row">
-                <h2 data-zh="敶梯???雿?" data-en="Score Works">敶梯???雿?</h2>
-                <button class="view-all-works" id="score-works-view-all" type="button" aria-controls="portfolio-grid" aria-expanded="false">View All Works <span aria-hidden="true">??/span></button>
+                <h2 data-zh="影視配樂作品" data-en="Score Works">影視配樂作品</h2>
+                <button class="view-all-works" id="score-works-view-all" type="button" aria-controls="portfolio-grid" aria-expanded="false">View All Works <span aria-hidden="true">→</span></button>
             </div>
 
             <div class="portfolio-grid" id="portfolio-grid">
-                <div class="work-card" style="background-image: url('cover01.webp');">
-                    <div class="card-overlay"><div class="hover-content"><h3 class="card-title">????/h3><p class="card-credit">??TV????閬?| ?葉???</p></div></div>
+                <div class="work-card" style="background-image: url('cover01.jpg');">
+                    <div class="card-overlay"><div class="hover-content"><h3 class="card-title">明月錄</h3><p class="card-credit">芒果TV、湖南衛視 | 劇中插曲配樂</p></div></div>
                 </div>
-                <div class="work-card" style="background-image: url('cover02.webp');">
-                    <div class="card-overlay"><div class="hover-content"><h3 class="card-title">暽寥?憌?</h3><p class="card-credit">??TV????閬?| ?葉???</p></div></div>
+                <div class="work-card" style="background-image: url('cover02.jpg');">
+                    <div class="card-overlay"><div class="hover-content"><h3 class="card-title">鹹魚飛升</h3><p class="card-credit">芒果TV、湖南衛視 | 劇中插曲配樂</p></div></div>
                 </div>
                 <div class="work-card" style="background-image: url('cover03.jpg');">
-                    <div class="card-overlay"><div class="hover-content"><h3 class="card-title">撠??必?餌</h3><p class="card-credit">擉啗?閬 | ?葉???</p></div></div>
+                    <div class="card-overlay"><div class="hover-content"><h3 class="card-title">少俠逆襲攻略</h3><p class="card-credit">騰訊視頻 | 劇中插曲配樂</p></div></div>
                 </div>
-                <div class="work-card" style="background-image: url('cover04.webp');">
-                    <div class="card-overlay"><div class="hover-content"><h3 class="card-title">擃桀?</h3><p class="card-credit">?餃蔣?? | ?單?蝮賜 / 雿</p></div></div>
+                <div class="work-card" style="background-image: url('cover04.jpg');">
+                    <div class="card-overlay"><div class="hover-content"><h3 class="card-title">髮圈</h3><p class="card-credit">電影配樂 | 音樂總監 / 作曲</p></div></div>
                 </div>
-                <div class="work-card" style="background-image: url('cover05.webp');">
-                    <div class="card-overlay"><div class="hover-content"><h3 class="card-title">???/h3><p class="card-credit">?餃蔣?? | ?單?蝮賜 / 雿</p></div></div>
+                <div class="work-card" style="background-image: url('cover05.jpg');">
+                    <div class="card-overlay"><div class="hover-content"><h3 class="card-title">朗鐵板</h3><p class="card-credit">電影配樂 | 音樂總監 / 作曲</p></div></div>
                 </div>
                 <div class="work-card" style="background-image: url('cover06.jpg');">
-                    <div class="card-overlay"><div class="hover-content"><h3 class="card-title">SKYMAKER</h3><p class="card-credit">?撠? | ?單?蝮賜 / 雿</p></div></div>
+                    <div class="card-overlay"><div class="hover-content"><h3 class="card-title">SKYMAKER</h3><p class="card-credit">動畫專案 | 音樂總監 / 作曲</p></div></div>
                 </div>
-                <div class="work-card" style="background-image: url('cover07.webp');">
-                    <div class="card-overlay"><div class="hover-content"><h3 class="card-title">閫貊１?銝??/h3><p class="card-credit">頝典????? | ???單?鋆賭?</p></div></div>
+                <div class="work-card" style="background-image: url('cover07.jpg');">
+                    <div class="card-overlay"><div class="hover-content"><h3 class="card-title">觸碰的那一刻</h3><p class="card-credit">跨域藝術合作 | 舞蹈音樂製作</p></div></div>
                 </div>
                 
                 
@@ -2951,11 +2951,11 @@ html[data-theme="night"] .contact-marquee {
 
        <section id="section-music" class="page-section music-section">
 
-  <p class="music-notice" data-zh="甇文???..?賢極銝?..?游??單?雿????閮??貊??湔嚗隢?敺?.." data-en="This area is currently under construction. More music and updates coming soon. Stay tuned.">蝬脩?撱箇蔭銝哨??游??單?雿????閮??貊??湔嚗隢?敺?/p>
+  <p class="music-notice" data-zh="此區域...施工中...更多音樂作品與相關資訊將陸續更新，敬請期待..." data-en="This area is currently under construction. More music and updates coming soon. Stay tuned.">網站建置中，更多音樂作品與相關資訊將陸續更新，敬請期待。</p>
   <div class="intro-hero">
-    <h1 data-zh="?單?" data-en="Music">?單?</h1>
-    <p data-zh="蝎暸雿???獢? data-en="Selected Works &amp; Projects">
-        蝎暸雿???獢?
+    <h1 data-zh="音樂" data-en="Music">音樂</h1>
+    <p data-zh="精選作品與專案" data-en="Selected Works &amp; Projects">
+        精選作品與專案
     </p>
 </div>
   <iframe
@@ -2973,25 +2973,25 @@ html[data-theme="night"] .contact-marquee {
 
 
     <div id="about-zh" class="about-copy" lang="zh-TW">
-                    <h1 id="about-name-zh" class="about-name">雿劓??/h1>
-                    <p class="about-identity">雿摰塚??潛摰塚??脤閮剛?</p>
+                    <h1 id="about-name-zh" class="about-name">余辰曜</h1>
+                    <p class="about-identity">作曲家｜鋼琴家｜聲音設計</p>
 
 <div class="about-slideshow">
 
     <div class="slide-viewport">
 
         <button class="slide-arrow slide-prev" type="button" aria-label="Previous image">
-            ??
+            ←
         </button>
 
         <div class="slide-track">
-            <img src="about_01.webp" alt="" class="about-slide">
-            <img src="about_02.webp" alt="" class="about-slide">
-            <img src="about_03.webp" alt="" class="about-slide">
+            <img src="about_01.jpg" alt="" class="about-slide">
+            <img src="about_02.jpg" alt="" class="about-slide">
+            <img src="about_03.jpg" alt="" class="about-slide">
         </div>
 
         <button class="slide-arrow slide-next" type="button" aria-label="Next image">
-            ??
+            →
         </button>
 
     </div>
@@ -3004,114 +3004,114 @@ html[data-theme="night"] .contact-marquee {
     
 
                     <div class="about-section">
-                        <h2>?犖蝪∩?</h2>
-                        <p>雿劓??????SkyCover嚗銝雿暑頨敶梯????怒??脰??啣?擃?瞍?頝函???摰嗉??潛摰塚??Ｘ平?澆?蝡??銵之摮賊璅頂?潛瞍?蝯??瑕?瘛勗???賊璅?????閬?嚗韏港?瘚琿璅飛?Ｚ??交甇西??璅之摮訾漱瘚??綽?銝衣 WOCMAT ???僑?餃??單??萎??摰雿?瘨菔??平?餉??蝡??脯??怨??餃蔣嚗銝准ky Maker???SPARK ANIMATION 2026嚗??漲?曉??蝛???摰姥?航?拇??敶勗?嚗UEIFF嚗???敶勗???/p>
-                        <p>隞??萎???瘨菔??平?餉?????蝡??脰?頝典?鈭???嚗撟???鋆賭?銝?隞??瑕?蝞∪憐璅楊?嗉??曆誨?餃????脤??銝血?怠蔣?撐????銋???撖衣?銝颱耨摨?嚗?靘??釭??渡楊?脰??撖行?賢?????隞亙????脤隤?嚗??閬死頛???撠平銝??瑁????單?閫?捱?寞???/p>
+                        <h2>個人簡介</h2>
+                        <p>余辰曜（藝名為 SkyCover）是一位活躍於影視、動畫、遊戲與新媒體展演的跨界配樂家與鋼琴家，畢業於國立臺北藝術大學音樂系鋼琴演奏組，具備深厚的古典音樂底蘊與國際視野，曾赴上海音樂學院與日本武藏野音樂大學交流演出，並獲 WOCMAT 國際青年電子音樂創作獎肯定。其作品涵蓋商業電視、獨立遊戲、動畫與電影，其中《Sky Maker》入選 SPARK ANIMATION 2026，作品亦曾入圍金穗獎、布宜諾斯艾利斯國際影展（BUEIFF）等國際影展。</p>
+                        <p>他的創作版圖涵蓋商業電視連續劇、獨立遊戲與跨域互動藝術；在幕後配樂製作上，他擅長將管弦樂編制與現代電子合成聲響融合並刻畫影像張力；同時也憑藉扎實的主修底子，提供高品質的鋼琴編曲與錄音實戰能力。他持續以多元的聲響語彙，為各類視覺載體提供專業且高執行力的音樂解決方案。</p>
                     </div>
 
                     <div class="about-section">
-                        <h2>?萎???</h2>
+                        <h2>創作領域</h2>
                         <ul class="about-list">
-                            <li>敶梯???</li><li>???</li><li>??脤</li><li>鈭?慦??摮?唾身閮?/li><li>蝞∪憐撖思?</li><li>璅?蝺冽??ˊ雿?/li><li>?潛蝺冽????/li><li>?潛瞍???蝛嗚?摮?/li>
+                            <li>影視配樂</li><li>動畫配樂</li><li>遊戲聲音</li><li>互動媒體與電子聲音設計</li><li>管弦寫作</li><li>樂譜編排與製作</li><li>鋼琴編曲與錄音</li><li>鋼琴演奏與研究、教學</li>
                         </ul>
                     </div>
 
                         <div class="about-section">
                             
-                        <h2>?萎?頠?</h2>
+                        <h2>創作軟體</h2>
                         <ul class="about-list">
                             <li>Cubase Pro</li><li>Dorico</li><li>Adobe Audition</li><li>CapCut Pro</li>
                         </ul>
                     </div>
 
                     <div class="about-section">
-                        <h2>摮豢風</h2>
+                        <h2>學歷</h2>
                         <ul class="recognition-list">
-                            <li>???箏???憭批飛 ?單?蝟駁?湔?憟? (蝣拙ㄚ)</li>
-                            <li>銝剖?銝絲?單?摮賊 (鈭斗???</li>
-                            <li>???箏???憭批飛 ?單?蝟鳴?摮詨ㄚ嚗?/li>
+                            <li>國立臺北藝術大學 音樂系鋼琴演奏組 (碩士)</li>
+                            <li>中國上海音樂學院 (交流生)</li>
+                            <li>國立臺北藝術大學 音樂系（學士）</li>
                         </ul>
                     </div>
 
                    <div class="about-section">
-    <h2>蝎暸蝬風</h2>
+    <h2>精選經歷</h2>
     <ul class="recognition-list">
-        <li>2026 蝚?48 撅?蝛? (Golden Harvest Awards)嚗???垣???餃蔣??閮剛?嚗?/li>
-        <li>2026 ?ky Maker???SPARK ANIMATION 2026</li>
-        <li>2025 ?踵撱瑕?摰姥?航?拇??敶勗? (BUEIFF)嚗?????菜???餃蔣??閮剛?嚗?/li>
-        <li>2024 ?箔葉?振甇??Ｕ??交嚗UN ????PLAYGROUND ?喳???敺萎辣嚗洵鈭?</li>
-        <li>2024 ?曇?憭扯? (Vision Get Wild)嚗????訾??單?憭扯?嚗雿璅?嚗?鞈?/li>
-        <li>2024 銝絲蝚砌?撅??菜靘?摰?閮剛??菜?憭扯魚嚗??唾敺?摰??單??萎??蝘??/li>
-        <li>2024 ?腹???蝭 (KuanDu International Animation Festival)嚗???蔭韏瑟蔭?賬????閮剛?嚗?/li>
-        <li>2022 ?y Little Dress???恍?璅??亙????剔?敶勗???拙????怠蔣撅毀暺????怠蔣撅?憭?????</li>
-        <li>2019 WOCMAT ???僑?餃??單??萎???(International Youth Electronic Music Creation Award)嚗蔔雿?/li>
+        <li>2026 第 48 屆金穗獎 (Golden Harvest Awards)：入圍作品《髮圈》（電影配樂設計）</li>
+        <li>2026 《Sky Maker》入選 SPARK ANIMATION 2026</li>
+        <li>2025 阿根廷布宜諾斯艾利斯國際影展 (BUEIFF)：入圍作品《朗鐵板》（電影配樂設計）</li>
+        <li>2024 臺中國家歌劇院《夏日放／FUN 時光》#PLAYGROUND 音像藝術徵件：第二名</li>
+        <li>2024 放視大賞 (Vision Get Wild)－智冠科技數位音樂大賞：數位音樂組－銅賞</li>
+        <li>2024 上海第二屆「元創未來」元宇宙設計創意大賽：「元音聲律」元宇宙音樂創作——優秀獎</li>
+        <li>2024 關渡國際動畫節 (KuanDu International Animation Festival)：入圍作品《潮起潮落》（動畫配樂設計）</li>
+        <li>2022 《My Little Dress》動畫配樂：入圍金光短片影展、智利國際動畫影展、巴黎國際動畫影展等多項國際獎項</li>
+        <li>2019 WOCMAT 國際青年電子音樂創作獎 (International Youth Electronic Music Creation Award)：佳作</li>
     </ul>
 </div>
 
 
 <div class="about-section">
-    <h2>蝎暸蝬風</h2>
+    <h2>精選經歷</h2>
     <ul class="recognition-list">
-        <li>2026 蝚?48 撅?蝛? (Golden Harvest Awards)嚗???垣???餃蔣??閮剛?嚗?/li>
-        <li>2026 ?ky Maker???SPARK ANIMATION 2026</li>
-        <li>2025 ?踵撱瑕?摰姥?航?拇??敶勗? (BUEIFF)嚗?????菜???餃蔣??閮剛?嚗?/li>
-        <li>2024 ?箔葉?振甇??Ｕ??交嚗UN ????PLAYGROUND ?喳???敺萎辣嚗洵鈭?</li>
-        <li>2024 ?曇?憭扯? (Vision Get Wild)嚗????訾??單?憭扯?嚗雿璅?嚗?鞈?/li>
-        <li>2024 ?腹???蝭 (KuanDu International Animation Festival)嚗???蔭韏瑟蔭?賬????閮剛?嚗?/li>
-        <li>2019 WOCMAT ???僑?餃??單??萎???(International Youth Electronic Music Creation Award)嚗蔔雿?/li>
+        <li>2026 第 48 屆金穗獎 (Golden Harvest Awards)：入圍作品《髮圈》（電影配樂設計）</li>
+        <li>2026 《Sky Maker》入選 SPARK ANIMATION 2026</li>
+        <li>2025 阿根廷布宜諾斯艾利斯國際影展 (BUEIFF)：入圍作品《朗鐵板》（電影配樂設計）</li>
+        <li>2024 臺中國家歌劇院《夏日放／FUN 時光》#PLAYGROUND 音像藝術徵件：第二名</li>
+        <li>2024 放視大賞 (Vision Get Wild)－智冠科技數位音樂大賞：數位音樂組－銅賞</li>
+        <li>2024 關渡國際動畫節 (KuanDu International Animation Festival)：入圍作品《潮起潮落》（動畫配樂設計）</li>
+        <li>2019 WOCMAT 國際青年電子音樂創作獎 (International Youth Electronic Music Creation Award)：佳作</li>
     </ul>
 </div>
 
 
 <div class="about-section">
 
-    <h3>???瞍?輯身閮?/h3>
+    <h3>劇場與展演聲響設計</h3>
     <ul class="recognition-list">
-        <li>2026 ?晶??x ??璅??臬??Ｘ平鋆賭??孛蝣啁?????颯??單???唾身閮?鋆賭?</li>
-        <li>2025 撠偌皛游?????隤扛摮璅?嚗璅身閮?瞍</li>
-        <li>2024 ?箔葉?振甇???憭?橘?FUN ????023-2024 #PLAYGROUND ?喳???敺萎辣?僑?萎?閮嚗??亙劂憭Ｕ慦?敶勗??單?鋆賭?</li>
-        <li>2023 ?啣?撣?銵尹??萎???撱箇??瑕??脣?蝘???單?閮剛?</li>
+        <li>2026 呂紹可 x 李宜樺 聯合畢業製作《觸碰的那一刻》：音樂、聲音設計與製作</li>
+        <li>2025 小水滴創藝劇團《踅》臺語親子音樂劇：音樂設計與演出</li>
+        <li>2024 臺中國家歌劇院 夏日放／FUN 時光—2023-2024 #PLAYGROUND 音像藝術徵件青年創作計畫：《夏日幻夢》新媒體影像音樂製作</li>
+        <li>2023 新北市美術館《共創之光－建築雷射聲光秀》：音樂設計</li>
     </ul>
 
-    <h3>?餃蔣?蔣閬?璅?/h3>
+    <h3>電影與影視配樂</h3>
     <ul class="recognition-list">
-        <li>2026 擉啗?閬嚗?靽必?餌嚗?璅???/li>
-        <li>2025 ?餃蔣???菜????閮剛?</li>
-        <li>2024 憭扳??餉??啜?ㄐ?犖??????</li>
-        <li>2024 TVBS???訾膨璅??????</li>
-        <li>2024 ?祈?摮貊????垣????閮剛?</li>
+        <li>2026 騰訊視頻：少俠逆襲攻略：配樂參與</li>
+        <li>2025 電影《朗鐵板》：配樂設計</li>
+        <li>2024 大愛電視台《在光裡的人》：配樂參與</li>
+        <li>2024 TVBS《秘書俱樂部》：配樂參與</li>
+        <li>2024 公視學生劇展《髮圈》：配樂設計</li>
     </ul>
 
-    <h3>???</h3>
+    <h3>動畫配樂</h3>
     <ul class="recognition-list">
-        <li>2026 ?ky Maker???恬??單?鋆賭?</li>
-        <li>2025 ??憭批??怠飛蝟颯??ㄐ??憒????恬??單??單?</li>
-        <li>2024 ??憭批??怠飛蝟颯蔭韏瑟蔭?賬??恬??單??單?</li>
-        <li>2023 ??憭批??怠飛蝟颯y Little Hedgehog???恬??單??單?</li>
+        <li>2026 《Sky Maker》動畫：音樂製作</li>
+        <li>2025 北藝大動畫學系《十月裡的妙妙子》動畫：音樂音效</li>
+        <li>2024 北藝大動畫學系《潮起潮落》動畫：音樂音效</li>
+        <li>2023 北藝大動畫學系《My Little Hedgehog》動畫：音樂音效</li>
     </ul>
 
-    <h3>???</h3>
+    <h3>遊戲配樂</h3>
     <ul class="recognition-list">
-        <li>2026 C4Cat Music Open Submission 2026嚗?脯omeward Memories??賊璅?憟??脯ynamix Universe????單??豢</li>
-        <li>2024 ??蝯脤??脯蟡晷撠?閬?EP ?單?鋆賭?嚗????批???/li>
-        <li>2023 瞍Ｗ???單???亦?芥??單?蝭憟??脫??脫?靘?/li>
-        <li>2022 瞍Ｗ???單??advia???單?蝭憟??脫??脫?靘?/li>
+        <li>2026 C4Cat Music Open Submission 2026：單曲《Homeward Memories》入選音樂節奏遊戲《Dynamix Universe》之遊戲音樂選曲</li>
+        <li>2024 莉莉絲遊戲《眾神派對》視覺 EP 音樂製作：《玄牝的內心》</li>
+        <li>2023 漢創國際音樂《陽春白雪》：音樂節奏遊戲樂曲提供</li>
+        <li>2022 漢創國際音樂《Gadvia》：音樂節奏遊戲樂曲提供</li>
     </ul>
 
-    <h3>?潛瞍?????/h3>
+    <h3>鋼琴演奏與錄音</h3>
     <ul class="recognition-list">
-        <li>2026 ??????菔??賡?筑隤??澆??皜舐????憭??賢輒瞍嚗??潛?典?</li>
-        <li>2026 ?????暑蝭嚗awo???粹?斗?</li>
-        <li>2025 ?單遝 / 憪蜓甇亙楷嚗iolin Sonata, Op.12 ?文?單?撠摩?ˊ</li>
-        <li>2023 ?剔?璁???瘚?頛荔??潛瞍??</li>
+        <li>2026 北藝星勢力《黑鍵與白鍵的絮語》（於台北南港生技園區多功能廳演出）：鋼琴獨奏</li>
+        <li>2026 南國國際生活節：《Kawo》演出鍵盤手</li>
+        <li>2025 石滾 / 始主步巢：Violin Sonata, Op.12 古典音樂專輯錄製</li>
+        <li>2023 郭真榕《時間之流》專輯：鋼琴演奏錄音</li>
     </ul>
 
-    <h3>摮貉?鈭斗?</h3>
+    <h3>學術交流</h3>
     <ul class="recognition-list">
-        <li>2025 ?? NSO 隞交??恥 2.0 ??雿摰嗅極雿?</li>
-        <li>2025 韏湔?祆郎???單?憭批飛?潛蝟颱漱瘚??潸府?∪????舫璅輒 (Concert Hall) 瞍嚗蒂???潛摰嗆偶撗∩縑撟豢??之撣怎</li>
-        <li>2024 隞亦?蝛嗥?頨思遢?喃?瘚琿璅飛?ａ?渡頂鈭斗?銝撟湛?撣怠??潛摰嗅重?菜???/li>
-        <li>2024 ?潔?瘚瑯?雿璅?(Dozo Music)??隞餃祕蝧?嚗????喳恕??璅ˊ雿??抵?鈭斗?</li>
+        <li>2025 參與 NSO 以樂會客 2.0 國際作曲家工作坊</li>
+        <li>2025 赴日本武藏野音樂大學鋼琴系交流，於該校布拉姆斯音樂廳 (Concert Hall) 演出，並參與鋼琴家永岡信幸教授大師班</li>
+        <li>2024 以研究生身份至上海音樂學院鋼琴系交流一年，師從鋼琴家孫韵教授</li>
+        <li>2024 於上海「兜作音樂 (Dozo Music)」擔任實習生，參與錄音室錄音、音樂製作協助與交流</li>
     </ul>
 
 </div>
@@ -3119,14 +3119,14 @@ html[data-theme="night"] .contact-marquee {
     <a href="https://sites.google.com/view/musicyu/portfolio"
        target="_blank"
        rel="noopener"
-       data-zh="?游?鞈??餌?甇瑁??迨"
+       data-zh="更多資訊・經歷請按此"
        data-en="More Information &amp; Experience">
         More Information &amp; Experience
     </a>
 </div>
                     <div id="contact-section" class="about-section contact-section">
 
-    <h2>?舐窗</h2>
+    <h2>聯絡</h2>
 
     <form class="contact-form" action="https://formspree.io/f/xjykwleb"
     method="POST">
@@ -3135,24 +3135,24 @@ html[data-theme="night"] .contact-marquee {
         <input
             type="text"
             name="name"
-            placeholder="憪?*"
+            placeholder="姓名*"
             required
         >
 
         <input
             type="email"
             name="email"
-            placeholder="?餃??萎辣*"
+            placeholder="電子郵件*"
             required
         >
 
         <textarea
             name="message"
-            placeholder="隢甇方??交?瘜?.."
+            placeholder="請在此載入您的想法..."
             required
         ></textarea>
 
-        <button type="submit">?</button>
+        <button type="submit">送出</button>
 
     </form>
 
@@ -3168,17 +3168,17 @@ html[data-theme="night"] .contact-marquee {
         <div class="slide-viewport">
 
             <button class="slide-arrow slide-prev" type="button" aria-label="Previous image">
-                ??
+                ←
             </button>
 
             <div class="slide-track">
-                <img src="about_01.webp" alt="" class="about-slide">
-                <img src="about_02.webp" alt="" class="about-slide">
-                <img src="about_03.webp" alt="" class="about-slide">
+                <img src="about_01.jpg" alt="" class="about-slide">
+                <img src="about_02.jpg" alt="" class="about-slide">
+                <img src="about_03.jpg" alt="" class="about-slide">
             </div>
 
             <button class="slide-arrow slide-next" type="button" aria-label="Next image">
-                ??
+                →
             </button>
 
         </div>
@@ -3259,23 +3259,23 @@ html[data-theme="night"] .contact-marquee {
                     <div class="about-section">
                         <h2>Education</h2>
                         <ul class="recognition-list">
-                            <li>Taipei National University of the Arts ??Piano Performance (Master's Degree)</li>
-                            <li>Shanghai Conservatory of Music ??Piano Performance (Exchange Student)</li>
-                            <li>Taipei National University of the Arts ??Music Department (Bachelor's Degree)</li>
+                            <li>Taipei National University of the Arts — Piano Performance (Master's Degree)</li>
+                            <li>Shanghai Conservatory of Music — Piano Performance (Exchange Student)</li>
+                            <li>Taipei National University of the Arts — Music Department (Bachelor's Degree)</li>
                         </ul>
                     </div>
 
                     <div class="about-section">
                        <h2>Selected Achievements</h2>
 <ul class="recognition-list">
-    <li>2026 48th Golden Harvest Awards: Nominated Work, ?垣??(Film Scoring)</li>
-    <li>2026 ?ky Maker?? Official Selection, SPARK ANIMATION 2026</li>
-    <li>2025 Buenos Aires International Film Festival (BUEIFF), Argentina: Nominated Work, ???菜??(Film Scoring)</li>
-    <li>2024 National Taichung Theater ?ummer Fun Time??#PLAYGROUND Audiovisual Art Competition: 2nd Place</li>
-    <li>2024 Vision Get Wild ??CATCHPLAY Digital Music Awards: Bronze Award, Digital Music Category</li>
-    <li>2024 2nd ?eta-Creation Future??Metaverse Design & Creative Competition, Shanghai: ?uan Yin Sheng Lu??Metaverse Music Composition ??Excellence Award</li>
-    <li>2024 KuanDu International Animation Festival: Nominated Work, ?蔭韏瑟蔭?賬?(Animation Scoring)</li>
-    <li>2022 ?y Little Dress??Animation Score: Selected for multiple international film festivals, including the Golden Harvest Short Film Festival, Chile International Animation Festival, and Paris International Animation Festival</li>
+    <li>2026 48th Golden Harvest Awards: Nominated Work, 《髮圈》 (Film Scoring)</li>
+    <li>2026 《Sky Maker》: Official Selection, SPARK ANIMATION 2026</li>
+    <li>2025 Buenos Aires International Film Festival (BUEIFF), Argentina: Nominated Work, 《朗鐵板》 (Film Scoring)</li>
+    <li>2024 National Taichung Theater “Summer Fun Time” #PLAYGROUND Audiovisual Art Competition: 2nd Place</li>
+    <li>2024 Vision Get Wild – CATCHPLAY Digital Music Awards: Bronze Award, Digital Music Category</li>
+    <li>2024 2nd “Meta-Creation Future” Metaverse Design & Creative Competition, Shanghai: “Yuan Yin Sheng Lu” Metaverse Music Composition – Excellence Award</li>
+    <li>2024 KuanDu International Animation Festival: Nominated Work, 《潮起潮落》 (Animation Scoring)</li>
+    <li>2022 《My Little Dress》 Animation Score: Selected for multiple international film festivals, including the Golden Harvest Short Film Festival, Chile International Animation Festival, and Paris International Animation Festival</li>
     <li>2019 WOCMAT International Youth Electronic Music Creation Award: Honorable Mention</li>
 </ul>
 
@@ -3283,9 +3283,9 @@ html[data-theme="night"] .contact-marquee {
     <a href="https://sites.google.com/view/musicyu/portfolio"
        target="_blank"
        rel="noopener"
-       data-zh="?游?鞈??餌?甇瑁??迨"
+       data-zh="更多資訊・經歷請按此"
        data-en="More Information &amp; Experience">
-        ?游?鞈??餌?甇瑁??迨
+        更多資訊・經歷請按此
     </a>
 </div>
 
@@ -3367,10 +3367,10 @@ html[data-theme="night"] .contact-marquee {
 
 <div class="contact-info">
     <p
-        data-zh="?單?蝺冽??璅ˊ雿?霅ˊ雿誑??雿?瘙??舐窗甇支縑蝞?"
+        data-zh="音樂編曲、配樂製作、樂譜製作以及合作需求請聯絡此信箱:"
         data-en="For music arrangement, film scoring, music engraving, and collaboration inquiries, please contact:"
     >
-        ?單?蝺冽??璅ˊ雿?霅ˊ雿誑??雿?瘙??舐窗甇支縑蝞?
+        音樂編曲、配樂製作、樂譜製作以及合作需求請聯絡此信箱:
     </p>
 
     <a
@@ -3385,7 +3385,7 @@ html[data-theme="night"] .contact-marquee {
 
 
 <button class="back-to-top" id="backToTop" aria-label="Back to top">
-       漅?
+       ⮝
 </button>
     <footer>
      
@@ -3434,10 +3434,10 @@ html[data-theme="night"] .contact-marquee {
         </div>
     </div>
     <p class="footer-name">Yu Chen Yao</p>
-    <p data-zh="雿摰塚??潛摰塚??脤閮剛?" data-en="Composer / Pianist / Sound Designer">雿摰塚??潛摰塚??脤閮剛?</p>
-    <p data-zh="蝬脩?閮剛????? Yu Chen Yao(瘚芸?頦Ｙ?)" data-en="Web Design & Development: Yu Chen Yao">蝬脩?閮剛????? Yu Chen Yao(瘚芸?頦Ｙ?)</p>
+    <p data-zh="作曲家｜鋼琴家｜聲音設計" data-en="Composer / Pianist / Sound Designer">作曲家｜鋼琴家｜聲音設計</p>
+    <p data-zh="網站設計與開發: Yu Chen Yao(浪子踢球)" data-en="Web Design & Development: Yu Chen Yao">網站設計與開發: Yu Chen Yao(浪子踢球)</p>
 
-       <p>穢 2026 Yu Chen Yao. All rights reserved. Unauthorized reproduction or distribution of this work is prohibited.</p>
+       <p>© 2026 Yu Chen Yao. All rights reserved. Unauthorized reproduction or distribution of this work is prohibited.</p>
 </footer>
 
     <script>
@@ -3659,7 +3659,7 @@ function prevSlide() {
             chineseAbout.hidden = currentLanguage !== "zh";
             englishAbout.hidden = currentLanguage !== "en";
             toggle.setAttribute("aria-pressed", String(currentLanguage === "en"));
-            toggle.setAttribute("aria-label", currentLanguage === "zh" ? "Switch to English" : "???箔葉??);
+            toggle.setAttribute("aria-label", currentLanguage === "zh" ? "Switch to English" : "切換為中文");
             document.getElementById("section-about").setAttribute(
                 "aria-labelledby",
                 currentLanguage === "zh" ? "about-name-zh" : "about-name-en"
@@ -3725,7 +3725,7 @@ document.querySelectorAll(".slide-prev").forEach(function (button) {
 
                     button.setAttribute("aria-expanded", String(!showAll && expanded));
                     button.firstChild.nodeValue = !showAll && expanded ? "Show Less " : "View All Works ";
-                    button.querySelector("span").textContent = !showAll && expanded ? "?? : "??;
+                    button.querySelector("span").textContent = !showAll && expanded ? "↑" : "→";
                 }
 
                 button.addEventListener("click", function () {
@@ -3764,7 +3764,7 @@ document.querySelectorAll(".slide-prev").forEach(function (button) {
 const navLinks = document.querySelectorAll("[data-section-link]");
 let isNavScrolling = false;
 
-// 銝????雿?桀??詨?????
+// 一開始先定位到目前選取的項目
 const initialLink = document.querySelector("[data-section-link].active-nav");
 moveNavIndicator(initialLink);
 const navEl = document.querySelector("header nav");
@@ -3778,8 +3778,8 @@ window.addEventListener("resize", function () {
     moveNavIndicator(activeLink);
 });
 
-// 暺????啗?寞?蝡??雿蔭嚗?蝘餃?頠楚靽? smooth
-// 暺?撠汗???啗?寞?蝡蝘餃?
+// 點擊時：灰色方框立即切換位置，但移動軌跡保持 smooth
+// 點擊導覽列：灰色方框立即移動
 function setActiveNav(link) {
     if (!link) return;
 
@@ -3840,7 +3840,7 @@ navLinks.forEach(function (link) {
     });
 });
 
-// ?頛敺停????皛曉?
+// 頁面載入後就開始監聽滾動
 window.addEventListener("scroll", function () {
     if (isNavScrolling) {
         clearTimeout(window.navScrollTimer);
@@ -3888,7 +3888,7 @@ window.addEventListener("scroll", function () {
                         message.textContent =
                             form.closest("#about-en")
                                 ? "Sent"
-                                : "撌脤";
+                                : "已送出";
 
                         button.insertAdjacentElement("afterend", message);
                     }
@@ -3914,41 +3914,41 @@ window.addEventListener("scroll", function () {
         const blurShape = document.querySelector('.random-blur-shape');
         let isDragging = false;
         let startX, startY;
-        let currentX = -40; // 撠? CSS ??left: -40vw
-        let currentY = -40; // 撠? CSS ??top: -40vh
+        let currentX = -40; // 對應 CSS 的 left: -40vw
+        let currentY = -40; // 對應 CSS 的 top: -40vh
 
-        // ?嗆?璅?皛?/閫豢/?訾?蝑?????
+        // 當指標（滑鼠/觸控/數位筆）按下時
         blurShape.addEventListener('pointerdown', (e) => {
             isDragging = true;
             blurShape.setPointerCapture(e.pointerId);
             
-            // 閮???????摨扳?
+            // 記錄按下時的初始座標
             startX = e.clientX;
             startY = e.clientY;
             
-            // 鈭?敺桃??暺??瘞????蝮桀?璅∠??潘?霈?敶Ｚ?皜嚗?
+            // 互動微特效：點擊時霧氣凝聚（縮小模糊值，讓圖形變清晰）
             blurShape.style.filter = "blur(35px)";
         });
 
-        // ?嗆?璅宏??嚗????擃撣?
+        // 當指標移動時，拖動整個流體畫布
         blurShape.addEventListener('pointermove', (e) => {
             if (!isDragging) return;
             
-            // 閮?雿宏??頧頛凝??vw/vh ?拍?蝘餃?嚗?
+            // 計算位移量（轉為輕微的 vw/vh 物理移動）
             const moveX = (e.clientX - startX) * 0.05;
             const moveY = (e.clientY - startY) * 0.05;
             
-            // 撖行??湔雿蔭嚗蒂靽????頧??恬?雿輻 CSS 霈??亦???
+            // 實時更新位置，並保留原本的旋轉動畫（使用 CSS 變數或直接疊加）
             blurShape.style.left = `calc(-40vw + ${moveX}px)`;
             blurShape.style.top = `calc(-40vh + ${moveY}px)`;
         });
 
-        // ?嗆?璅??
+        // 當指標放開時
         blurShape.addEventListener('pointerup', (e) => {
             isDragging = false;
             blurShape.releasePointerCapture(e.pointerId);
             
-            // ?Ｗ儔??
+            // 恢復原狀
             blurShape.style.filter = "blur(50px)";
             blurShape.style.left = "-40vw";
             blurShape.style.top = "-40vh";
@@ -3971,7 +3971,7 @@ backToTop.addEventListener("click", function () {
         const elapsed = currentTime - startTime;
         const progress = Math.min(elapsed / duration, 1);
 
-        // easeInOutCubic嚗?憪?蝯??賣?頛???
+        // easeInOutCubic：開始與結束都比較柔順
         const eased =
             progress < 0.5
                 ? 4 * progress * progress * progress
@@ -4001,4 +4001,3 @@ document.addEventListener("mousemove", function (event) {
     </script>
 </body>
 </html>
-
