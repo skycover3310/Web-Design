@@ -1,26 +1,32 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yu Chen Yao | Composer / Pianist / Sound Designer</title>
-    <!-- 引入 Squarespace 高級極簡字體 -->
+    <!-- 撘 Squarespace 擃?璆萇陛摮? -->
     <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;600;700&display=swap" rel="stylesheet">
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;600;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
-
+@font-face {
+    font-family: "Cubic 11";
+    src: url("./fonts/Cubic_11.woff2") format("woff2");
+    font-display: swap;
+}
         html {
     scroll-behavior: smooth;
 }
-        /* --- Squarespace 核心極簡視覺風格定義 --- */
+        /* --- Squarespace ?詨?璆萇陛閬死憸冽摰儔 --- */
         :root {
-            --bg-color: #ffffffe0;       /* 高級溫潤淺灰色底色 */
-            --text-main: #111111f5;      /* 高級極細黑色字 */
-            --text-muted: #272727;     /* 輔助灰色字 */
-            --card-radius: 10px;        /* 輕量圓角 */
+            --bg-color: #ffffff;       /* 擃?皞急膜瘛箇?脣???*/
+            --text-main: #000000;      /* 擃?璆萇敦暺摮?*/
+            --text-muted: #131313;     /* 頛?啗摮?*/
+            --card-radius: 20px;        /* 頛??? */
         }
 
         * {
@@ -35,11 +41,11 @@
              background-color: var(--bg-color);
             color: var(--text-main);
             overflow-x: hidden;
-            /* 確保底層互動霧氣不會把網頁內容撐開 */
+            /* 蝣箔?摨惜鈭??扳除銝??雯?摰寞???*/
             position: relative; 
         }
 
-        /* 導覽列 (Header) */
+        /* 撠汗??(Header) */
        header {
     position: sticky;
     top: 0;
@@ -63,7 +69,7 @@ header::before {
 
     transform: translateX(-50%);
 
-  background: rgba(255, 255, 255, 0.635);
+  background: rgba(255, 255, 255, 0.728);
 -webkit-backdrop-filter: blur(5px);
 backdrop-filter: blur(5px);
 
@@ -80,15 +86,15 @@ header.is-scrolled::before {
         .logo {
             FONT-FAMILY: 'Geist', 'Noto Sans TC', serif;
             font-size: 50px;
-    font-weight: 900;      /* 大字配粗一點比較有份量，不想加粗就留 400 */
-    letter-spacing: 2px;   /* 字變大後，2px 字距會顯得太鬆 */
+    font-weight: 900;      /* 憭批???銝暺?頛?隞賡?嚗??喳?蝎停??400 */
+    letter-spacing: 2px;   /* 摮?憭批?嚗?px 摮??＊敺云擛?*/
     line-height: 1;
-    display: inline-block;          /* transform 對 inline 元素無效，一定要加 */
-    transform: scale(1.9, 0.75);    /* 第一個數字是橫向，第二個是縱向 */
+    display: inline-block;          /* transform 撠?inline ???⊥?嚗?摰???*/
+    transform: scale(1.9, 0.75);    /* 蝚砌??摮璈怠?嚗洵鈭蝮勗? */
     transform-origin: left center;  
     transition: -webkit-text-fill-color 0.4s ease;
     color: transparent;
-    -webkit-text-fill-color: transparent;       /* 填色透明 */
+    -webkit-text-fill-color: transparent;       /* 憛怨?? */
     -webkit-text-stroke: 1.5px var(--text-main);
         }
         nav {
@@ -99,14 +105,17 @@ header.is-scrolled::before {
         nav a {
             color: var(--text-main);
             text-decoration: none;
-            font-size: 14px;
+            font-size: 12px;
             letter-spacing: 1.5px;
+             font-family: "Cubic 11", sans-serif;
             text-transform: uppercase;
             margin-left: 30px;
-            font-weight: 400;
+            font-weight: 500;
             transition: all 0.3s;
             cursor: pointer;
             padding-bottom: 4px;
+            white-space: nowrap;
+width: max-content;
             border-bottom: 1px solid transparent;
         }
 
@@ -118,6 +127,7 @@ header.is-scrolled::before {
         .lang-btn {
             background: none;
             border: 1px solid var(--text-main);
+            font-family: "Cubic 11", sans-serif;
             color: var(--text-main);
             padding: 4px 12px;
             font-size: 12px;
@@ -133,16 +143,106 @@ header.is-scrolled::before {
             color: #ffffff;
         }
 
-        /* 模擬多頁區段控制 (Section View) */
+        /* 璅⊥憭??畾菜??(Section View) */
         .page-section {
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px 20px 80px 20px;
+            
             scroll-margin-top: 80px;
-            display: block; /* 預設完全隱藏 */
+            display: block; /* ?身摰?梯? */
         }
 
-        /* 當啟動 active 時，強制覆蓋屬性顯示並觸發動畫 */
+     .home-cta {
+    min-height: 200svh;
+    box-sizing: border-box;
+    padding: clamp(100px, 14vh, 180px) 0;
+    margin-bottom: 0;
+    border-bottom: none;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.home-cta h1 {
+    max-width: 800px;
+    font-family: 'Inter', 'Noto Sans TC', sans-serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 260;
+    letter-spacing: -0.045em;
+    line-height: 1.2;
+}
+
+#works-title {
+    scroll-margin-top: 88px;
+}
+
+.home-cta h1.is-typing {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+}
+
+.hero-title-measure,
+.hero-title-output {
+    grid-area: 1 / 1;
+    min-width: 0;
+}
+
+.hero-title-measure {
+    visibility: hidden;
+}
+
+        .home-cta-link {
+            display: inline-flex;
+            align-self: flex-start;
+            align-items: center;
+            gap: 10px;
+            margin-top: 24px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid currentColor;
+            color: var(--text-main);
+            font-family: "Cubic 11", "Geist", sans-serif;
+            font-size: 13px;
+            letter-spacing: 0.08em;
+            text-decoration: none;
+            transition: gap 0.25s ease;
+        }
+
+.home-cta-link.is-pending {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(8px);
+}
+
+.home-cta-link.is-entering {
+    animation: heroCtaEnter 700ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes heroCtaEnter {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+        .home-cta-link:hover {
+            gap: 16px;
+        }
+
+        .home-cta-link::after {
+            content: "??;
+        }
+
+        .home-cta-link:focus-visible {
+            outline: 2px solid var(--text-main);
+            outline-offset: 5px;
+        }
+
+        .portfolio-section {
+    border-top: 1px solid #000000;
+}
+.about-page-section {
+    border-top: 1px solid #000000;
+}
+        /* ?嗅???active ??撘瑕閬?撅祆折＊蝷箔蒂閫貊? */
         .page-section.active {
             display: block !important; 
             animation: fadeIn 0.6s ease-in-out;
@@ -153,7 +253,7 @@ header.is-scrolled::before {
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* 語系隱藏切換 */
+        /* 隤頂?梯??? */
         .lang-block {
             display: none;
         }
@@ -161,11 +261,11 @@ header.is-scrolled::before {
             display: block;
         }
 
-        /* 首頁標題區 */
-        .intro-hero {
-            margin-bottom: 60px;
-        }
-
+        /* 擐?璅?? */
+      .intro-hero {
+    padding-top: 180px;
+    margin-bottom: 60px;
+}
         .intro-hero h1 {
             font-family: 'Geist', 'Noto Sans TC', serif;
             font-size: 48px;
@@ -182,68 +282,272 @@ header.is-scrolled::before {
             font-weight: 400;
         }
 
-        /* 作品集 Editorial Gallery Grid */
-        .portfolio-grid {
+        .music-section .intro-hero {
+            margin-bottom: 24px;
+        }
+
+        .music-section .music-notice {
+            margin: 0 0 24px;
+            color: var(--text-muted);
+            font-size: 22px;
+            font-color: #6a6a6a72;!important;
+            line-height: 1.7;
+            overflow-wrap: anywhere;
+            background: transparent;
+            user-select: text;
+            -webkit-user-select: text;
+        }
+
+        .services-panel {
             display: grid;
-            grid-template-columns: repeat(12, minmax(0, 1fr));
-            grid-auto-flow: row dense;
-            grid-auto-rows: 24px;
-            gap: clamp(16px, 1.7vw, 24px);
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 16px;
+            margin: 30px 0 40px;
         }
 
-        /* 作品圖片維持原比例並以裁切填滿版面 */
-        .work-card {
-            position: relative;
-            min-height: 0;
-            background-color: #eaeaea;
-            border-radius: var(--card-radius);
-            overflow: hidden;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            cursor: default;
-            user-select: none;
-            -webkit-user-drag: none; 
-            filter: brightness(0.87);
-            transition: filter 0.55s ease, transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s ease;
+        .service-card {
+            background: #f7f7f5;
+            border: 1px solid #d8d8d2;
+            padding: 26px 20px 22px;
+            min-height: 170px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease, border-color 0.3s ease;
         }
 
-        .work-card:nth-child(1),
-        .work-card:nth-child(4),
-        .work-card:nth-child(9) {
-            grid-column: span 5;
-            grid-row: span 13;
+        .service-card:hover {
+            transform: translateY(-2px);
+            border-color: #111111;
         }
 
-        .work-card:nth-child(2),
-        .work-card:nth-child(3),
-        .work-card:nth-child(10) {
-            grid-column: span 7;
-            grid-row: span 13;
+        .service-index {
+            font-family: "Cubic 11", "Geist", sans-serif;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgba(17, 17, 17, 0.7);
+            margin-bottom: 18px;
         }
 
-        .work-card:nth-child(5),
-        .work-card:nth-child(8),
-        .work-card:nth-child(12) {
-            grid-column: span 4;
-            grid-row: span 11;
+        .service-card h3 {
+            font-family: 'Geist', 'Noto Sans TC', serif;
+            font-size: clamp(1.5rem, 2vw, 2rem);
+            font-weight: 500;
+            line-height: 1.1;
+            margin: 0 0 12px;
         }
 
-        .work-card:nth-child(6),
-        .work-card:nth-child(7),
-        .work-card:nth-child(11) {
-            grid-column: span 8;
-            grid-row: span 11;
+        .service-card p {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #2d2d2d;
+            margin: 0;
         }
 
-        /* 大師級微微浮起與擴散陰影微動畫 */
-        .work-card:hover {
-            filter: brightness(1);
-            transform: scale(1.02) translateY(-6px); 
-            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.08); 
-        }
+        /* 雿???Editorial Gallery Grid */
+.portfolio-grid {
+    display: grid;
+   grid-template-columns: repeat(24, minmax(0, 1fr));
+    grid-auto-rows: 180px;
+    gap: 12px;
+}
 
-        /* 強行重疊在圖片前方的暗色半透明遮罩與文字層 */
+.work-card:nth-child(1)  { grid-column: span 3; }
+.work-card:nth-child(2)  { grid-column: span 2.2; }
+.work-card:nth-child(3)  { grid-column: span 2; }
+
+.work-card:nth-child(4)  { grid-column: span 2; }
+.work-card:nth-child(5)  { grid-column: span 3; }
+.work-card:nth-child(6)  { grid-column: span 1; }
+
+.work-card:nth-child(7)  { grid-column: span 3; }
+.work-card:nth-child(8)  { grid-column: span 2; }
+.work-card:nth-child(9)  { grid-column: span 1; }
+
+.work-card:nth-child(10) { grid-column: span 1; }
+.work-card:nth-child(11) { grid-column: span 3; }
+.work-card:nth-child(12) { grid-column: span 2; }
+
+
+
+
+
+
+/* Albums / Releases */
+/* Albums / Releases */
+.album-section {
+    margin-top: 40px;
+    margin-bottom: 42px;
+    padding-bottom: 28px;
+    display: grid;
+   grid-template-columns: repeat(2, 375px);
+    gap: clamp(16px, 1vw, 24px);   /* 頝???grid ??頝?*/
+    border-bottom: 1px solid #d9d9d9;
+}
+
+.album-item {
+    position: relative;
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border: 1px solid #bdbdbd;        /* 頝?work-card 銝璅?*/
+    border-radius: 0;
+    outline: 1px solid rgba(255, 255, 255, 0.522);
+outline-offset: -8px;
+    background: #000000;
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    filter: brightness(0.87);
+    transition:
+        filter 0.55s ease,
+        transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.album-item:hover {
+    filter: brightness(1);
+    transform: scale(1.01);
+}
+
+.album-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* 摨瞍詨惜?桃蔗嚗像撣詨停?剁?hover ??瘛梧? */
+.album-item::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.65) 100%);
+    pointer-events: none;
+    transition: all 0.4s ease;
+}
+
+.album-item:hover::after {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.4) 20%, rgba(0,0,0,0.8) 100%);
+}
+
+/* ??撅?*/
+.album-info {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 28px;
+    color: #fff;
+}
+
+.album-info p {
+    margin: 0;
+    line-height: 1.4;
+}
+
+.album-info p:first-child {
+    margin-bottom: 8px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    opacity: 0;
+}
+
+.album-info p:nth-child(2) {
+    margin-bottom: 8px;
+    font-size: 30px;
+    line-height: 1.15;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+.album-info p:nth-child(3),
+.album-info p:nth-child(4) {
+    font-size: 14px;
+    letter-spacing: 0.6px;
+}
+
+/* 撟喳虜?梯?嚗over 瘚桃嚗? .hover-content ??憟??恬? */
+.album-info p {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.album-arrow {
+    opacity: 0;
+    transform: translateY(10px);
+    transition:
+        opacity 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+        transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.album-item:hover .album-info p,
+.album-item:hover .album-arrow {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.album-arrow {
+    position: absolute;
+    right: 28px;
+    bottom: 26px;
+    font-size: 32px;
+    line-height: 1;
+    font-weight: 300;
+}
+
+/* 閫豢鋆蔭瘝? hover嚗?摮虜擏?*/
+@media (hover: none), (pointer: coarse) {
+    .album-item { filter: brightness(1); }
+    .album-info p,
+    .album-arrow {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+        /* 雿???蝬剜???靘蒂隞亥??‵皛輻???*/
+       .work-card {
+    position: relative;
+    min-height: 0;
+
+    background-color: #eaeaea;
+
+    border: 1px solid #bdbdbd;
+    border-radius: 0;
+    box-sizing: border-box;
+
+    overflow: hidden;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    cursor: default;
+    user-select: none;
+    -webkit-user-drag: none;
+
+    filter: brightness(0.87);
+
+    transition:
+        filter 0.55s ease,
+        transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+        box-shadow 0.4s ease;
+}
+        
+
+        /* 憭批葦蝝凝敺格筑韏瑁??湔?啣蔣敺桀???*/
+    .work-card:hover {
+    filter: brightness(1);
+    transform: scale(1.01);
+    box-shadow: none;
+}
+        /* 撘瑁????典????寧?????桃蔗??摮惜 */
         .card-overlay {
             position: absolute;
             inset: 0;
@@ -255,13 +559,39 @@ header.is-scrolled::before {
             transition: all 0.4s ease;
         }
 
-        .card-overlay .hover-content {
-            opacity: 0;
-            transform: translateY(10px);
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
+       .card-overlay .hover-content {
+    opacity: 1;
+    transform: translateY(0);
+}
 
-        /* 滑鼠懸停時，優雅壓暗遮罩並浮現職稱文字 */
+.work-card::after {
+    content: "??;
+    position: absolute;
+    right: 28px;
+    bottom: 26px;
+
+    color: #fff;
+    font-size: 32px;
+    line-height: 1;
+    font-weight: 300;
+
+    opacity: 0;
+    transform: translateX(-4px);
+    transition:
+        opacity 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+
+    z-index: 3;
+    pointer-events: none;
+}
+
+.work-card:hover::after {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+        /* 皛??詨????芷?憯??桃蔗銝行筑?曇蝔望?摮?*/
         .work-card:hover .card-overlay {
             background: linear-gradient(to bottom, rgba(0,0,0,0.4) 20%, rgba(0,0,0,0.8) 100%);
         }
@@ -287,7 +617,7 @@ header.is-scrolled::before {
             text-transform: uppercase;
         }
 
-        /* 關於我 (About) 內頁簡約排版 */
+        /* ???(About) ?折?蝪∠??? */
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -313,7 +643,7 @@ header.is-scrolled::before {
             margin-bottom: 20px;
         }
 
-        /* 網頁底部法律免責與保護聲明 */
+        /* 蝬脤?摨瘜??痊??霅瑁??*/
   footer {
     max-width: 1200px;
     margin: 100px auto 40px auto;
@@ -449,6 +779,8 @@ header.is-scrolled::before {
             font-size: 24px
         }
 
+
+        
            .about-section h3 {
     margin: 0 0 14px;
     font-size: 18px;
@@ -456,25 +788,29 @@ header.is-scrolled::before {
     line-height: 1.4;
 }
 
+
+
+
 .about-section .recognition-list + h3 {
     margin-top: 28px;
 }
 
-        .about-section p {
-            color: #222222;
-            font-size: 18px;
-            font-weight: 400;
-            line-height: 1.9;
-        }
+.about-section p {
+    color: #222222;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.9;
+    text-align: left;
+}
 
      
         .about-section p + p {
-            margin-top: 18px;
+           margin-top: 8px;
         }
 
         .about-list {
             display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
+           grid-template-columns: repeat(2, 380px);
             gap: 8px 55px;
             color: #222222;
             font-size: 18px;
@@ -586,87 +922,147 @@ footer {
             }
         }
 
-        @media (max-width: 768px) {
-            header {
-                position: sticky;
-                top: 0;
-                padding-top: 14px;
-                padding-bottom: 14px;
-                
-                
-                .burger {
-                    display: block;
-                    
-            }
-                
-            
+@media (min-width: 769px) {
+    #section-home > .home-cta {
+        min-height: 100svh;
+        padding: clamp(64px, 10vh, 120px) 0;
+    }
 
-            nav {
-                display: none;
-            }
+    .portfolio-grid {
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        grid-auto-rows: auto;
+        
+    }
 
-
-             nav.mobile-open {
-                
-    position: relative; /* 因為要讓 ::before 用絕對定位對齊 */
-    
+  .work-card {
+    width: 100%;
+    height: 220px;
 }
 
+    
+   .work-card:nth-child(1) { grid-column: span 2; }
+.work-card:nth-child(2) { grid-column: span 2; }
+.work-card:nth-child(3) { grid-column: span 2; }
+
+.work-card:nth-child(4) { grid-column: span 2; }
+.work-card:nth-child(5) { grid-column: span 2; }
+.work-card:nth-child(6) { grid-column: span 2; }
+
+.work-card:nth-child(7) { grid-column: span 2; }
+.work-card:nth-child(8) { grid-column: span 2; }
+.work-card:nth-child(9) { grid-column: span 2; }
+
+
+.work-card:nth-child(10) { grid-column: span 2; }
+.work-card:nth-child(11) { grid-column: span 2; }
+.work-card:nth-child(12) { grid-column: span 2; }
+}
+
+
+
+
+
+
+       @media (max-width: 768px) {
+
+    #section-home > .home-cta {
+        min-height: calc(100svh - 80px);
+        padding: clamp(48px, 7svh, 64px) 0 clamp(56px, 8svh, 72px);
+    }
+
+    #section-home > .home-cta > h1 {
+        font-size: clamp(2.65rem, 10.3vw, 2.8rem);
+        line-height: 1.24;
+    }
+
+    .services-panel {
+        grid-template-columns: 1fr;
+        gap: 5px;!important;
+        margin-top: 4px;!important;
+    }
+
+    .service-card {
+        min-height: auto;
+    }
+
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        padding: 14px 20px;
+        box-sizing: border-box;
+        z-index: 1000;
+    }
+
+    .logo {
+        font-size: 16px;!important;
+        transform: scale(1.25, 0.75);
+        transform-origin: left center;
+    }
+
+    .burger {
+        display: block;
+        flex-shrink: 0;
+        z-index: 2100;
+    }
+
+    nav {
+        display: none;
+    }
+
+    nav.mobile-open {
+        display: flex;
+        flex-direction: column;
+        position: absolute !important;
+        top: calc(100% + 8px);
+        right: 16px;
+
+        width: 100px;
+        padding: 12px 16px;
+
+        align-items: flex-start;
+        gap: 12px;
+
+        background: rgba(235, 235, 235, 0.613);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+
+        border: 1px solid rgba(162, 162, 162, 0.416);
+        border-radius: 10px;
+        box-shadow: 0 12px 30px rgba(231, 231, 231, 0.08);
+
+        z-index: 2000;
+    }
+
 nav.mobile-open::before {
-    content: "";
-    position: absolute;
     left: 0;
     top: var(--nav-indicator-top, 0px);
     width: 100%;
     height: var(--nav-indicator-height, 0px);
-    background: rgba(17, 17, 17, 0.12);
-    border-radius: 4px;
+
     transition:
-        top 0.35s cubic-bezier(0.22, 1, 0.36, 1),
-        height 0.35s cubic-bezier(0.22, 1, 0.36, 1);
-    pointer-events: none;
-    z-index: 0;
+        top 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+        height 0.45s cubic-bezier(0.22, 1, 0.36, 1);
 }
+
+    nav.mobile-open a {
+        display: block;
+        width: 110%;
+        padding: 9px 0;
+        margin: 0;
+
+        font-size: 12px;
+        letter-spacing: 0.8px;
     }
 
-           nav.mobile-open {
-    display: flex;
-    flex-direction: column;
-
-    
-
-    position: absolute !important;
-    top: calc(100% + 8px);
-    right: 16px;
-
-    width: 100px;
-    padding: 12px 16px;
-
-    align-items: flex-start;
-    gap: 12px;
-
-   background: rgba(235, 235, 235, 0.613);
-backdrop-filter: blur(12px);
--webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(162, 162, 162, 0.416);
-    border-radius: 10px;
-    box-shadow: 0 12px 30px rgba(231, 231, 231, 0.08);
-
-    z-index: 2000;
+         .page-section {
+    padding-top: 80px;
+    padding-bottom: 60px;
 }
-           nav.mobile-open a {
-    display: block;
-    width: 110%;
-    padding: 9px 0;
-    margin: 0;
-
-    font-size: 12px;
-    letter-spacing: 0.8px;
-}
-
-            .page-section {
-                padding-bottom: 60px;
-            }
 
             .intro-hero {
                 margin-bottom: 36px;
@@ -723,8 +1119,8 @@ backdrop-filter: blur(12px);
 
             header {
                 gap: 12px;
-                padding-top: 18px;
-                padding-bottom: 24px;
+                padding-top: 12px;
+                padding-bottom: 12px;
                 
             }
  
@@ -732,7 +1128,7 @@ backdrop-filter: blur(12px);
                 font-size: 30px;
                 letter-spacing: 1px;
                  transform: scale(1.5, 0.7);
-        margin-right: 20px;
+      
             }
 
             nav {
@@ -755,7 +1151,7 @@ backdrop-filter: blur(12px);
             }
 
             .intro-hero h1 {
-                font-size: 2.3rem;
+                font-size: 2rem;
             }
 
             .intro-hero p {
@@ -781,6 +1177,10 @@ backdrop-filter: blur(12px);
             .about-list {
                 grid-template-columns: 1fr;
             }
+            
+
+
+            
  .expertise-grid {
         grid-template-columns: 1fr 1fr;
         column-gap: 20px;
@@ -813,21 +1213,28 @@ backdrop-filter: blur(12px);
                 transition-duration: 0.01ms !important;
                 animation-duration: 0.01ms !important;
             }
+
+            .home-cta-link.is-pending,
+            .home-cta-link.is-entering {
+                visibility: visible;
+                opacity: 1;
+                transform: none;
+                animation: none !important;
+            }
         }
   body {
   margin: 0;
   min-height: 100vh;
   overflow-x: hidden;
 
-  /* 明暗交錯，亮灰與近黑要有明確落差 */
+  /* ??鈭日嚗漁?啗?餈?閬??Ⅱ?賢榆 */
   background: linear-gradient(
     135deg,
-    #29ab84 0%,
-    #d175ffc0 20%,
-    #b83939 40%,
-    #47ff72 60%,
-    #42dcde 80%,
-    #e5e5e5fd 100%
+  #20e1ff 0%,
+  #21b0e844 24%,
+  #56D3C4 48%,
+  #A0E9B1 70%,
+  #E9F1EE 100%
   );
   background-size: 150% 150%;
   background-repeat: repeat-y;
@@ -839,7 +1246,7 @@ backdrop-filter: blur(12px);
   to   { background-position: 100% 50%; }
 }
 
-/* 額外的流動光暈層，讓畫面更有深度 */
+/* 憿??????惜嚗??恍?湔?瘛勗漲 */
 body::before {
   content: "";
   position: fixed;
@@ -857,48 +1264,48 @@ body::before {
   to { transform: translate(6%, -6%) scale(1.2); }
 }
 
-  /* 🌌 🟥 新增：不規則、隨機漂浮的朦朧圖形基礎設定 */
+  /* ?? ? ?啣?嚗?閬??璈?瘚桃??行?耦?箇?閮剖? */
   .random-blur-shape {
     position: fixed;
-    /* 使用你調配好的深暗灰（#5858598b）作為隨機圖形的底色，維持色調和諧 */
+    /* 雿輻雿矽?末?楛?嚗?5858598b嚗??粹璈?敶Ｙ?摨嚗雁?隤踹?隢?*/
     background: rgba(237, 236, 236, 0.785);
-    /* 透過 40px 的強烈模糊，讓圖形邊緣變得像霧氣一樣朦朧 */
+    /* ?? 40px ?撥?芋蝟?霈?敶ａ?蝺??敺??扳除銝璅???*/
     filter: blur(70px);
     z-index: -2;
     pointer-events: none;
   }
 
-  /* 🟥 隨機圖形一：巨大的長條不規則流體，在左上方到右方隨機扭曲 */
+  /* ? ?冽??耦銝嚗楊憭抒??瑟?銝???擃??典椰銝?啣?寥璈??*/
   .shape-1 {
     width: 900px;
     height: 650px;
     top: -10%;
     left: -15%;
-    /* 設定很不對稱的初始形狀 */
+    /* 閮剖?敺?撠迂??憪耦? */
     border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
-    /* 速度較快（13秒），軌跡完全獨立隨機 */
+    /* ?漲頛翰嚗?3蝘?嚗?頝∪??函蝡璈?*/
     animation: randomDrift1 7s ease-in-out infinite alternate;
   }
 
-  /* 🟥 隨機圖形二：中型的奇異形狀，在右下方到中央隨機漂移 */
+  /* ? ?冽??耦鈭?銝剖????啣耦?嚗?喃??孵銝剖亢?冽?瞍宏 */
 .shape-2 {
     width: 650px;
     height: 650px;
     bottom: -15%;
     right: -10%;
     border-radius: 70% 30% 52% 48% / 60% 40% 60% 40%;
-    /* 速度較慢（19秒），反向隨機漂移 */
+    /* ?漲頛嚗?9蝘?嚗??璈?蝘?*/
     animation: randomDrift2 10s ease-in-out infinite alternate-reverse;
   }
 
-  /* ⚙️ 圖形一的隨機不規則扭曲與漂移軌跡 */
+  /* ?? ?耦銝?璈?閬??剜??蝘餉?頝?*/
   @keyframes randomDrift1 {
     0% {
       transform: translate(0, 0) scale(1) rotate(0deg);
       border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
     }
     50% {
-      /* 大幅度揉捏變形，打破完美的圓形 */
+      /* 憭批?摨行???敶ｇ??摰???敶?*/
       transform: translate(140px, 80px) scale(1.15) rotate(45deg);
       border-radius: 70% 30% 52% 48% / 30% 65% 35% 70%;
     }
@@ -908,7 +1315,7 @@ body::before {
     }
   }
 
-  /* ⚙️ 圖形二的隨機不規則扭曲與漂移軌跡 */
+  /* ?? ?耦鈭??冽?銝???脰?瞍宏頠楚 */
   @keyframes randomDrift2 {
     0% {
       transform: translate(0, 0) scale(1) rotate(0deg);
@@ -924,14 +1331,14 @@ body::before {
     }
   }
 
-  /* 💡 保持你調配的高級淺灰白色文字 */
+  /* ? 靽?雿矽??擃?瘛箇?質?? */
   .portfolio-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 40px 20px;
     color: #f4f4f5; 
   }
-  /* 切换按钮：两个小圆点，当前选中的有外圈 */
+  /* ??嚗舅銝芸??嚗??葉??憭? */
 .theme-switch {
     display: flex;
     align-items: center;
@@ -965,27 +1372,35 @@ body::before {
 .theme-color { background: linear-gradient(135deg, #e58ad0, #c0393f); }
 .theme-mono  { background: linear-gradient(135deg, #ffffff, #bdbdbd); }
 
-/* 白灰主题：用 html[data-theme] 的优先级盖过原本的 body 规则，位置放哪都可以 */
+/* ?賜銝駁?嚗 html[data-theme] ???漣?????body 閫?嚗?蝵格?芷?臭誑 */
 html[data-theme="mono"] body {
     background: linear-gradient(
         135deg,
-        #d1d1d1 0%,
-        #b3b3b328 30%,
-        #cdcdcd76 65%,
-        #cacaca21 100%
+        #fffdfd 0%,
+        #fdfcfd 30%,
+        #ffffff 65%,
+        #ffffffd0 100%
     );
     background-size: 250% 250%;
-    animation: hazyFlow 14s ease-in-out infinite alternate;  /* 想要完全静止就改成 animation: none; */
+    animation: none  /* ?唾?摰?迫撠望??animation: none; */
 }
 
-/* 原本偏蓝的光晕层在白灰主题里会显得突兀，直接关掉 */
+animation: hazyFlow 14s ease-in-out infinite alternate;
+
+/* ????????函?唬蜓憸?隡敺??嚗?亙??*/
 html[data-theme="mono"] body::before { display: none; }
 
-/* 漂浮的雾气改成白色，在灰底上会像柔光 */
+/* 瞍筑?瘞??莎??函摨?隡??? */
+
+
+
 html[data-theme="mono"] .random-blur-shape {
-   background: rgba(192, 192, 192, 0.097);
+   background: rgb(255, 255, 255);
 }
-/* 手機版漢堡選單 */
+
+
+
+/* ???慰?⊿??*/
 .burger {
     position: relative;
     width: 28px;
@@ -1014,18 +1429,18 @@ html[data-theme="mono"] .random-blur-shape {
 
 .burger span:nth-of-type(1) {
     top: 0;
-    transform-origin: left center;
+    transform-origin: center center;
 }
 
 .burger span:nth-of-type(2) {
     top: 50%;
     transform: translateY(-50%);
-    transform-origin: left center;
+    transform-origin: center center;
 }
 
 .burger span:nth-of-type(3) {
     top: 100%;
-    transform-origin: left center;
+    transform-origin: center center;
     transform: translateY(-100%);
 }
 
@@ -1045,6 +1460,39 @@ html[data-theme="mono"] .random-blur-shape {
     top: 20px;
     left: 3px;
 }
+
+@media (max-width: 768.99px) {
+    .burger {
+        display: block;
+        width: 40px;
+        height: 40px;
+    }
+
+    .burger span {
+        width: 22px;
+        left: 9px;
+    }
+
+    .burger span:nth-of-type(1) {
+        top: 11px;
+    }
+
+    .burger span:nth-of-type(2) {
+        top: 20px;
+    }
+
+    .burger span:nth-of-type(3) {
+        top: 29px;
+    }
+
+    .burger input:checked ~ span:nth-of-type(1),
+    .burger input:checked ~ span:nth-of-type(3) {
+        top: 20px;
+        left: 9px;
+    }
+}
+
+
 @media (max-width: 480px) {
     .theme-switch { gap: 8px; }
     .theme-dot { width: 15px; height: 15px; }
@@ -1118,26 +1566,26 @@ html[data-theme="mono"] .random-blur-shape {
     opacity: 1;
 }
 
-/* 導覽列：目前頁面黑色填滿白牆，懸停變灰，無底線 */
+/* 撠汗???桀??暺憛急遛?賜?嚗???堆??∪?蝺?*/
 @media (min-width: 769px) {
 
     
     header {
         padding-top: 0px;
         padding-bottom: 0;
-        min-height: 56px;          /* 白牆高度 */
+        min-height: 56px;          /* ?賜?擃漲 */
     }
 
     nav {
-        align-self: stretch;       /* 導覽列拉到跟白牆一樣高 */
+        align-self: stretch;       /* 撠汗???啗??賜?銝璅?? */
         align-items: stretch;
         gap: 4px;
     }
 
     nav a {
         display: flex;
-        align-items: center;       /* 文字垂直置中 */
-        padding: 0 16px;           /* 黑色填充的左右寬度 */
+        align-items: center;       /* ???蝵桐葉 */
+        padding: 0 16px;           /* 暺憛怠??椰?喳祝摨?*/
     }
 
     .lang-btn,
@@ -1155,7 +1603,7 @@ nav a {
 }
 
 nav a:hover {
-    color: #191919c1;                /* 懸停變灰 */
+    color: #191919c1;                /* ?詨?霈 */
     border-bottom: none;
 }
 
@@ -1189,70 +1637,48 @@ nav a.active-nav {
     border-bottom: none;
 }
 
-/* 分隔線和獎項清單維持滿版，只有段落限寬並左右對齊 */
 .about-section p {
     max-width: 1200px;
+    color: #222222;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.9;
     text-align: justify;
     text-justify: inter-character;
     hyphens: auto;
 }
 
-/* 段落左右對齊，桌機和手機都適用 */
-.about-section p {
-    text-align: justify;
-    text-justify: inter-character;   /* 中文字也能平均分配間距 */
-    hyphens: auto;                   /* 英文在手機窄螢幕自動斷字，避免字距被拉得太開 */
-}
-
-/* Logo 跑馬燈 */
-.logo {
-    transform: none;              /* 縮放改由內層負責，這行要蓋掉原本的 scale */
-    flex: 0 1 700px;              /* 跑馬燈可見寬度，想更寬或更窄改 560px */
-    overflow: hidden;
-    -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-    mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);   /* 兩端淡出 */
-}
-
-@media (max-width: 1100px) and (min-width: 481px) {
-    .logo {
-        flex: 0 1 320px;
-        min-width: 100px;
-    }
-}
-
-.logo-track {
-    --sx: 1.9;                    /* 橫向拉寬，沿用你原本的 scale */
-    --sy: 0.75;
-    display: flex;
-    width: max-content;
-    white-space: nowrap;
-    transform-origin: left center;
-    animation: logo-marquee 14s linear infinite;   /* 數字越小越快 */
-}
-
-.logo-track span {
-    padding-right: 0.6em;         /* 兩段文字之間的空隙 */
-}
-
-@keyframes logo-marquee {
-    from { transform: scale(var(--sx), var(--sy)) translateX(0); }
-    to   { transform: scale(var(--sx), var(--sy)) translateX(-50%); }
+#about-en .about-section:first-of-type p {
+    text-align: left;
+    text-justify: none;
+    hyphens: none;
+    word-spacing: normal;
+    letter-spacing: normal;
+    font-size: 17px;
+    line-height: 1.9;
 }
 
 
 
-@media (max-width: 480px) {
-    .logo {
-        flex: 1 1 auto;
-        width: 100%;
-        min-width: 0;
-    }
 
-    .logo-track {
-        --sx: 1.9;
-        --sy: 0.75;
-    }
+
+/* ???皛輻? */
+.portfolio-section,
+.about-page-section {
+    border-top: none;
+    position: relative;
 }
+
+
+
+
+
+
+
+
+
+
+
 @media (prefers-reduced-motion: reduce) {
     .logo-track { animation: none !important; }
 }
@@ -1261,7 +1687,7 @@ nav a.active-nav {
     white-space: nowrap;
 }
 
-/* 社群聯絡按鈕 */
+/* 蝷曄黎?舐窗?? */
 .social-container {
     display: flex;
     flex-direction: column;
@@ -1281,7 +1707,7 @@ nav a.active-nav {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 8px;
 }
 
 .social-icons a {
@@ -1290,8 +1716,8 @@ nav a.active-nav {
     justify-content: center;
     width: 56px;
     height: 56px;
-    border-radius: var(--card-radius);
-    background-color: #313638;
+    border-radius: 2px;
+    background-color: #313638e3;
     transition: 0.3s;
 }
 
@@ -1301,12 +1727,12 @@ nav a.active-nav {
     fill: #fff;
 }
 
-.social-icons a:nth-child(1):hover { background-color: #d62976; }
-.social-icons a:nth-child(2):hover { background-color: #ff5500; }
-.social-icons a:nth-child(3):hover { background-color: #1db954; }
-.social-icons a:nth-child(4):hover { background-color: #ff0000; } /* YouTube Music */
-.social-icons a:nth-child(5):hover { background-color: #4285f4; } /* Gmail */
-
+.social-icons a:nth-child(1):hover { background-color: #d62976; } /* Instagram */
+.social-icons a.facebook:hover { background-color: #1877F2; } /* Facebook */
+.social-icons a:nth-child(3):hover { background-color: #ff5500; } /* SoundCloud */
+.social-icons a:nth-child(4):hover { background-color: #1db954; } /* Spotify */
+.social-icons a:nth-child(5):hover { background-color: #ff0000; } /* YouTube */
+.social-icons a:nth-child(6):hover { background-color: #4285f4; } /* Gmail */
 @media (max-width: 480px) {
     .social-icons a {
         width: 46px;
@@ -1326,8 +1752,12 @@ nav a.active-nav {
 }
 
 .contact-section h2 {
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 1;
     margin-bottom: 30px;
 }
+
 
 .contact-form input,
 .contact-form textarea {
@@ -1395,7 +1825,7 @@ nav a.active-nav {
     transform: translateY(0);
 }
 
-/* 回到頂端按鈕 */
+/* ??垢?? */
 .back-to-top {
     position: fixed;
     right: clamp(12px, 2.5vw, 24px);
@@ -1447,7 +1877,7 @@ nav a.active-nav {
     }
 }
 
-/* 平板版：確保英文導覽列也容得下背景按鈕 */
+/* 撟單??蝣箔??望?撠汗??摰孵?銝??舀???*/
 @media (min-width: 769px) and (max-width: 1100px) {
 
        header {
@@ -1472,7 +1902,7 @@ nav a.active-nav {
 
  nav a {
     padding: 0 6px;
-    font-size: 11px;
+    font-size: 10px;
     letter-spacing: 0.5px;
     white-space: nowrap;
     min-width: 0;
@@ -1564,15 +1994,820 @@ nav a.active-nav {
         text-justify: auto;
     }
 }
+
+/* 敺拙?餉皜豢? */
+
+.contact-marquee {
+    width: 100%;
+    height: 110px;
+    overflow: hidden;
+    background: #000;
+    color: #fff;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+}
+
+.contact-marquee-track {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    height: 100%;
+    flex-shrink: 0;
+    animation: contact-marquee 20s linear infinite;
+}
+
+.contact-marquee-group {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    padding-right: 100px;
+}
+
+.contact-marquee-group > span {
+    font-family: 'Geist', 'Noto Sans TC', Arial, sans-serif;
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 1;
+    color: #fff;
+    padding: 0;
+    margin: 0;
+}
+
+.marquee-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    height: 58px;
+    padding: 0 30px;
+    margin-left: 50px;
+
+    background: #fff;
+    color: #000;
+
+    border-radius: 999px;
+
+    font-family: 'Geist', 'Noto Sans TC', Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.contact-marquee:hover .contact-marquee-track {
+    animation-play-state: paused;
+}
+
+@keyframes contact-marquee {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 768px) {
+
+.album-section {
+    display: grid;
+    width: 100%;
+    max-width: 520px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+    margin: 24px auto 32px;
+    padding: 0 16px 24px;
+    box-sizing: border-box;
+}
+
+.album-item {
+    width: 100%;
+    min-width: 0;
+    aspect-ratio: 1 / 1;
+}
+
+.album-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.album-info {
+    padding: 18px;
+    overflow-wrap: anywhere;
+}
+
+.album-info p,
+.album-arrow {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.album-info p:first-child {
+    margin-bottom: 6px;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    line-height: 1.5;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.album-info p:nth-child(2) {
+    margin-bottom: 6px;
+    font-size: clamp(20px, 6vw, 26px);
+    line-height: 1.2;
+}
+
+.album-info p:nth-child(3),
+.album-info p:nth-child(4) {
+    font-size: 12px;
+    line-height: 1.5;
+    letter-spacing: 0.3px;
+}
+
+.album-arrow {
+    position: static;
+    align-self: flex-end;
+    margin-top: 12px;
+    font-size: 28px;
+}
+
+    .contact-marquee {
+        height: 80px;
+    }
+
+    .contact-marquee-group {
+        padding-right: 30px;
+    }
+
+    .contact-marquee-group > span {
+        font-size: 32px;
+    }
+
+    .marquee-button {
+        display: none;
+    }
+
+    .contact-marquee-track {
+        animation: contact-marquee-mobile 22s linear infinite;
+    }
+}
+
+@keyframes contact-marquee-mobile {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.contact-info {
+    text-align: center;
+    padding: 35px 20px 20px;
+     font-family: 'Cubic 11', 'Noto Sans TC', Arial, sans-serif;
+}
+
+.contact-info p {
+    margin: 0 0 8px;
+    font-size: 16px;
+    line-height: 1.6;
+     font-family: 'Cubic 11', 'Noto Sans TC', Arial, sans-serif;
+}
+
+.contact-info a {
+    color: #000;
+    font-size: 16px;
+    text-decoration: none;
+     font-family: 'Cubic 11', 'Noto Sans TC', Arial, sans-serif;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+nav.mobile-open::before {
+    left: 0;
+    top: var(--nav-indicator-top, 0px);
+    width: 100%;
+    height: var(--nav-indicator-height, 0px);
+}
+/* Work Grid嚗?摮虜擏?蝞剝 hover ?箇 */
+.work-card .card-overlay .hover-content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.work-card::after {
+    content: "??;
+    position: absolute;
+    right: 28px;
+    bottom: 26px;
+
+    color: #fff;
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 1;
+
+    opacity: 0;
+    transform: translateX(-5px);
+
+    transition:
+        opacity 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+
+    z-index: 3;
+    pointer-events: none;
+}
+
+.work-card:hover::after {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+@media (min-width: 769px) {
+    .portfolio-section .intro-hero {
+        margin-left: 8px;
+    }
+}
+#contact-section,
+#contact-section-en {
+    scroll-margin-top: 80px;
+}
+
+
+/* ===== FINAL LOGO OVERRIDE ===== */
+
+.logo {
+    font-family: 'Geist', 'Noto Sans TC', serif;
+    font-size: 40px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    line-height: 1;
+
+    display: inline-block;
+    transform: scale(1.9, 0.75);
+    transform-origin: left center;
+
+    transition: -webkit-text-fill-color 0.4s ease;
+
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1.5px var(--text-main);
+}
+
+/* Header ?詨? */
+header nav {
+    margin-left: auto !important;
+}
+
+/* 獢??敺株矽撠汗??頝?*/
+@media (min-width: 769px) {
+    header nav {
+        gap: 13px !important;
+    }
+
+    .theme-switch {
+        margin-left: 6px !important;
+        gap: 11px !important;
+    }
+
+    .lang-btn {
+        margin-left: 5px !important;
+        gap: 11px !important;
+    }
+
+    .theme-dot {
+        width: 18px;
+        height: 18px;
+        gap: 11px !important;
+    }
+}
+
+
+@media (max-width: 768.99px) {
+    .logo {
+        font-size: 24px !important;
+        letter-spacing: 1.8px !important;
+        transform: none !important;
+    }
+}
+
+
+
+/* ????Logo嚗蝡身摰?銝蔣?踹??砍?閫 */
+@media (max-width: 768.99px) {
+    .logo {
+        font-family: 'Inter', sans-serif !important;
+        font-size: 24px !important;
+        font-weight: 300 !important;
+        letter-spacing: 1.8px !important;
+        line-height: 1 !important;
+
+        color: #000 !important;
+        -webkit-text-fill-color: #000 !important;
+        -webkit-text-stroke: 0 !important;
+
+        transform: none !important;
+        transform-origin: left center !important;
+    }
+}
+@media (min-width: 769px) {
+  header nav {
+    transform: translateX(20px);
+  }
+}
+
+@media (min-width: 768.01px) and (max-width: 768.99px) {
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        padding: 12px 20px;
+        box-sizing: border-box;
+        z-index: 1000;
+    }
+
+    header nav {
+        display: none;
+    }
+
+    header nav.mobile-open {
+        display: flex;
+        flex-direction: column;
+        position: absolute !important;
+        top: calc(100% + 8px);
+        right: 16px;
+        width: 100px;
+        padding: 12px 16px;
+        align-items: flex-start;
+        gap: 12px;
+        background: rgba(235, 235, 235, 0.613);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(162, 162, 162, 0.416);
+        border-radius: 10px;
+        box-shadow: 0 12px 30px rgba(231, 231, 231, 0.08);
+        z-index: 2000;
+    }
+
+    header nav.mobile-open::before {
+        left: 0;
+        top: var(--nav-indicator-top, 0px);
+        width: 100%;
+        height: var(--nav-indicator-height, 0px);
+    }
+
+    header nav.mobile-open a {
+        display: block;
+        width: 110%;
+        padding: 9px 0;
+        margin: 0;
+        font-size: 12px;
+        letter-spacing: 0.8px;
+    }
+
+    #section-home {
+        padding-top: 80px;
+        padding-bottom: 60px;
+    }
+
+    #section-home > .home-cta {
+        min-height: calc(100svh - 80px);
+        padding: clamp(48px, 7svh, 64px) 0 clamp(56px, 8svh, 72px);
+    }
+
+    #section-home > .home-cta > h1 {
+        font-size: clamp(2.65rem, 10.3vw, 2.8rem);
+        line-height: 1.24;
+    }
+}
+
+/* Home Discography and Works showcase */
+#section-home > .intro-hero {
+    padding-top: clamp(48px, 7vw, 96px);
+    margin-bottom: clamp(28px, 4vw, 48px);
+}
+
+#section-home > .albums-heading-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    max-width: none;
+}
+
+#section-home > .albums-heading-row .albums-heading-copy {
+    min-width: 0;
+}
+
+#section-home > .intro-hero h1 {
+    font-size: clamp(2rem, 4.3vw, 3rem);
+    line-height: 1.1;
+    margin-bottom: 8px;
+}
+
+#section-home > .intro-hero p {
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+#section-home .album-section {
+    width: 100%;
+    max-width: none;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(16px, 2vw, 28px);
+    margin: 0 auto 28px;
+    padding: 0 0 28px;
+}
+
+#section-home .album-item {
+    aspect-ratio: 1 / 1;
+    border-radius: 0;
+}
+
+#section-home .album-item img {
+    object-position: center;
+}
+
+#section-home .album-info {
+    padding: 18px 52px 18px 18px;
+}
+
+#section-home .album-info p:first-child {
+    opacity: 1;
+    font-size: 11px;
+    letter-spacing: 0.6px;
+}
+
+#section-home .album-info p:nth-child(2) {
+    font-size: clamp(22px, 2.5vw, 30px);
+}
+
+#section-home .album-info p:nth-child(3),
+#section-home .album-info p:nth-child(4) {
+    font-size: 13px;
+}
+
+#section-home .album-arrow {
+    right: 16px;
+    bottom: 16px;
+    font-size: 26px;
+}
+
+#section-home .works-heading-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin: 0 0 16px;
+    padding-top: 20px;
+}
+
+#section-home .works-heading-row h2 {
+    margin: 0;
+    font-size: clamp(21px, 2.4vw, 28px);
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+#section-home .view-all-works {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    gap: 8px;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: inherit;
+    font-size: 12px;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    cursor: pointer;
+    transition: gap 0.2s ease, opacity 0.2s ease;
+}
+
+#section-home .view-all-works:hover {
+    gap: 12px;
+    opacity: 0.68;
+}
+
+#section-home .view-all-works:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 4px;
+}
+
+#section-home .portfolio-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: auto;
+    gap: clamp(16px, 2vw, 28px);
+}
+
+#section-home .work-card {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 4 / 5;
+    grid-column: auto;
+    grid-row: auto;
+    border-radius: 0;
+}
+
+#section-home .card-overlay {
+    padding: 18px 52px 18px 18px;
+}
+
+#section-home .card-title {
+    font-size: 18px;
+    line-height: 1.35;
+}
+
+#section-home .card-credit {
+    font-size: 11px;
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+}
+
+#section-home .work-card::after {
+    right: 16px;
+    bottom: 16px;
+    font-size: 26px;
+}
+
+@media (max-width: 800px) {
+    #section-home > .albums-heading-row {
+        gap: 10px;
+    }
+
+    #section-home > .intro-hero {
+        padding-top: 48px;
+        margin-bottom: 28px;
+    }
+
+    #section-home .album-section {
+        max-width: none;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 14px;
+        margin-bottom: 24px;
+        padding: 0 0 24px;
+    }
+
+    #section-home .album-item {
+        aspect-ratio: 1 / 1;
+    }
+
+    #section-home .album-info {
+        padding: 14px 48px 14px 14px;
+        overflow-wrap: anywhere;
+    }
+
+    #section-home .album-info p:first-child {
+        margin-bottom: 4px;
+        font-size: 10px;
+        line-height: 1.4;
+    }
+
+    #section-home .album-info p:nth-child(2) {
+        margin-bottom: 4px;
+        font-size: clamp(18px, 5vw, 22px);
+        line-height: 1.2;
+    }
+
+    #section-home .album-info p:nth-child(3),
+    #section-home .album-info p:nth-child(4) {
+        font-size: 11px;
+        line-height: 1.4;
+    }
+
+    #section-home .album-arrow {
+        position: absolute;
+        right: 14px;
+        bottom: 12px;
+        font-size: 26px;
+        margin: 0;
+    }
+
+    #section-home .works-heading-row {
+        gap: 10px;
+        margin-bottom: 14px;
+        padding-top: 16px;
+    }
+
+    #section-home .works-heading-row h2 {
+        font-size: clamp(18px, 5vw, 22px);
+    }
+
+    #section-home .view-all-works {
+        gap: 5px;
+        font-size: 11px;
+        white-space: nowrap;
+    }
+
+    #section-home .portfolio-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 14px;
+    }
+
+    #section-home .work-card {
+        aspect-ratio: 4 / 5;
+    }
+
+    #section-home .card-overlay {
+        padding: 14px 48px 14px 14px;
+    }
+
+    #section-home .card-title {
+        font-size: 16px;
+    }
+
+    #section-home .card-credit {
+        font-size: 10px;
+    }
+
+    #section-home .work-card::after {
+        right: 14px;
+        bottom: 12px;
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    #section-home .album-arrow {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+html[data-theme="night"] {
+    --bg-color: #071525;
+    --text-main: #ffffff;
+    --text-muted: #b8cad9;
+    color-scheme: dark;
+}
+
+html[data-theme="night"] body {
+    color: #ffffff;
+    background: linear-gradient(135deg, #071525 0%, #102a43 48%, #173b57 100%);
+    background-size: 150% 150%;
+    background-repeat: repeat-y;
+    animation: hazyFlow 14s ease-in-out infinite alternate;
+}
+
+html[data-theme="night"] body::before {
+    background:
+        radial-gradient(circle at 20% 30%, rgba(184, 202, 217, 0.08), transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(23, 59, 87, 0.22), transparent 45%);
+    mix-blend-mode: screen;
+}
+
+html[data-theme="night"] .random-blur-shape {
+    background: rgba(56, 81, 104, 0.24);
+}
+
+html[data-theme="night"] header::before {
+    background: rgba(7, 21, 37, 0.82);
+}
+
+html[data-theme="night"] .logo {
+    color: transparent !important;
+    -webkit-text-fill-color: transparent !important;
+    -webkit-text-stroke: 1.5px #ffffff !important;
+}
+
+html[data-theme="night"] nav a,
+html[data-theme="night"] .lang-btn,
+html[data-theme="night"] .home-cta-link {
+    color: #ffffff;
+}
+
+html[data-theme="night"] nav a:hover,
+html[data-theme="night"] nav a.active-nav,
+html[data-theme="night"] nav::before {
+    background-color: rgba(213, 228, 240, 0.12);
+}
+
+html[data-theme="night"] .lang-btn {
+    border-color: #385168;
+}
+
+html[data-theme="night"] .lang-btn:hover {
+    background: #ffffff;
+    color: #071525;
+}
+
+html[data-theme="night"] .theme-dot {
+    border-color: #b8cad9;
+}
+
+html[data-theme="night"] .theme-dot[aria-pressed="true"] {
+    outline-color: #ffffff;
+}
+
+.theme-night {
+    background: #0c2033;
+    border-color: #6f8ba3;
+    opacity: 1;
+}
+
+html[data-theme="night"] .page-section,
+html[data-theme="night"] footer,
+html[data-theme="night"] .intro-hero p,
+html[data-theme="night"] .about-section,
+html[data-theme="night"] .about-list,
+html[data-theme="night"] .recognition-list,
+html[data-theme="night"] .social-title,
+html[data-theme="night"] .contact-info {
+    color: #b8cad9;
+}
+
+html[data-theme="night"] .intro-hero h1,
+html[data-theme="night"] .home-cta h1,
+html[data-theme="night"] .about-name,
+html[data-theme="night"] .about-section h2,
+html[data-theme="night"] .about-section h3,
+html[data-theme="night"] .footer-name {
+    color: #ffffff;
+}
+
+html[data-theme="night"] .about-section p,
+html[data-theme="night"] .contact-placeholder {
+    color: #b8cad9 !important;
+}
+
+html[data-theme="night"] .work-card,
+html[data-theme="night"] .album-item {
+    background-color: #0c2033;
+    border-color: #385168;
+}
+
+html[data-theme="night"] .album-item::after,
+html[data-theme="night"] .card-overlay {
+    background: linear-gradient(to bottom, rgba(7, 21, 37, 0.08) 38%, rgba(7, 21, 37, 0.82) 100%);
+}
+
+html[data-theme="night"] .album-info,
+html[data-theme="night"] .card-title,
+html[data-theme="night"] .card-credit {
+    color: #ffffff;
+}
+
+html[data-theme="night"] .more-experience-button a,
+html[data-theme="night"] .contact-form button {
+    border-color: #385168;
+    background: #0c2033;
+    color: #ffffff;
+}
+
+html[data-theme="night"] .contact-form input,
+html[data-theme="night"] .contact-form textarea {
+    border-color: #385168;
+    background: #0c2033;
+    color: #ffffff;
+}
+
+html[data-theme="night"] .back-to-top {
+    border-color: rgba(213, 228, 240, 0.24);
+    background: rgba(12, 32, 51, 0.78);
+    color: #d5e4f0;
+}
+
+html[data-theme="night"] .contact-marquee {
+    background: #0c2033;
+    color: #ffffff;
+}
+
+@media (max-width: 768.99px) {
+    html[data-theme="night"] .burger span {
+        background: #d5e4f0;
+    }
+
+    html[data-theme="night"] nav.mobile-open {
+        background: rgba(12, 32, 51, 0.97);
+        border-color: #385168;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.28);
+    }
+
+    html[data-theme="night"] nav.mobile-open a {
+        color: #ffffff;
+    }
+
+    html[data-theme="night"] nav.mobile-open a:hover,
+    html[data-theme="night"] nav.mobile-open a.active-nav,
+    html[data-theme="night"] nav.mobile-open::before {
+        background: rgba(213, 228, 240, 0.12);
+    }
+}
 </style>
  <script>
-        try {
-            if (localStorage.getItem("theme") === "mono") {
-                document.documentElement.dataset.theme = "mono";
-            }
-        } catch (e) {}
         function setTheme(theme) {
-    const t = theme === "mono" ? "mono" : "color";
+    const t = theme === "mono" || theme === "night" ? theme : "color";
     document.documentElement.dataset.theme = t;
 
     document.querySelectorAll("[data-theme-value]").forEach(function (btn) {
@@ -1589,22 +2824,36 @@ nav a.active-nav {
     <div class="random-blur-shape"></div>
 <div class="random-blur-shape shape-1"></div>
 <div class="random-blur-shape shape-2"></div>
-    <!-- 頂部簡約導覽列 -->
+<div class="retro-cursor" aria-hidden="true"></div>
+    <!-- ?蝪∠?撠汗??-->
     <header>
-        <a class="logo" href="#home" aria-label="THIS IS YU CHEN YAO'S PAGE., works">
-    <span class="logo-track">
-        <span>THIS IS YU CHEN YAO'S PAGE.</span>
-        <span aria-hidden="true">THIS IS YU CHEN YAO'S PAGE.</span>
-    </span>
+    <a class="logo" href="#home" aria-label="YU CHEN YAO">
+    YU CHEN YAO
 </a>
         <nav aria-label="Primary navigation">
-            <a href="#section-home" id="nav-works" class="active-nav" data-section-link="home" data-zh="作品" data-en="Works" aria-current="page">作品</a>
-            <a href="#section-portfolio" id="nav-portfolio" data-section-link="portfolio" data-zh="作品集" data-en="Portfolio">作品集</a>
-            <a href="#section-about" id="nav-about" data-section-link="about" data-zh="關於" data-en="About">關於</a>
-            <button class="lang-btn" id="language-toggle" type="button" onclick="toggleLanguage()" aria-label="Switch to English" aria-pressed="false">EN / 中文</button>
-            <div class="theme-switch" role="group" aria-label="背景主题">
-        <button type="button" class="theme-dot theme-color" data-theme-value="color" aria-label="彩色背景" aria-pressed="true"></button>
-        <button type="button" class="theme-dot theme-mono" data-theme-value="mono" aria-label="白灰背景" aria-pressed="false"></button>
+            <a href="#section-home" id="nav-works" class="active-nav" data-section-link="home" data-zh="雿?" data-en="Works" aria-current="page">雿?</a>
+            <a href="#section-music"
+     id="nav-music"
+   data-section-link="music"
+   data-zh="?單?"
+   data-en="Music">
+    ?單?
+</a>
+            <a href="#section-about" id="nav-about" data-section-link="about" data-zh="?" data-en="About">?</a>
+         <a href="#section-about"
+   id="nav-contact"
+   data-section-link="contact"
+   data-zh="?舐窗"
+   data-en="Contact"
+   onclick="showSection('about', { scroll: false }); setTimeout(function () { document.querySelector('#about-zh:not([hidden]) .contact-section, #about-en:not([hidden]) .contact-section').scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 50); return false;">
+    ?舐窗
+</a>
+            
+            <button class="lang-btn" id="language-toggle" type="button" onclick="toggleLanguage()" aria-label="Switch to English" aria-pressed="false">EN / 銝剜?</button>
+            <div class="theme-switch" role="group" aria-label="?銝駁?">
+        <button type="button" class="theme-dot theme-color" data-theme-value="color" aria-label="敶抵?" aria-pressed="true"></button>
+        <button type="button" class="theme-dot theme-mono" data-theme-value="mono" aria-label="?賜?" aria-pressed="false"></button>
+        <button type="button" class="theme-dot theme-night" data-theme-value="night" aria-label="瘛梯?憭?璅∪?" title="瘛梯?憭?璅∪?" aria-pressed="false"></button>
     </div>
         </nav>
         <div class="nav-backdrop"></div>
@@ -1613,58 +2862,102 @@ nav a.active-nav {
 
     <main>
   <section id="section-home" class="page-section active" aria-labelledby="works-title">
-            <div class="intro-hero">
-                <h1 id="works-title" data-zh="精選配樂作品" data-en="Selected Scoring Works"><strong>精選配樂作品</strong></h1>
-                <p data-zh="動畫、電影、電視與多媒體配樂" data-en="Animation, Film, TV &amp; Multimedia Scoring">動畫、電影、電視與多媒體配樂</p>
+            <div class="home-cta">
+                <h1 data-zh="隞仿璅韏琿?嚗蝝Ｗ蔣????????單?蝔? data-en="Ignite your imagination through a sonic journey across music, visuals, brands, and stories.">隞仿璅韏琿?嚗蝝Ｗ蔣????????單?蝔?/h1>
+             <a class="home-cta-link"
+   href="#works-title"
+   data-zh="??雿??單???"
+   data-en="Start your journey"
+   onclick="document.querySelector('#works-title').scrollIntoView({ behavior: 'smooth', block: 'start' }); return false;">
+</a>
             </div>
-          
-            <div class="portfolio-grid">
-                <div class="work-card" style="background-image: url('cover01.jpg');">
-                    <div class="card-overlay"><div class="hover-content"><h3 class="card-title">在光裏的人</h3><p class="card-credit">大愛電視台 | 劇中插曲配樂</p></div></div>
+
+ 
+
+
+
+            <div class="intro-hero albums-heading-row">
+                <div class="albums-heading-copy">
+                    <h1 id="works-title" data-zh="?單?雿?" data-en="Discography"><strong>?單?雿?</strong></h1>
+                    <p data-zh="撠摩?銵? data-en="Albums &amp; Releases">撠摩?銵?/p>
                 </div>
-                <div class="work-card" style="background-image: url('cover02.jpg');">
-                    <div class="card-overlay"><div class="hover-content"><h3 class="card-title">成功補習班</h3><p class="card-credit">華納兄弟發行 | 協力編曲</p></div></div>
+                <button class="view-all-works" id="albums-view-all" type="button" aria-controls="albums-grid" aria-expanded="false">View All Works <span aria-hidden="true">??/span></button>
+            </div>
+
+           
+          
+           <div class="album-section" id="albums-grid">
+
+    <a class="album-item" href="https://music.youtube.com/channel/UC0UhQ5Zjvt8OrgHbie1Ui0A" target="_blank" rel="noopener noreferrer">
+        <img src="album_01.webp" alt="SkyCover Music 1st Album: Journey">
+
+        <div class="album-info">
+            <p>Composed & Released by SkyCover (Yu Chen Yao)</p>
+            <p>Journey</p>
+            <p>SkyCover Music 1st Album</p>
+            <p>2021 ??2024</p>
+            <span class="album-arrow">??/span>
+        </div>
+    </a>
+
+    <a class="album-item" href="https://www.pukumelo.com/" target="_blank" rel="noopener noreferrer">
+        <img src="album_02.webp" alt="Pukumelo Music 1st Album: 時葉の幸せな時間">
+
+        <div class="album-info">
+            <p>Contributing Composer</p>
+            <p>???桀兢???</p>
+            <p>Pukumelo 1st Album</p>
+            <p>M3 ??October 2026</p>
+            <span class="album-arrow">??/span>
+        </div>
+    </a>
+
+</div>
+
+
+            <div class="works-heading-row">
+                <h2 data-zh="敶梯???雿?" data-en="Score Works">敶梯???雿?</h2>
+                <button class="view-all-works" id="score-works-view-all" type="button" aria-controls="portfolio-grid" aria-expanded="false">View All Works <span aria-hidden="true">??/span></button>
+            </div>
+
+            <div class="portfolio-grid" id="portfolio-grid">
+                <div class="work-card" style="background-image: url('cover01.webp');">
+                    <div class="card-overlay"><div class="hover-content"><h3 class="card-title">????/h3><p class="card-credit">??TV????閬?| ?葉???</p></div></div>
+                </div>
+                <div class="work-card" style="background-image: url('cover02.webp');">
+                    <div class="card-overlay"><div class="hover-content"><h3 class="card-title">暽寥?憌?</h3><p class="card-credit">??TV????閬?| ?葉???</p></div></div>
                 </div>
                 <div class="work-card" style="background-image: url('cover03.jpg');">
-                    <div class="card-overlay"><div class="hover-content"><h3 class="card-title">流水迢迢</h3><p class="card-credit">騰訊視頻大劇 | 配樂製作</p></div></div>
+                    <div class="card-overlay"><div class="hover-content"><h3 class="card-title">撠??必?餌</h3><p class="card-credit">擉啗?閬 | ?葉???</p></div></div>
                 </div>
-                <div class="work-card" style="background-image: url('cover04.jpg');">
-                    <div class="card-overlay"><div class="hover-content"><h3 class="card-title">秘書俱樂部</h3><p class="card-credit">TVBS 歡樂台 | 原創配樂</p></div></div>
+                <div class="work-card" style="background-image: url('cover04.webp');">
+                    <div class="card-overlay"><div class="hover-content"><h3 class="card-title">擃桀?</h3><p class="card-credit">?餃蔣?? | ?單?蝮賜 / 雿</p></div></div>
                 </div>
-                <div class="work-card" style="background-image: url('cover05.jpg');">
-                    <div class="card-overlay"><div class="hover-content"><h3 class="card-title">阿叔</h3><p class="card-credit">華視/東森電視 | 電視劇配樂</p></div></div>
+                <div class="work-card" style="background-image: url('cover05.webp');">
+                    <div class="card-overlay"><div class="hover-content"><h3 class="card-title">???/h3><p class="card-credit">?餃蔣?? | ?單?蝮賜 / 雿</p></div></div>
                 </div>
                 <div class="work-card" style="background-image: url('cover06.jpg');">
-                    <div class="card-overlay"><div class="hover-content"><h3 class="card-title">放手阿官</h3><p class="card-credit">大愛劇場 | 劇中插曲編曲</p></div></div>
+                    <div class="card-overlay"><div class="hover-content"><h3 class="card-title">SKYMAKER</h3><p class="card-credit">?撠? | ?單?蝮賜 / 雿</p></div></div>
                 </div>
-                <div class="work-card" style="background-image: url('cover07.jpg');">
-                    <div class="card-overlay"><div class="hover-content"><h3 class="card-title">SKYMAKER</h3><p class="card-credit">動畫專案 | 音樂總監 / 作曲</p></div></div>
+                <div class="work-card" style="background-image: url('cover07.webp');">
+                    <div class="card-overlay"><div class="hover-content"><h3 class="card-title">閫貊１?銝??/h3><p class="card-credit">頝典????? | ???單?鋆賭?</p></div></div>
                 </div>
-                <div class="work-card" style="background-image: url('cover08.jpg');">
-                    <div class="card-overlay"><div class="hover-content"><h3 class="card-title">在光裏的人</h3><p class="card-credit">大愛電視台 | 劇中插曲配樂</p></div></div>
-                </div>
-                <div class="work-card" style="background-image: url('cover09.jpg');">
-                    <div class="card-overlay"><div class="hover-content"><h3 class="card-title">在光裏的人</h3><p class="card-credit">大愛電視台 | 劇中插曲配樂</p></div></div>
-                </div>
-                <div class="work-card" style="background-image: url('cover10.jpg');">
-                    <div class="card-overlay"><div class="hover-content"><h3 class="card-title">在光裏的人</h3><p class="card-credit">大愛電視台 | 劇中插曲配樂</p></div></div>
-                </div>
-                <div class="work-card" style="background-image: url('cover11.jpg');">
-                    <div class="card-overlay"><div class="hover-content"><h3 class="card-title">在光裏的人</h3><p class="card-credit">大愛電視台 | 劇中插曲配樂</p></div></div>
-                </div>
-                <div class="work-card" style="background-image: url('cover12.jpg');">
-                    <div class="card-overlay"><div class="hover-content"><h3 class="card-title">在光裏的人</h3><p class="card-credit">大愛電視台 | 劇中插曲配樂</p></div></div>
-                </div>
+                
+                
+            
             </div>
         </section>
 
 
-        <section id="section-portfolio" class="page-section">
+       <section id="section-music" class="page-section music-section">
 
-    <div class="intro-hero">
-        <h1>Portfolio</h1>
-        <p>Selected Works & Projects</p>
-    </div>
+  <p class="music-notice" data-zh="甇文???..?賢極銝?..?游??單?雿????閮??貊??湔嚗隢?敺?.." data-en="This area is currently under construction. More music and updates coming soon. Stay tuned.">蝬脩?撱箇蔭銝哨??游??單?雿????閮??貊??湔嚗隢?敺?/p>
+  <div class="intro-hero">
+    <h1 data-zh="?單?" data-en="Music">?單?</h1>
+    <p data-zh="蝎暸雿???獢? data-en="Selected Works &amp; Projects">
+        蝎暸雿???獢?
+    </p>
+</div>
   <iframe
     width="100%"
     height="600"
@@ -1675,30 +2968,30 @@ nav a.active-nav {
   </iframe>
 
 </section>
-        <section id="section-about" class="page-section" aria-labelledby="about-name-zh">
+        <section id="section-about" class="page-section about-page-section" aria-labelledby="about-name-zh">
             <div class="about-content">
 
 
     <div id="about-zh" class="about-copy" lang="zh-TW">
-                    <h1 id="about-name-zh" class="about-name">余辰曜</h1>
-                    <p class="about-identity">作曲家｜鋼琴家｜聲音設計</p>
+                    <h1 id="about-name-zh" class="about-name">雿劓??/h1>
+                    <p class="about-identity">雿摰塚??潛摰塚??脤閮剛?</p>
 
 <div class="about-slideshow">
 
     <div class="slide-viewport">
 
         <button class="slide-arrow slide-prev" type="button" aria-label="Previous image">
-            ←
+            ??
         </button>
 
         <div class="slide-track">
-            <img src="about_01.jpg" alt="" class="about-slide">
-            <img src="about_02.jpg" alt="" class="about-slide">
-            <img src="about_03.jpg" alt="" class="about-slide">
+            <img src="about_01.webp" alt="" class="about-slide">
+            <img src="about_02.webp" alt="" class="about-slide">
+            <img src="about_03.webp" alt="" class="about-slide">
         </div>
 
         <button class="slide-arrow slide-next" type="button" aria-label="Next image">
-            →
+            ??
         </button>
 
     </div>
@@ -1711,129 +3004,129 @@ nav a.active-nav {
     
 
                     <div class="about-section">
-                        <h2>個人簡介</h2>
-                        <p>余辰曜（藝名為 SkyCover）是一位活躍於影視、動畫、遊戲與新媒體展演的跨界配樂家與鋼琴家，畢業於國立臺北藝術大學音樂系鋼琴演奏組，具備深厚的古典音樂底蘊與國際視野，曾赴上海音樂學院與日本武藏野音樂大學交流演出，並獲 WOCMAT 國際青年電子音樂創作獎肯定。其作品涵蓋商業電視、獨立遊戲、動畫與電影，其中《Sky Maker》入選 SPARK ANIMATION 2026，作品亦曾入圍金穗獎、布宜諾斯艾利斯國際影展（BUEIFF）等國際影展。</p>
-                        <p>他的創作版圖涵蓋商業電視連續劇、獨立遊戲與跨域互動藝術；在幕後配樂製作上，他擅長將管弦樂編制與現代電子合成聲響融合並刻畫影像張力；同時，他也憑藉扎實的主修底子，提供高品質的鋼琴編曲與錄音實戰能力。他持續以多元的聲響語彙，為各類視覺載體提供專業且高執行力的音樂解決方案。</p>
+                        <h2>?犖蝪∩?</h2>
+                        <p>雿劓??????SkyCover嚗銝雿暑頨敶梯????怒??脰??啣?擃?瞍?頝函???摰嗉??潛摰塚??Ｘ平?澆?蝡??銵之摮賊璅頂?潛瞍?蝯??瑕?瘛勗???賊璅?????閬?嚗韏港?瘚琿璅飛?Ｚ??交甇西??璅之摮訾漱瘚??綽?銝衣 WOCMAT ???僑?餃??單??萎??摰雿?瘨菔??平?餉??蝡??脯??怨??餃蔣嚗銝准ky Maker???SPARK ANIMATION 2026嚗??漲?曉??蝛???摰姥?航?拇??敶勗?嚗UEIFF嚗???敶勗???/p>
+                        <p>隞??萎???瘨菔??平?餉?????蝡??脰?頝典?鈭???嚗撟???鋆賭?銝?隞??瑕?蝞∪憐璅楊?嗉??曆誨?餃????脤??銝血?怠蔣?撐????銋???撖衣?銝颱耨摨?嚗?靘??釭??渡楊?脰??撖行?賢?????隞亙????脤隤?嚗??閬死頛???撠平銝??瑁????單?閫?捱?寞???/p>
                     </div>
 
                     <div class="about-section">
-                        <h2>創作領域</h2>
+                        <h2>?萎???</h2>
                         <ul class="about-list">
-                            <li>影視配樂</li><li>動畫配樂</li><li>遊戲聲音</li><li>互動媒體與電子聲音設計</li><li>管弦寫作</li><li>樂譜編排與製作</li><li>鋼琴編曲與錄音</li><li>鋼琴演奏與研究、教學</li>
+                            <li>敶梯???</li><li>???</li><li>??脤</li><li>鈭?慦??摮?唾身閮?/li><li>蝞∪憐撖思?</li><li>璅?蝺冽??ˊ雿?/li><li>?潛蝺冽????/li><li>?潛瞍???蝛嗚?摮?/li>
                         </ul>
                     </div>
 
                         <div class="about-section">
                             
-                        <h2>創作軟體</h2>
+                        <h2>?萎?頠?</h2>
                         <ul class="about-list">
                             <li>Cubase Pro</li><li>Dorico</li><li>Adobe Audition</li><li>CapCut Pro</li>
                         </ul>
                     </div>
 
                     <div class="about-section">
-                        <h2>學歷</h2>
+                        <h2>摮豢風</h2>
                         <ul class="recognition-list">
-                            <li>國立臺北藝術大學 音樂系鋼琴演奏組 (碩士)</li>
-                            <li>中國上海音樂學院 (交流生)</li>
-                            <li>國立臺北藝術大學 音樂系（學士）</li>
+                            <li>???箏???憭批飛 ?單?蝟駁?湔?憟? (蝣拙ㄚ)</li>
+                            <li>銝剖?銝絲?單?摮賊 (鈭斗???</li>
+                            <li>???箏???憭批飛 ?單?蝟鳴?摮詨ㄚ嚗?/li>
                         </ul>
                     </div>
 
                    <div class="about-section">
-    <h2>精選經歷</h2>
+    <h2>蝎暸蝬風</h2>
     <ul class="recognition-list">
-        <li>2026 第 48 屆金穗獎 (Golden Harvest Awards)：入圍作品《髮圈》（電影配樂設計）</li>
-        <li>2026 《Sky Maker》入選 SPARK ANIMATION 2026</li>
-        <li>2025 阿根廷布宜諾斯艾利斯國際影展 (BUEIFF)：入圍作品《朗鐵板》（電影配樂設計）</li>
-        <li>2024 臺中國家歌劇院《夏日放／FUN 時光》#PLAYGROUND 音像藝術徵件：第二名</li>
-        <li>2024 放視大賞 (Vision Get Wild)－智冠科技數位音樂大賞：數位音樂組－銅賞</li>
-        <li>2024 上海第二屆「元創未來」元宇宙設計創意大賽：「元音聲律」元宇宙音樂創作——優秀獎</li>
-        <li>2024 關渡國際動畫節 (KuanDu International Animation Festival)：入圍作品《潮起潮落》（動畫配樂設計）</li>
-        <li>2022 《My Little Dress》動畫配樂：入圍金光短片影展、智利國際動畫影展、巴黎國際動畫影展等多項國際獎項</li>
-        <li>2019 WOCMAT 國際青年電子音樂創作獎 (International Youth Electronic Music Creation Award)：佳作</li>
+        <li>2026 蝚?48 撅?蝛? (Golden Harvest Awards)嚗???垣???餃蔣??閮剛?嚗?/li>
+        <li>2026 ?ky Maker???SPARK ANIMATION 2026</li>
+        <li>2025 ?踵撱瑕?摰姥?航?拇??敶勗? (BUEIFF)嚗?????菜???餃蔣??閮剛?嚗?/li>
+        <li>2024 ?箔葉?振甇??Ｕ??交嚗UN ????PLAYGROUND ?喳???敺萎辣嚗洵鈭?</li>
+        <li>2024 ?曇?憭扯? (Vision Get Wild)嚗????訾??單?憭扯?嚗雿璅?嚗?鞈?/li>
+        <li>2024 銝絲蝚砌?撅??菜靘?摰?閮剛??菜?憭扯魚嚗??唾敺?摰??單??萎??蝘??/li>
+        <li>2024 ?腹???蝭 (KuanDu International Animation Festival)嚗???蔭韏瑟蔭?賬????閮剛?嚗?/li>
+        <li>2022 ?y Little Dress???恍?璅??亙????剔?敶勗???拙????怠蔣撅毀暺????怠蔣撅?憭?????</li>
+        <li>2019 WOCMAT ???僑?餃??單??萎???(International Youth Electronic Music Creation Award)嚗蔔雿?/li>
     </ul>
 </div>
 
 
 <div class="about-section">
-    <h2>精選經歷</h2>
+    <h2>蝎暸蝬風</h2>
     <ul class="recognition-list">
-        <li>2026 第 48 屆金穗獎 (Golden Harvest Awards)：入圍作品《髮圈》（電影配樂設計）</li>
-        <li>2026 《Sky Maker》入選 SPARK ANIMATION 2026</li>
-        <li>2025 阿根廷布宜諾斯艾利斯國際影展 (BUEIFF)：入圍作品《朗鐵板》（電影配樂設計）</li>
-        <li>2024 臺中國家歌劇院《夏日放／FUN 時光》#PLAYGROUND 音像藝術徵件：第二名</li>
-        <li>2024 放視大賞 (Vision Get Wild)－智冠科技數位音樂大賞：數位音樂組－銅賞</li>
-        <li>2024 關渡國際動畫節 (KuanDu International Animation Festival)：入圍作品《潮起潮落》（動畫配樂設計）</li>
-        <li>2019 WOCMAT 國際青年電子音樂創作獎 (International Youth Electronic Music Creation Award)：佳作</li>
+        <li>2026 蝚?48 撅?蝛? (Golden Harvest Awards)嚗???垣???餃蔣??閮剛?嚗?/li>
+        <li>2026 ?ky Maker???SPARK ANIMATION 2026</li>
+        <li>2025 ?踵撱瑕?摰姥?航?拇??敶勗? (BUEIFF)嚗?????菜???餃蔣??閮剛?嚗?/li>
+        <li>2024 ?箔葉?振甇??Ｕ??交嚗UN ????PLAYGROUND ?喳???敺萎辣嚗洵鈭?</li>
+        <li>2024 ?曇?憭扯? (Vision Get Wild)嚗????訾??單?憭扯?嚗雿璅?嚗?鞈?/li>
+        <li>2024 ?腹???蝭 (KuanDu International Animation Festival)嚗???蔭韏瑟蔭?賬????閮剛?嚗?/li>
+        <li>2019 WOCMAT ???僑?餃??單??萎???(International Youth Electronic Music Creation Award)嚗蔔雿?/li>
     </ul>
 </div>
 
 
 <div class="about-section">
 
-    <h3>劇場與展演聲響設計</h3>
+    <h3>???瞍?輯身閮?/h3>
     <ul class="recognition-list">
-        <li>2026 呂紹可 x 李宜樺 聯合畢業製作《觸碰的那一刻》：音樂、聲音設計與製作</li>
-        <li>2025 小水滴創藝劇團《踅》臺語親子音樂劇：音樂設計與演出</li>
-        <li>2024 臺中國家歌劇院 夏日放／FUN 時光—2023-2024 #PLAYGROUND 音像藝術徵件青年創作計畫：《夏日幻夢》新媒體影像音樂製作</li>
-        <li>2023 新北市美術館《共創之光－建築雷射聲光秀》：音樂設計</li>
+        <li>2026 ?晶??x ??璅??臬??Ｘ平鋆賭??孛蝣啁?????颯??單???唾身閮?鋆賭?</li>
+        <li>2025 撠偌皛游?????隤扛摮璅?嚗璅身閮?瞍</li>
+        <li>2024 ?箔葉?振甇???憭?橘?FUN ????023-2024 #PLAYGROUND ?喳???敺萎辣?僑?萎?閮嚗??亙劂憭Ｕ慦?敶勗??單?鋆賭?</li>
+        <li>2023 ?啣?撣?銵尹??萎???撱箇??瑕??脣?蝘???單?閮剛?</li>
     </ul>
 
-    <h3>電影與影視配樂</h3>
+    <h3>?餃蔣?蔣閬?璅?/h3>
     <ul class="recognition-list">
-        <li>2026 騰訊視頻：少俠逆襲攻略：配樂參與</li>
-        <li>2025 電影《朗鐵板》：配樂設計</li>
-        <li>2024 大愛電視台《在光裡的人》：配樂參與</li>
-        <li>2024 TVBS《秘書俱樂部》：配樂參與</li>
-        <li>2024 公視學生劇展《髮圈》：配樂設計</li>
+        <li>2026 擉啗?閬嚗?靽必?餌嚗?璅???/li>
+        <li>2025 ?餃蔣???菜????閮剛?</li>
+        <li>2024 憭扳??餉??啜?ㄐ?犖??????</li>
+        <li>2024 TVBS???訾膨璅??????</li>
+        <li>2024 ?祈?摮貊????垣????閮剛?</li>
     </ul>
 
-    <h3>動畫配樂</h3>
+    <h3>???</h3>
     <ul class="recognition-list">
-        <li>2026 《Sky Maker》動畫：音樂製作</li>
-        <li>2025 北藝大動畫學系《十月裡的妙妙子》動畫：音樂音效</li>
-        <li>2024 北藝大動畫學系《潮起潮落》動畫：音樂音效</li>
-        <li>2023 北藝大動畫學系《My Little Hedgehog》動畫：音樂音效</li>
+        <li>2026 ?ky Maker???恬??單?鋆賭?</li>
+        <li>2025 ??憭批??怠飛蝟颯??ㄐ??憒????恬??單??單?</li>
+        <li>2024 ??憭批??怠飛蝟颯蔭韏瑟蔭?賬??恬??單??單?</li>
+        <li>2023 ??憭批??怠飛蝟颯y Little Hedgehog???恬??單??單?</li>
     </ul>
 
-    <h3>遊戲配樂</h3>
+    <h3>???</h3>
     <ul class="recognition-list">
-        <li>2026 C4Cat Music Open Submission 2026：單曲《Homeward Memories》入選音樂節奏遊戲《Dynamix Universe》之遊戲音樂選曲</li>
-        <li>2024 莉莉絲遊戲《眾神派對》視覺 EP 音樂製作：《玄牝的內心》</li>
-        <li>2023 漢創國際音樂《陽春白雪》：音樂節奏遊戲樂曲提供</li>
-        <li>2022 漢創國際音樂《Gadvia》：音樂節奏遊戲樂曲提供</li>
+        <li>2026 C4Cat Music Open Submission 2026嚗?脯omeward Memories??賊璅?憟??脯ynamix Universe????單??豢</li>
+        <li>2024 ??蝯脤??脯蟡晷撠?閬?EP ?單?鋆賭?嚗????批???/li>
+        <li>2023 瞍Ｗ???單???亦?芥??單?蝭憟??脫??脫?靘?/li>
+        <li>2022 瞍Ｗ???單??advia???單?蝭憟??脫??脫?靘?/li>
     </ul>
 
-    <h3>鋼琴演奏與錄音</h3>
+    <h3>?潛瞍?????/h3>
     <ul class="recognition-list">
-        <li>2026 北藝星勢力《黑鍵與白鍵的絮語》（於台北南港生技園區多功能廳演出）：鋼琴獨奏</li>
-        <li>2026 南國國際生活節：《Kawo》演出鍵盤手</li>
-        <li>2025 石滾 / 始主步巢：Violin Sonata, Op.12 古典音樂專輯錄製</li>
-        <li>2023 郭真榕《時間之流》專輯：鋼琴演奏錄音</li>
+        <li>2026 ??????菔??賡?筑隤??澆??皜舐????憭??賢輒瞍嚗??潛?典?</li>
+        <li>2026 ?????暑蝭嚗awo???粹?斗?</li>
+        <li>2025 ?單遝 / 憪蜓甇亙楷嚗iolin Sonata, Op.12 ?文?單?撠摩?ˊ</li>
+        <li>2023 ?剔?璁???瘚?頛荔??潛瞍??</li>
     </ul>
 
-    <h3>學術交流</h3>
+    <h3>摮貉?鈭斗?</h3>
     <ul class="recognition-list">
-        <li>2025 參與 NSO 以樂會客 2.0 國際作曲家工作坊</li>
-        <li>2025 赴日本武藏野音樂大學鋼琴系交流，於該校布拉姆斯音樂廳 (Concert Hall) 演出，並參與鋼琴家永岡信幸教授大師班</li>
-        <li>2024 以研究生身份至上海音樂學院鋼琴系交流一年，師從鋼琴家孫韵教授</li>
-        <li>2024 於上海「兜作音樂 (Dozo Music)」擔任實習生，參與錄音室錄音、音樂製作協助與交流</li>
+        <li>2025 ?? NSO 隞交??恥 2.0 ??雿摰嗅極雿?</li>
+        <li>2025 韏湔?祆郎???單?憭批飛?潛蝟颱漱瘚??潸府?∪????舫璅輒 (Concert Hall) 瞍嚗蒂???潛摰嗆偶撗∩縑撟豢??之撣怎</li>
+        <li>2024 隞亦?蝛嗥?頨思遢?喃?瘚琿璅飛?ａ?渡頂鈭斗?銝撟湛?撣怠??潛摰嗅重?菜???/li>
+        <li>2024 ?潔?瘚瑯?雿璅?(Dozo Music)??隞餃祕蝧?嚗????喳恕??璅ˊ雿??抵?鈭斗?</li>
     </ul>
 
 </div>
 <div class="more-experience-button">
-    <a href="https://sites.google.com/view/yu-chen-yao/portfolio"
+    <a href="https://sites.google.com/view/musicyu/portfolio"
        target="_blank"
        rel="noopener"
-       data-zh="更多資訊・經歷請按此"
+       data-zh="?游?鞈??餌?甇瑁??迨"
        data-en="More Information &amp; Experience">
         More Information &amp; Experience
     </a>
 </div>
-                    <div class="about-section contact-section">
+                    <div id="contact-section" class="about-section contact-section">
 
-    <h2>聯絡</h2>
+    <h2>?舐窗</h2>
 
     <form class="contact-form" action="https://formspree.io/f/xjykwleb"
     method="POST">
@@ -1842,24 +3135,24 @@ nav a.active-nav {
         <input
             type="text"
             name="name"
-            placeholder="姓名*"
+            placeholder="憪?*"
             required
         >
 
         <input
             type="email"
             name="email"
-            placeholder="電子郵件*"
+            placeholder="?餃??萎辣*"
             required
         >
 
         <textarea
             name="message"
-            placeholder="請在此載入您的想法..."
+            placeholder="隢甇方??交?瘜?.."
             required
         ></textarea>
 
-        <button type="submit">送出</button>
+        <button type="submit">?</button>
 
     </form>
 
@@ -1875,17 +3168,17 @@ nav a.active-nav {
         <div class="slide-viewport">
 
             <button class="slide-arrow slide-prev" type="button" aria-label="Previous image">
-                ←
+                ??
             </button>
 
             <div class="slide-track">
-                <img src="about_01.jpg" alt="" class="about-slide">
-                <img src="about_02.jpg" alt="" class="about-slide">
-                <img src="about_03.jpg" alt="" class="about-slide">
+                <img src="about_01.webp" alt="" class="about-slide">
+                <img src="about_02.webp" alt="" class="about-slide">
+                <img src="about_03.webp" alt="" class="about-slide">
             </div>
 
             <button class="slide-arrow slide-next" type="button" aria-label="Next image">
-                →
+                ??
             </button>
 
         </div>
@@ -1896,7 +3189,7 @@ nav a.active-nav {
         <h2>Biography</h2>
 
     <p>
-        Chen-Yao Yu (artist name: SkyCover) is a composer and pianist active across film, television, animation, game audio, and new media performance. He graduated from the Piano Performance program at Taipei National University of the Arts, where he developed a strong foundation in classical music alongside an international perspective. He has participated in exchange performances at the Shanghai Conservatory of Music and Musashino Academia Musicae in Japan, and received recognition from the WOCMAT International Young Computer Music Composer Award.
+        Chen-Yao Yu (artist name: SkyCover) is a composer and pianist working across film, television, animation, game audio, and new media. He graduated from the Music and Piano Performance program at TNUA(Taipei National University of the Arts), developing a strong foundation in classical music and an international perspective. He has participated in exchange performances at the Shanghai Conservatory of Music and Musashino Academia Musicae in Japan, and received recognition from the WOCMAT International Young Computer Music Composer Award.
     </p>
 
     <p>
@@ -1907,7 +3200,7 @@ nav a.active-nav {
 
                         <h2>Selected Experience</h2>
                        <div class="about-section">
-    <h2>EXPERTISE</h2>
+    
 
 <div class="expertise-grid">
 
@@ -1950,52 +3243,55 @@ nav a.active-nav {
 
 </div>
 </div>
-                    <div class="about-section">
-                            
-                        <h2>Tools</h2>
-                        <ul class="about-list">
-                            <li>Cubase Pro</li><li>Dorico</li><li>Adobe Audition</li><li>CapCut Pro</li>
-                        </ul>
+                    <div class="about-section tools-section">
+    <h2>Tools</h2>
+                      <div class="about-section">
+                     <div>
+                        <p>Cubase Pro</p>
+                        <p>Dorico</p>
+                        <p>Adobe Audition</p>
+                        <p>CapCut Pro</p>
                     </div>
+                </div>
+                    
                             
 
                     <div class="about-section">
                         <h2>Education</h2>
                         <ul class="recognition-list">
-                            <li>Taipei National University of the Arts — Piano Performance (Master's Degree)</li>
-                            <li>Shanghai Conservatory of Music — Piano Performance (Exchange Student)</li>
-                            <li>Taipei National University of the Arts — Music Department (Bachelor's Degree)</li>
+                            <li>Taipei National University of the Arts ??Piano Performance (Master's Degree)</li>
+                            <li>Shanghai Conservatory of Music ??Piano Performance (Exchange Student)</li>
+                            <li>Taipei National University of the Arts ??Music Department (Bachelor's Degree)</li>
                         </ul>
                     </div>
 
                     <div class="about-section">
                        <h2>Selected Achievements</h2>
 <ul class="recognition-list">
-    <li>2026 48th Golden Harvest Awards: Nominated Work, 《髮圈》 (Film Scoring)</li>
-    <li>2026 《Sky Maker》: Official Selection, SPARK ANIMATION 2026</li>
-    <li>2025 Buenos Aires International Film Festival (BUEIFF), Argentina: Nominated Work, 《朗鐵板》 (Film Scoring)</li>
-    <li>2024 National Taichung Theater “Summer Fun Time” #PLAYGROUND Audiovisual Art Competition: 2nd Place</li>
-    <li>2024 Vision Get Wild – CATCHPLAY Digital Music Awards: Bronze Award, Digital Music Category</li>
-    <li>2024 2nd “Meta-Creation Future” Metaverse Design & Creative Competition, Shanghai: “Yuan Yin Sheng Lu” Metaverse Music Composition – Excellence Award</li>
-    <li>2024 KuanDu International Animation Festival: Nominated Work, 《潮起潮落》 (Animation Scoring)</li>
-    <li>2022 《My Little Dress》 Animation Score: Selected for multiple international film festivals, including the Golden Harvest Short Film Festival, Chile International Animation Festival, and Paris International Animation Festival</li>
+    <li>2026 48th Golden Harvest Awards: Nominated Work, ?垣??(Film Scoring)</li>
+    <li>2026 ?ky Maker?? Official Selection, SPARK ANIMATION 2026</li>
+    <li>2025 Buenos Aires International Film Festival (BUEIFF), Argentina: Nominated Work, ???菜??(Film Scoring)</li>
+    <li>2024 National Taichung Theater ?ummer Fun Time??#PLAYGROUND Audiovisual Art Competition: 2nd Place</li>
+    <li>2024 Vision Get Wild ??CATCHPLAY Digital Music Awards: Bronze Award, Digital Music Category</li>
+    <li>2024 2nd ?eta-Creation Future??Metaverse Design & Creative Competition, Shanghai: ?uan Yin Sheng Lu??Metaverse Music Composition ??Excellence Award</li>
+    <li>2024 KuanDu International Animation Festival: Nominated Work, ?蔭韏瑟蔭?賬?(Animation Scoring)</li>
+    <li>2022 ?y Little Dress??Animation Score: Selected for multiple international film festivals, including the Golden Harvest Short Film Festival, Chile International Animation Festival, and Paris International Animation Festival</li>
     <li>2019 WOCMAT International Youth Electronic Music Creation Award: Honorable Mention</li>
 </ul>
 
 <div class="more-experience-button">
-    <a href="https://sites.google.com/view/yu-chen-yao/portfolio"
+    <a href="https://sites.google.com/view/musicyu/portfolio"
        target="_blank"
        rel="noopener"
-       data-zh="更多資訊・經歷請按此"
+       data-zh="?游?鞈??餌?甇瑁??迨"
        data-en="More Information &amp; Experience">
-        更多資訊・經歷請按此
+        ?游?鞈??餌?甇瑁??迨
     </a>
 </div>
 
 
 
-                    <div class="about-section">
-                      
+                    <div id="contact-section-en" class="about-section contact-section">
 
     <h2>CONTACT</h2>
 
@@ -2032,12 +3328,64 @@ nav a.active-nav {
             </div>
         </section>
 
-      
-    </main>
+<div class="contact-marquee">
+    <div class="contact-marquee-track">
 
-    <p style="color: #000000; text-align: center; font-family: Geist, sans-serif;">Or you can email me at <a href="mailto:skycovermusic@email.com">skycovermusic@email.com</a></p>
+        <div class="contact-marquee-group">
+            <span>Feel Free to Contact me</span>
+            <a href="mailto:skycovermusic@gmail.com" class="marquee-button">Contact</a>
+        </div>
+
+        <div class="contact-marquee-group">
+            <span>Feel Free to Contact me</span>
+            <a href="mailto:skycovermusic@gmail.com" class="marquee-button">Contact</a>
+        </div>
+
+        <div class="contact-marquee-group">
+            <span>Feel Free to Contact me</span>
+            <a href="mailto:skycovermusic@gmail.com" class="marquee-button">Contact</a>
+        </div>
+
+        <div class="contact-marquee-group">
+            <span>Feel Free to Contact me</span>
+            <a href="mailto:skycovermusic@gmail.com" class="marquee-button">Contact</a>
+        </div>
+
+        <div class="contact-marquee-group">
+            <span>Feel Free to Contact me</span>
+            <a href="mailto:skycovermusic@gmail.com" class="marquee-button">Contact</a>
+        </div>
+
+        <div class="contact-marquee-group">
+            <span>Feel Free to Contact me</span>
+            <a href="mailto:skycovermusic@gmail.com" class="marquee-button">Contact</a>
+        </div>
+
+    </div>
+</div>
+</div>
+
+<div class="contact-info">
+    <p
+        data-zh="?單?蝺冽??璅ˊ雿?霅ˊ雿誑??雿?瘙??舐窗甇支縑蝞?"
+        data-en="For music arrangement, film scoring, music engraving, and collaboration inquiries, please contact:"
+    >
+        ?單?蝺冽??璅ˊ雿?霅ˊ雿誑??雿?瘙??舐窗甇支縑蝞?
+    </p>
+
+    <a
+        href="mailto:skycovermusic@gmail.com"
+        data-zh="skycovermusic@gmail.com"
+        data-en="skycovermusic@gmail.com"
+    >
+        skycovermusic@gmail.com
+    </a>
+</div>
+
+
+
 <button class="back-to-top" id="backToTop" aria-label="Back to top">
-       ⮝
+       漅?
 </button>
     <footer>
      
@@ -2049,6 +3397,17 @@ nav a.active-nav {
             <a href="https://www.instagram.com/__chenyao__/" target="_blank" rel="noopener" aria-label="Instagram">
                 <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path></svg>
             </a>
+<a href="https://www.facebook.com/chris.yu.165237/"
+   target="_blank"
+   rel="noopener"
+   aria-label="Facebook"
+   class="facebook">
+    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+        <path d="M279.14 288l14.22-92.66h-88.91V127.2c0-25.35 12.42-50.06 52.24-50.06H297V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/>
+    </svg>
+</a>
+
+
             <a href="https://soundcloud.com/chris-yu-404190717/popular-tracks" target="_blank" rel="noopener" aria-label="SoundCloud">
                 <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M111.4 256.3c-3.6 0-6.4 2.8-6.9 6.5L96 339.1l8.5 74.4c.5 3.7 3.3 6.5 6.9 6.5 3.5 0 6.4-2.8 6.9-6.5l9.7-74.4-9.7-76.3c-.5-3.7-3.4-6.5-6.9-6.5zm-42.6 24.9c-.5-3.4-3-5.9-6.4-5.9-3.5 0-6.1 2.5-6.5 5.9L48 339l7.9 55.9c.4 3.4 3 5.9 6.5 5.9 3.4 0 5.9-2.5 6.4-5.9l9-55.9-9-57.8zm-42.7 22.8c-.5-2.9-2.7-5-5.7-5-3 0-5.2 2.1-5.6 5L8 339l6.8 30.9c.4 2.9 2.6 5 5.6 5 3 0 5.2-2.1 5.7-5l7.9-30.9-7.9-33zm127.7-88.9c-4.3 0-7.6 3.3-8.1 7.7L136 339l9.7 92.3c.4 4.4 3.8 7.7 8.1 7.7s7.6-3.3 8.1-7.7l11-92.3-11-93.8c-.5-4.3-3.8-7.6-8.1-7.6zm44.3-24.4c-4.9 0-8.8 3.9-9.2 8.8L172 339l9.5 87.6c.4 4.9 4.3 8.7 9.2 8.7 4.8 0 8.8-3.8 9.2-8.7L209 339l-9.1-105.2c-.4-4.9-4.4-8.8-9.2-8.8zM223.7 78c-6.7 0-12.1 5.4-12.4 12.1L200 339l11.3 129.5c.3 6.7 5.7 12.1 12.4 12.1s12.1-5.4 12.4-12.1L248 339 236.1 90.1c-.3-6.7-5.7-12.1-12.4-12.1zM274 339l10.6 124.3c.3 7.1 6.1 12.7 13.3 12.7 7.2 0 13-5.6 13.3-12.7L322 339 310.9 90.6c-.3-7.1-6.1-12.7-13.3-12.7-7.2 0-13 5.6-13.3 12.7L274 339zm305.1-160.8c-8-6.6-18.2-10.6-29.3-10.6-4.4 0-8.7.6-12.8 1.8C529.2 129.4 495.8 96 456 96c-19.9 0-38 8.3-50.9 21.5-4.9-7.4-11.3-13.7-18.8-18.5V447h194.4c40.5 0 73.3-32.8 73.3-73.3 0-40.5-32.8-73.3-73.3-73.3-2.1 0-4.2.1-6.2.3z"></path></svg>
             </a>
@@ -2075,10 +3434,10 @@ nav a.active-nav {
         </div>
     </div>
     <p class="footer-name">Yu Chen Yao</p>
-    <p data-zh="作曲家｜鋼琴家｜聲音設計" data-en="Composer / Pianist / Sound Designer">作曲家｜鋼琴家｜聲音設計</p>
-    <p data-zh="網站設計與開發: Yu Chen Yao" data-en="Web Design & Development: Yu Chen Yao">網站設計與開發: Yu Chen Yao</p>
+    <p data-zh="雿摰塚??潛摰塚??脤閮剛?" data-en="Composer / Pianist / Sound Designer">雿摰塚??潛摰塚??脤閮剛?</p>
+    <p data-zh="蝬脩?閮剛????? Yu Chen Yao(瘚芸?頦Ｙ?)" data-en="Web Design & Development: Yu Chen Yao">蝬脩?閮剛????? Yu Chen Yao(瘚芸?頦Ｙ?)</p>
 
-       <p>© 2026 Yu Chen Yao. All rights reserved. Unauthorized reproduction or distribution of this work is prohibited.</p>
+       <p>穢 2026 Yu Chen Yao. All rights reserved. Unauthorized reproduction or distribution of this work is prohibited.</p>
 </footer>
 
     <script>
@@ -2135,7 +3494,7 @@ function prevSlide() {
     currentSlide = (currentSlide - 1 + 3) % 3;
     updateSlideshow();
 }
-        let currentLanguage = "zh";
+        let currentLanguage = "en";
 
         function showSection(section, options = {}) {
             const sectionName = ["home", "portfolio", "about"].includes(section) ? section : "home";
@@ -2170,6 +3529,121 @@ function prevSlide() {
            showSection(["home", "portfolio", "about"].includes(section) ? section : "home", { scroll: false });
         }
 
+        let heroTypewriterTimer = null;
+        let heroTypewriterRun = 0;
+        let heroTypewriterComplete = false;
+        let heroChineseTypewriterComplete = false;
+
+        function updateHeroTitleLanguage(language) {
+            const title = document.querySelector(".home-cta h1");
+            const cta = document.querySelector(".home-cta-link");
+            if (!title || !cta) return;
+
+            clearTimeout(heroTypewriterTimer);
+            heroTypewriterTimer = null;
+            heroTypewriterRun++;
+
+            if (language !== "en") {
+                const text = title.dataset.zh;
+                if (heroChineseTypewriterComplete || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+                    title.classList.remove("is-typing");
+                    title.removeAttribute("aria-label");
+                    title.textContent = text;
+                    cta.classList.remove("is-pending", "is-entering");
+                    heroChineseTypewriterComplete = true;
+                    return;
+                }
+
+                const run = heroTypewriterRun;
+                const measure = document.createElement("span");
+                const output = document.createElement("span");
+                measure.className = "hero-title-measure";
+                measure.textContent = text;
+                measure.setAttribute("aria-hidden", "true");
+                output.className = "hero-title-output";
+                output.setAttribute("aria-hidden", "true");
+                title.classList.add("is-typing");
+                title.setAttribute("aria-label", text);
+                title.replaceChildren(measure, output);
+                cta.classList.remove("is-entering");
+                cta.classList.add("is-pending");
+
+                const characters = Array.from(text);
+                let index = 0;
+                function typeNextChineseCharacter() {
+                    if (run !== heroTypewriterRun || currentLanguage !== "zh") return;
+
+                    index++;
+                    output.textContent = characters.slice(0, index).join("");
+                    if (index < characters.length) {
+                        heroTypewriterTimer = setTimeout(typeNextChineseCharacter, 44);
+                        return;
+                    }
+
+                    heroChineseTypewriterComplete = true;
+                    title.classList.remove("is-typing");
+                    title.removeAttribute("aria-label");
+                    title.textContent = text;
+                    heroTypewriterTimer = setTimeout(function () {
+                        if (run !== heroTypewriterRun || currentLanguage !== "zh") return;
+                        cta.classList.remove("is-pending");
+                        cta.classList.add("is-entering");
+                    }, 250);
+                }
+
+                heroTypewriterTimer = setTimeout(typeNextChineseCharacter, 44);
+                return;
+            }
+
+            const text = title.dataset.en;
+            if (heroTypewriterComplete || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+                title.classList.remove("is-typing");
+                title.removeAttribute("aria-label");
+                title.textContent = text;
+                cta.classList.remove("is-pending", "is-entering");
+                heroTypewriterComplete = true;
+                return;
+            }
+
+            const run = heroTypewriterRun;
+            const measure = document.createElement("span");
+            const output = document.createElement("span");
+            measure.className = "hero-title-measure";
+            measure.textContent = text;
+            measure.setAttribute("aria-hidden", "true");
+            output.className = "hero-title-output";
+            output.setAttribute("aria-hidden", "true");
+            title.classList.add("is-typing");
+            title.setAttribute("aria-label", text);
+            title.replaceChildren(measure, output);
+            cta.classList.remove("is-entering");
+            cta.classList.add("is-pending");
+
+            let index = 0;
+            function typeNextCharacter() {
+                if (run !== heroTypewriterRun || currentLanguage !== "en") return;
+
+                index++;
+                output.textContent = text.slice(0, index);
+                if (index < text.length) {
+                    heroTypewriterTimer = setTimeout(typeNextCharacter, 44);
+                    return;
+                }
+
+                heroTypewriterComplete = true;
+                title.classList.remove("is-typing");
+                title.removeAttribute("aria-label");
+                title.textContent = text;
+                heroTypewriterTimer = setTimeout(function () {
+                    if (run !== heroTypewriterRun || currentLanguage !== "en") return;
+                    cta.classList.remove("is-pending");
+                    cta.classList.add("is-entering");
+                }, 250);
+            }
+
+            heroTypewriterTimer = setTimeout(typeNextCharacter, 44);
+        }
+
         function setLanguage(language) {
             currentLanguage = language === "en" ? "en" : "zh";
             document.documentElement.lang = currentLanguage === "en" ? "en" : "zh-TW";
@@ -2185,11 +3659,30 @@ function prevSlide() {
             chineseAbout.hidden = currentLanguage !== "zh";
             englishAbout.hidden = currentLanguage !== "en";
             toggle.setAttribute("aria-pressed", String(currentLanguage === "en"));
-            toggle.setAttribute("aria-label", currentLanguage === "zh" ? "Switch to English" : "切換為中文");
+            toggle.setAttribute("aria-label", currentLanguage === "zh" ? "Switch to English" : "???箔葉??);
             document.getElementById("section-about").setAttribute(
                 "aria-labelledby",
                 currentLanguage === "zh" ? "about-name-zh" : "about-name-en"
             );
+            updateHeroTitleLanguage(currentLanguage);
+        }
+
+        function moveNavIndicator(link) {
+            if (!link) return;
+
+            const nav = link.closest("nav");
+            if (!nav) return;
+
+            const navRect = nav.getBoundingClientRect();
+            const linkRect = link.getBoundingClientRect();
+
+            const left = linkRect.left - navRect.left;
+            const top = linkRect.top - navRect.top;
+
+            nav.style.setProperty("--nav-indicator-left", left + "px");
+            nav.style.setProperty("--nav-indicator-width", linkRect.width + "px");
+            nav.style.setProperty("--nav-indicator-top", top + "px");
+            nav.style.setProperty("--nav-indicator-height", linkRect.height + "px");
         }
 
         function toggleLanguage() {
@@ -2212,9 +3705,51 @@ function prevSlide() {
 document.querySelectorAll(".slide-prev").forEach(function (button) {
     button.addEventListener("click", prevSlide);
 });
-            let savedTheme = "color";
-            try { savedTheme = localStorage.getItem("theme") || "color"; } catch (e) {}
-            setTheme(savedTheme);
+            const scoreWorksGrid = document.getElementById("portfolio-grid");
+            const albumsGrid = document.getElementById("albums-grid");
+
+            function setupExpandableWorks(grid, cardSelector, button, showAllOnMobile) {
+                if (!grid || !button) return;
+
+                const cards = grid.querySelectorAll(cardSelector);
+                let expanded = false;
+
+                function updateVisibility() {
+                    const isMobile = window.matchMedia("(max-width: 800px)").matches;
+                    const showAll = showAllOnMobile && isMobile;
+                    const visibleCount = isMobile ? 3 : 4;
+
+                    cards.forEach(function (card, index) {
+                        card.hidden = !showAll && !expanded && index >= visibleCount;
+                    });
+
+                    button.setAttribute("aria-expanded", String(!showAll && expanded));
+                    button.firstChild.nodeValue = !showAll && expanded ? "Show Less " : "View All Works ";
+                    button.querySelector("span").textContent = !showAll && expanded ? "?? : "??;
+                }
+
+                button.addEventListener("click", function () {
+                    if (showAllOnMobile && window.matchMedia("(max-width: 800px)").matches) return;
+                    expanded = !expanded;
+                    updateVisibility();
+                });
+                window.addEventListener("resize", updateVisibility);
+                updateVisibility();
+            }
+
+            setupExpandableWorks(
+                albumsGrid,
+                ".album-item",
+                document.getElementById("albums-view-all")
+            );
+            setupExpandableWorks(
+                scoreWorksGrid,
+                ".work-card",
+                document.getElementById("score-works-view-all"),
+                true
+            );
+
+            setTheme("color");
 
             document.querySelectorAll("[data-theme-value]").forEach(function (btn) {
                 btn.addEventListener("click", function () {
@@ -2222,31 +3757,14 @@ document.querySelectorAll(".slide-prev").forEach(function (button) {
                 });
             });
 
-            setLanguage("zh");
+            setLanguage("en");
             loadSectionFromHash();
 
             const sections = document.querySelectorAll(".page-section");
 const navLinks = document.querySelectorAll("[data-section-link]");
 let isNavScrolling = false;
 
-function moveNavIndicator(link) {
-    if (!link) return;
-
-    const nav = link.closest("nav");
-    if (!nav) return;
-
-    const navRect = nav.getBoundingClientRect();
-    const linkRect = link.getBoundingClientRect();
-
-    const left = linkRect.left - navRect.left;
-    const top = linkRect.top - navRect.top;
-
-    nav.style.setProperty("--nav-indicator-left", left + "px");
-    nav.style.setProperty("--nav-indicator-width", linkRect.width + "px");
-    nav.style.setProperty("--nav-indicator-top", top + "px");
-    nav.style.setProperty("--nav-indicator-height", linkRect.height + "px");
-}
-// 一開始先定位到目前選取的項目
+// 銝????雿?桀??詨?????
 const initialLink = document.querySelector("[data-section-link].active-nav");
 moveNavIndicator(initialLink);
 const navEl = document.querySelector("header nav");
@@ -2260,34 +3778,81 @@ window.addEventListener("resize", function () {
     moveNavIndicator(activeLink);
 });
 
-// 點擊時：灰色方框立即切換位置，但移動軌跡保持 smooth
+// 暺????啗?寞?蝡??雿蔭嚗?蝘餃?頠楚靽? smooth
+// 暺?撠汗???啗?寞?蝡蝘餃?
+function setActiveNav(link) {
+    if (!link) return;
+
+    navLinks.forEach(function (item) {
+        const isCurrent = item === link;
+        item.classList.toggle("active-nav", isCurrent);
+        if (isCurrent) {
+            item.setAttribute("aria-current", "page");
+        } else {
+            item.removeAttribute("aria-current");
+        }
+    });
+
+    moveNavIndicator(link);
+}
+
+function updateActiveNavFromScroll() {
+    const contactSection = document.querySelector(
+        "#about-zh:not([hidden]) .contact-section, #about-en:not([hidden]) .contact-section"
+    );
+    const offset = 120;
+
+    if (contactSection) {
+        const contactRect = contactSection.getBoundingClientRect();
+        if (contactRect.top <= offset && contactRect.bottom > offset) {
+            setActiveNav(document.getElementById("nav-contact"));
+            return;
+        }
+    }
+
+    const sections = [
+        { id: "section-home", nav: "nav-works" },
+        { id: "section-music", nav: "nav-music" },
+        { id: "section-about", nav: "nav-about" }
+    ];
+    let currentNav = document.getElementById("nav-works");
+
+    sections.forEach(function (item) {
+        const section = document.getElementById(item.id);
+        if (section && section.getBoundingClientRect().top <= offset) {
+            currentNav = document.getElementById(item.nav);
+        }
+    });
+
+    setActiveNav(currentNav);
+}
+
 navLinks.forEach(function (link) {
     link.addEventListener("click", function () {
         isNavScrolling = true;
-        navLinks.forEach(function (item) {
-            item.classList.remove("active-nav");
-        });
+        setActiveNav(link);
 
-        link.classList.add("active-nav");
-        moveNavIndicator(link);
-       let scrollTimer;
-
-function unlockNavAfterScroll() {
-    clearTimeout(scrollTimer);
-
-    scrollTimer = setTimeout(function () {
-        isNavScrolling = false;
-    }, 150);
-}
-
-window.addEventListener("scroll", function () {
-    if (isNavScrolling) {
-        unlockNavAfterScroll();
-    }
-}, { passive: true });
+        clearTimeout(window.navScrollTimer);
+        window.navScrollTimer = setTimeout(function () {
+            isNavScrolling = false;
+            updateActiveNavFromScroll();
+        }, 1000);
     });
 });
 
+// ?頛敺停????皛曉?
+window.addEventListener("scroll", function () {
+    if (isNavScrolling) {
+        clearTimeout(window.navScrollTimer);
+        window.navScrollTimer = setTimeout(function () {
+            isNavScrolling = false;
+            updateActiveNavFromScroll();
+        }, 160);
+        return;
+    }
+
+    updateActiveNavFromScroll();
+}, { passive: true });
 
         });
 
@@ -2323,7 +3888,7 @@ window.addEventListener("scroll", function () {
                         message.textContent =
                             form.closest("#about-en")
                                 ? "Sent"
-                                : "已送出";
+                                : "撌脤";
 
                         button.insertAdjacentElement("afterend", message);
                     }
@@ -2349,41 +3914,41 @@ window.addEventListener("scroll", function () {
         const blurShape = document.querySelector('.random-blur-shape');
         let isDragging = false;
         let startX, startY;
-        let currentX = -40; // 對應 CSS 的 left: -40vw
-        let currentY = -40; // 對應 CSS 的 top: -40vh
+        let currentX = -40; // 撠? CSS ??left: -40vw
+        let currentY = -40; // 撠? CSS ??top: -40vh
 
-        // 當指標（滑鼠/觸控/數位筆）按下時
+        // ?嗆?璅?皛?/閫豢/?訾?蝑?????
         blurShape.addEventListener('pointerdown', (e) => {
             isDragging = true;
             blurShape.setPointerCapture(e.pointerId);
             
-            // 記錄按下時的初始座標
+            // 閮???????摨扳?
             startX = e.clientX;
             startY = e.clientY;
             
-            // 互動微特效：點擊時霧氣凝聚（縮小模糊值，讓圖形變清晰）
+            // 鈭?敺桃??暺??瘞????蝮桀?璅∠??潘?霈?敶Ｚ?皜嚗?
             blurShape.style.filter = "blur(35px)";
         });
 
-        // 當指標移動時，拖動整個流體畫布
+        // ?嗆?璅宏??嚗????擃撣?
         blurShape.addEventListener('pointermove', (e) => {
             if (!isDragging) return;
             
-            // 計算位移量（轉為輕微的 vw/vh 物理移動）
+            // 閮?雿宏??頧頛凝??vw/vh ?拍?蝘餃?嚗?
             const moveX = (e.clientX - startX) * 0.05;
             const moveY = (e.clientY - startY) * 0.05;
             
-            // 實時更新位置，並保留原本的旋轉動畫（使用 CSS 變數或直接疊加）
+            // 撖行??湔雿蔭嚗蒂靽????頧??恬?雿輻 CSS 霈??亦???
             blurShape.style.left = `calc(-40vw + ${moveX}px)`;
             blurShape.style.top = `calc(-40vh + ${moveY}px)`;
         });
 
-        // 當指標放開時
+        // ?嗆?璅??
         blurShape.addEventListener('pointerup', (e) => {
             isDragging = false;
             blurShape.releasePointerCapture(e.pointerId);
             
-            // 恢復原狀
+            // ?Ｗ儔??
             blurShape.style.filter = "blur(50px)";
             blurShape.style.left = "-40vw";
             blurShape.style.top = "-40vh";
@@ -2406,7 +3971,7 @@ backToTop.addEventListener("click", function () {
         const elapsed = currentTime - startTime;
         const progress = Math.min(elapsed / duration, 1);
 
-        // easeInOutCubic：開始與結束都比較柔順
+        // easeInOutCubic嚗?憪?蝯??賣?頛???
         const eased =
             progress < 0.5
                 ? 4 * progress * progress * progress
@@ -2423,6 +3988,16 @@ backToTop.addEventListener("click", function () {
 
     requestAnimationFrame(scrollToTop);
 });
+
+const retroCursor = document.querySelector(".retro-cursor");
+
+document.addEventListener("mousemove", function (event) {
+    retroCursor.style.left = event.clientX + "px";
+    retroCursor.style.top = event.clientY + "px";
+});
+
+
+
     </script>
 </body>
 </html>
